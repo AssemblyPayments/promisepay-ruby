@@ -77,29 +77,29 @@ describe Promisepay::Client do
   #   end
   # end
 
-  # describe 'self.resources' do
-  #   it 'contains all available resources' do
-  #     expect(Promisepay::Client.resources).to be_a(Hash)
-  #     expect(Promisepay::Client.resources).to_not be_empty
-  #   end
-  # end
+  describe 'self.resources' do
+    it 'contains all available resources' do
+      expect(Promisepay::Client.resources).to be_a(Hash)
+      expect(Promisepay::Client.resources).to_not be_empty
+    end
+  end
 
-  # describe 'resources' do
-  #   context 'when no request was previously made' do
-  #     it 'is empty' do
-  #       expect(client.resources).to be_empty
-  #     end
-  #   end
+  describe 'resources' do
+    context 'when no request was previously made' do
+      it 'is empty' do
+        expect(client.resources).to be_empty
+      end
+    end
 
-  #   context 'when requests were previously made' do
-  #     before { client.users.find_all }
-  #     it 'is not empty' do
-  #       expect(client.resources).to_not be_empty
-  #     end
-  #     it 'contains previosuly used resources' do
-  #       expect(client.resources).to have_key(:users)
-  #     end
-  #   end
-  # end
+    # context 'when requests were previously made' do
+    #   before { client.users.find_all }
+    #   it 'is not empty' do
+    #     expect(client.resources).to_not be_empty
+    #   end
+    #   it 'contains previosuly used resources' do
+    #     expect(client.resources).to have_key(:users)
+    #   end
+    # end
+  end
 
 end

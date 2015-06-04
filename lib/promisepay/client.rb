@@ -52,7 +52,7 @@ module Promisepay
     # @return [Hash]
     def self.resources
       {
-        # users: UserResource
+        users: UserResource
       }
     end
 
