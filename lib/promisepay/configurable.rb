@@ -1,5 +1,4 @@
 module Promisepay
-
   # Configuration options for {Client}, defaulting to values in {Default}.
   module Configurable
     # @!attribute api_domain
@@ -17,7 +16,6 @@ module Promisepay
     attr_accessor :api_domain, :environment, :token, :username
 
     class << self
-
       # List of configurable keys for {Promisepay::Client}.
       #
       # @return [Array] of option keys
@@ -38,7 +36,7 @@ module Promisepay
       end
       self
     end
-    alias setup reset!
+    alias_method :setup, :reset!
 
     # API endpoint to be used by {Promisepay::Client}.
     # Built from {#environment} and {#api_domain}

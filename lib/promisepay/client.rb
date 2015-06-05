@@ -1,11 +1,11 @@
 require_relative 'configurable'
 require_relative 'models/user'
+require_relative 'resources/base_resource'
 require_relative 'resources/user_resource'
 require 'json'
 require 'faraday'
 
 module Promisepay
-
   # Client for the Promisepay API
   #
   # @see http://docs.promisepay.com/v2.2/docs/overview
@@ -15,7 +15,9 @@ module Promisepay
     def initialize(options = {})
       # Use options passed in, but fall back to module defaults
       Promisepay::Configurable.keys.each do |key|
-        instance_variable_set(:"@#{key}", options[key] || Promisepay.instance_variable_get(:"@#{key}"))
+        instance_variable_set(
+          :"@#{key}", options[key] || Promisepay.instance_variable_get(:"@#{key}")
+        )
       end
     end
 
@@ -73,6 +75,5 @@ module Promisepay
     def resources
       @resources ||= {}
     end
-
   end
 end

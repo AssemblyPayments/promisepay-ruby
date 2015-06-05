@@ -1,8 +1,6 @@
 module Promisepay
-
   # Default configuration options for {Client}
   module Default
-
     # Default API domain
     API_DOMAIN = 'api.promisepay.com'.freeze
 
@@ -10,7 +8,6 @@ module Promisepay
     ENVIRONMENT = 'test'.freeze
 
     class << self
-
       # Configuration options.
       #
       # @return [Hash]

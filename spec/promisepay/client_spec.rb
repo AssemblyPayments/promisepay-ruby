@@ -4,6 +4,9 @@ describe Promisepay::Client do
   let(:client) { Promisepay::Client.new }
 
   describe 'initialize' do
+    before { EnvironmentVariables.clean_up && Promisepay.setup }
+    after { EnvironmentVariables.restore && Promisepay.setup }
+
     context 'without parameters' do
       it 'configures client with default values' do
         expect(client.api_domain).to be_a(String)
@@ -14,7 +17,7 @@ describe Promisepay::Client do
     end
 
     context 'with parameters' do
-      let(:client) do
+      let(:client_with_params) do
         Promisepay::Client.new(
           api_domain: 'api.domain.com',
           environment: 'production',
@@ -22,32 +25,21 @@ describe Promisepay::Client do
           token: 'myToken'
         )
       end
-      it 'properly configure client' do
-        expect(client.api_domain).to eql('api.domain.com')
-        expect(client.environment).to eql('production')
-        expect(client.username).to eql('myUsername')
-        expect(client.token).to eql('myToken')
+
+      it 'properly configures client' do
+        expect(client_with_params.api_domain).to eql('api.domain.com')
+        expect(client_with_params.environment).to eql('production')
+        expect(client_with_params.username).to eql('myUsername')
+        expect(client_with_params.token).to eql('myToken')
       end
     end
 
-    context 'having environment parameters previously set' do
+    context 'with environment variables' do
       before do
-        @cached_environment = ENV['PROMISEPAY_ENVIRONMENT']
-        @cached_api_domain = ENV['PROMISEPAY_API_DOMAIN']
-        @cached_useranme = ENV['PROMISEPAY_USERNAME']
-        @cached_token = ENV['PROMISEPAY_TOKEN']
         ENV['PROMISEPAY_ENVIRONMENT'] = 'env_environment'
         ENV['PROMISEPAY_API_DOMAIN'] = 'env_api_domain'
         ENV['PROMISEPAY_USERNAME'] = 'env_username'
         ENV['PROMISEPAY_TOKEN'] = 'env_token'
-        Promisepay.setup
-      end
-
-      after do
-        ENV['PROMISEPAY_ENVIRONMENT'] = @cached_environment
-        ENV['PROMISEPAY_API_DOMAIN'] = @cached_api_domain
-        ENV['PROMISEPAY_USERNAME'] = @cached_useranme
-        ENV['PROMISEPAY_TOKEN'] = @cached_token
         Promisepay.setup
       end
 
@@ -91,15 +83,16 @@ describe Promisepay::Client do
       end
     end
 
-    # context 'when requests were previously made' do
-    #   before { client.users.find_all }
-    #   it 'is not empty' do
-    #     expect(client.resources).to_not be_empty
-    #   end
-    #   it 'contains previosuly used resources' do
-    #     expect(client.resources).to have_key(:users)
-    #   end
-    # end
-  end
+    context 'when requests were previously made', vcr: { cassette_name: 'users_multiple' }  do
+      before { client.users.find_all }
 
+      it 'is not empty' do
+        expect(client.resources).to_not be_empty
+      end
+
+      it 'contains previosuly used resources' do
+        expect(client.resources).to have_key(:users)
+      end
+    end
+  end
 end
