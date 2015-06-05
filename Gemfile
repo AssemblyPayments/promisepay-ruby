@@ -1,4 +1,11 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in promisepay.gemspec
+group :test do
+  gem 'coveralls'
+  gem 'rspec'
+  gem 'vcr'
+  gem 'webmock'
+  gem 'yard'
+end
+
 gemspec

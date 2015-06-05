@@ -1,6 +1,8 @@
 require './lib/promisepay'
 require 'webmock/rspec'
 require 'vcr'
+require 'coveralls'
+Coveralls.wear!
 
 # Require supporting ruby files for specs in spec/support/ and its subdirectories.
 Dir['./spec/support/**/*.rb'].each { |f| require f }
