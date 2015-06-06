@@ -58,16 +58,14 @@ describe Promisepay::Client do
     end
   end
 
-  # describe 'queries' do
-
-  #   let(:client_for_queries) { Promisepay::Client.new(username: 'myUsername', token: 'myToken') }
-
-  #   describe 'get' do
-  #     it 'returns a Faraday:Response' do
-  #       expect(client_for_queries.get('')).to be_a(Faraday::response)
-  #     end
-  #   end
-  # end
+  describe 'CRUD requests' do
+    it 'are available' do
+      expect(client).to respond_to(:get).with(2).arguments
+      expect(client).to respond_to(:post).with(2).arguments
+      expect(client).to respond_to(:patch).with(2).arguments
+      expect(client).to respond_to(:delete).with(2).arguments
+    end
+  end
 
   describe 'self.resources' do
     it 'contains all available resources' do

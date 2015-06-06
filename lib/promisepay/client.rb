@@ -35,10 +35,10 @@ module Promisepay
     # Make a HTTP GET request
     #
     # @param url [String] The path, relative to {#api_endpoint}
-    # @param options [Hash] Query params for request
+    # @param parameters [Hash] Query params for request
     # @return [Faraday::Response]
-    def get(url, options = {})
-      connection.get("#{api_endpoint}#{url}", options)
+    def get(url, parameters = {})
+      connection.get("#{api_endpoint}#{url}", parameters)
     end
 
     # Make a HTTP POST request
@@ -48,6 +48,32 @@ module Promisepay
     # @return [Faraday::Response]
     def post(url, parameters = {})
       connection.post do |req|
+        req.url "#{api_endpoint}#{url}"
+        req.headers['Content-Type'] = 'application/json'
+        req.body = parameters.to_json
+      end
+    end
+
+    # Make a HTTP PATCH request
+    #
+    # @param url [String] The path, relative to {#api_endpoint}
+    # @param parameters [Hash] Query params for request
+    # @return [Faraday::Response]
+    def patch(url, parameters = {})
+      connection.patch do |req|
+        req.url "#{api_endpoint}#{url}"
+        req.headers['Content-Type'] = 'application/json'
+        req.body = parameters.to_json
+      end
+    end
+
+    # Make a HTTP DELETE request
+    #
+    # @param url [String] The path, relative to {#api_endpoint}
+    # @param parameters [Hash] Query params for request
+    # @return [Faraday::Response]
+    def delete(url, parameters = {})
+      connection.delete do |req|
         req.url "#{api_endpoint}#{url}"
         req.headers['Content-Type'] = 'application/json'
         req.body = parameters.to_json
