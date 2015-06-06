@@ -25,8 +25,7 @@ module Promisepay
     # @return [Promisepay::User]
     def find(id)
       response = JSON.parse(@client.get("users/#{id}").body)
-      attributes = response['users']
-      Promisepay::User.new(@client, attributes)
+      response.key?('users') ? Promisepay::User.new(@client, response['users']) : nil
     end
 
     # Create a new user for a marketplace
@@ -37,9 +36,12 @@ module Promisepay
     #
     # @return [Promisepay::User]
     def create(attributes)
-      response = JSON.parse(@client.post('users', options).body)
-      attributes = response['users']
-      Promisepay::User.new(@client, attributes)
+      response = JSON.parse(@client.post('users', attributes).body)
+      if response.key?('errors')
+        nil
+      else
+        Promisepay::User.new(@client, response['users'])
+      end
     end
   end
 end

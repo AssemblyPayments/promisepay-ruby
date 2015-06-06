@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/users
+    body:
+      encoding: UTF-8
+      string: '{"id":"99","first_name":"myFirstName","email":"firstname@email.com","country":"AUS"}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Access-Control-Allow-Headers:
+      - Origin, Content-Type, Accept, Authorization, Token
+      Access-Control-Allow-Methods:
+      - POST, GET, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Request-Method:
+      - "*"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      - no-cache="set-cookie"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 06 Jun 2015 09:27:13 GMT
+      Etag:
+      - '"8754574e233c0a528685ebb688f33b99"'
+      Location:
+      - "/users/99"
+      Server:
+      - nginx/1.4.5 + Phusion Passenger 4.0.41
+      Set-Cookie:
+      - AWSELB=0DBB11830A38E977296412C0A203E644D732F49D5D8B1F8651E4AEE885D7AA8B7B9AC5F3ADB4A6F37B5FF8C730A7468BC5CA58DF2E7376E824BD49918D1818AC6660EDC9BD;PATH=/
+      - request_method=POST; path=/
+      Status:
+      - 201 Created
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Powered-By:
+      - Phusion Passenger 4.0.41
+      X-Request-Id:
+      - f47f067b-bfb0-4c60-8b61-e1f779f63833
+      X-Runtime:
+      - '0.683487'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '632'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"users":{"created_at":"2015-06-06T09:27:13.502Z","updated_at":"2015-06-06T09:27:13.502Z","full_name":"myFirstName","email":"firstname@email.com","mobile":null,"phone":null,"first_name":"myFirstName","last_name":null,"id":"99","location":"AUS","verification_state":"pending","held_state":false,"dob":"Not
+        provided.","government_number":"Not provided.","drivers_license":"Not provided.","related":{"addresses":"fe52ff33-bf22-464f-b4b3-0f04c9bec678"},"links":{"self":"/users","items":"/users/99/items","card_accounts":"/users/99/card_accounts","paypal_accounts":"/users/99/paypal_accounts","bank_accounts":"/users/99/bank_accounts"}}}'
+    http_version:
+  recorded_at: Sat, 06 Jun 2015 09:27:13 GMT
+recorded_with: VCR 2.9.3
