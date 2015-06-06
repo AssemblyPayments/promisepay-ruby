@@ -11,7 +11,7 @@ describe Promisepay::BaseModel do
   end
 
   describe 'attributes' do
-    let(:attributes) { { 'name' => 'myName', 'email' => 'myname@email.com' } }
+    let(:attributes) { { name: 'myName', email: 'myname@email.com' } }
     let(:model) { Promisepay::BaseModel.new(client, attributes) }
 
     it 'can be accessed' do

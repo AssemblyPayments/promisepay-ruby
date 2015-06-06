@@ -3,7 +3,7 @@ module Promisepay
   class BaseModel
     def initialize(client, attributes = {})
       @client = client
-      @attributes = attributes
+      @attributes = stringify_keys(attributes)
     end
 
     def method_missing(name, *args, &block)
@@ -12,6 +12,12 @@ module Promisepay
       else
         super
       end
+    end
+
+    private
+
+    def stringify_keys(hash)
+      Hash[hash.map { |k, v| [k.to_s, v] }]
     end
   end
 end
