@@ -1,4 +1,5 @@
 require_relative 'configurable'
+require_relative 'models/base_model'
 require_relative 'models/user'
 require_relative 'resources/base_resource'
 require_relative 'resources/user_resource'
@@ -43,10 +44,14 @@ module Promisepay
     # Make a HTTP POST request
     #
     # @param url [String] The path, relative to {#api_endpoint}
-    # @param options [Hash] Query params for request
+    # @param parameters [Hash] Query params for request
     # @return [Faraday::Response]
-    def post(url, options = {})
-      connection.post("#{api_endpoint}#{url}", options)
+    def post(url, parameters = {})
+      connection.post do |req|
+        req.url "#{api_endpoint}#{url}"
+        req.headers['Content-Type'] = 'application/json'
+        req.body = parameters.to_json
+      end
     end
 
     # Available resources for {Client}

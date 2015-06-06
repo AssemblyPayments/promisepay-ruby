@@ -1,8 +1,5 @@
 module Promisepay
   # Manage Users
-  class User
-    def initialize(client, _options = {})
-      @client = client
-    end
+  class User < BaseModel
   end
 end
