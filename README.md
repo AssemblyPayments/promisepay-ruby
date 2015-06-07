@@ -25,9 +25,10 @@ Or install it yourself as:
 ## Usage
 
 Before interacting with Promispay API you need to generate an access token.
+
 See http://docs.promisepay.com/v2.2/docs/request_token for more information.
 
-With your access token, retrieve a client instance with it.
+You can generate a client as following:
 
 ```ruby
 client = Promisepay::Client.new(username: 'YOUR_USERNAME', token: 'YOUR_TOKEN')
