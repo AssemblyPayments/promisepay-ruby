@@ -40,7 +40,9 @@ module Promisepay
     # @param parameters [Hash] Query params for request
     # @return [Faraday::Response]
     def get(url, parameters = {})
-      connection.get("#{api_endpoint}#{url}", parameters)
+      response = connection.get("#{api_endpoint}#{url}", parameters)
+      on_complete(response)
+      response
     end
 
     # Make a HTTP POST request
@@ -49,11 +51,13 @@ module Promisepay
     # @param parameters [Hash] Query params for request
     # @return [Faraday::Response]
     def post(url, parameters = {})
-      connection.post do |req|
+      response = connection.post do |req|
         req.url "#{api_endpoint}#{url}"
         req.headers['Content-Type'] = 'application/json'
         req.body = parameters.to_json
       end
+      on_complete(response)
+      response
     end
 
     # Make a HTTP PATCH request
@@ -62,11 +66,13 @@ module Promisepay
     # @param parameters [Hash] Query params for request
     # @return [Faraday::Response]
     def patch(url, parameters = {})
-      connection.patch do |req|
+      response = connection.patch do |req|
         req.url "#{api_endpoint}#{url}"
         req.headers['Content-Type'] = 'application/json'
         req.body = parameters.to_json
       end
+      on_complete(response)
+      response
     end
 
     # Make a HTTP DELETE request
@@ -75,11 +81,13 @@ module Promisepay
     # @param parameters [Hash] Query params for request
     # @return [Faraday::Response]
     def delete(url, parameters = {})
-      connection.delete do |req|
+      response = connection.delete do |req|
         req.url "#{api_endpoint}#{url}"
         req.headers['Content-Type'] = 'application/json'
         req.body = parameters.to_json
       end
+      on_complete(response)
+      response
     end
 
     # Available resources for {Client}
@@ -108,6 +116,12 @@ module Promisepay
     # @return [Hash]
     def resources
       @resources ||= {}
+    end
+
+    private
+
+    def on_complete(response)
+      fail Promisepay::Error.from_response(response) unless response.success?
     end
   end
 end

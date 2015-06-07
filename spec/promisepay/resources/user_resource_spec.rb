@@ -29,9 +29,8 @@ describe Promisepay::UserResource do
     end
 
     context 'an unknown user', vcr: { cassette_name: 'users_unknown' } do
-      it 'returns nil' do
-        user = client.users.find('unkown_id')
-        expect(user).to be_nil
+      it 'raises an error' do
+        expect { client.users.find('unkown_id') }.to raise_error(Promisepay::Unauthorized)
       end
     end
   end
@@ -57,10 +56,14 @@ describe Promisepay::UserResource do
       end
     end
 
-    context 'with invalid attributes' do
-      let(:invalid_attributes) { {} }
+    context 'with invalid attributes', vcr: { cassette_name: 'users_created_error' } do
+      let(:invalid_attributes) { { email: 'notAnEmail' } }
 
-      it 'has to be implemented'
+      it 'raises an error' do
+        expect {
+          client.users.create(invalid_attributes)
+        }.to raise_error(Promisepay::UnprocessableEntity)
+      end
     end
   end
 end

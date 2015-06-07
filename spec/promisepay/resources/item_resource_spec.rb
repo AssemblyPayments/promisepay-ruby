@@ -32,9 +32,8 @@ describe Promisepay::ItemResource do
     end
 
     context 'an unknown item', vcr: { cassette_name: 'items_unknown' } do
-      it 'returns nil' do
-        item = client.items.find('unkown_id')
-        expect(item).to be_nil
+      it 'raises an error' do
+        expect { client.items.find('unkown_id') }.to raise_error(Promisepay::Unauthorized)
       end
     end
   end
@@ -61,10 +60,14 @@ describe Promisepay::ItemResource do
       end
     end
 
-    context 'with invalid attributes' do
-      let(:invalid_attributes) { {} }
+    context 'with invalid attributes', vcr: { cassette_name: 'items_created_error' } do
+      let(:invalid_attributes) { { id: '1' } }
 
-      it 'has to be implemented'
+      it 'raises an error' do
+        expect {
+          client.items.create(invalid_attributes)
+        }.to raise_error(Promisepay::UnprocessableEntity)
+      end
     end
   end
 end

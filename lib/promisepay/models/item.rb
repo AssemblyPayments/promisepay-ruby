@@ -7,15 +7,11 @@ module Promisepay
     #
     # @param attributes [Hash] Item's attributes to be updated.
     #
-    # @return [Boolean]
+    # @return [self]
     def update(attributes)
       response = JSON.parse(@client.patch("items/#{send(:id)}", attributes).body)
-      if response.key?('errors')
-        false
-      else
-        @attributes = response['items']
-        true
-      end
+      @attributes = response['items']
+      self
     end
 
     # Show the item status for a marketplace.

@@ -25,7 +25,7 @@ module Promisepay
     # @return [Promisepay::Item]
     def find(id)
       response = JSON.parse(@client.get("items/#{id}").body)
-      response.key?('items') ? Promisepay::Item.new(@client, response['items']) : nil
+      Promisepay::Item.new(@client, response['items'])
     end
 
     # Create an item for a marketplace
@@ -37,11 +37,7 @@ module Promisepay
     # @return [Promisepay::Item]
     def create(attributes)
       response = JSON.parse(@client.post('items', attributes).body)
-      if response.key?('errors')
-        nil
-      else
-        Promisepay::Item.new(@client, response['items'])
-      end
+      Promisepay::Item.new(@client, response['items'])
     end
 
     # Delete an item for a marketplace
@@ -50,10 +46,10 @@ module Promisepay
     #
     # @param id [String] Marketplace item ID.
     #
-    # @return boolean
+    # @return [Boolean]
     def delete(id)
-      response = JSON.parse(@client.delete("items/#{id}").body)
-      response.key?('errors')
+      @client.delete("items/#{id}")
+      true
     end
 
     def method_missing(name, *args, &block)

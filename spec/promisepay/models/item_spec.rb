@@ -9,14 +9,18 @@ describe Promisepay::Item do
       let(:valid_attributes) { { name: 'updatedName' } }
       it 'correctly updates the item' do
         original_name = item.name
-        expect(item.update(valid_attributes)).to be(true)
+        item.update(valid_attributes)
         expect(item.name).to_not eql(original_name)
         expect(item.name).to eql('updatedName')
       end
     end
 
-    context 'with invalid attributes' do
-      it 'has to be implemented'
+    context 'with invalid attributes', vcr: { cassette_name: 'items_updated_error' } do
+      let(:invalid_attributes) { { amount: 1 } }
+
+      it 'raises an error' do
+        expect { item.update(invalid_attributes) }.to raise_error(Promisepay::UnprocessableEntity)
+      end
     end
   end
 
