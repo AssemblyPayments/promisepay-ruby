@@ -4,12 +4,12 @@ describe Promisepay::Item do
   let(:client) { Promisepay::Client.new }
   let(:item) { VCR.use_cassette('items_multiple') { client.items.find_all.first } }
 
-  describe 'update' do
+  describe 'update!' do
     context 'with valid attributes', vcr: { cassette_name: 'items_updated' } do
       let(:valid_attributes) { { name: 'updatedName' } }
       it 'correctly updates the item' do
         original_name = item.name
-        item.update(valid_attributes)
+        item.update!(valid_attributes)
         expect(item.name).to_not eql(original_name)
         expect(item.name).to eql('updatedName')
       end
@@ -19,7 +19,7 @@ describe Promisepay::Item do
       let(:invalid_attributes) { { amount: 1 } }
 
       it 'raises an error' do
-        expect { item.update(invalid_attributes) }.to raise_error(Promisepay::UnprocessableEntity)
+        expect { item.update!(invalid_attributes) }.to raise_error(Promisepay::UnprocessableEntity)
       end
     end
   end

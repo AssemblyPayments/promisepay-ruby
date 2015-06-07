@@ -8,7 +8,7 @@ module Promisepay
     # @param attributes [Hash] Item's attributes to be updated.
     #
     # @return [self]
-    def update(attributes)
+    def update!(attributes)
       response = JSON.parse(@client.patch("items/#{send(:id)}", attributes).body)
       @attributes = response['items']
       self
