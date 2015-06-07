@@ -1,7 +1,9 @@
 require_relative 'configurable'
 require_relative 'models/base_model'
+require_relative 'models/item'
 require_relative 'models/user'
 require_relative 'resources/base_resource'
+require_relative 'resources/item_resource'
 require_relative 'resources/user_resource'
 require 'json'
 require 'faraday'
@@ -85,6 +87,7 @@ module Promisepay
     # @return [Hash]
     def self.resources
       {
+        items: ItemResource,
         users: UserResource
       }
     end

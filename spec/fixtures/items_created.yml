@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/items
+    body:
+      encoding: UTF-8
+      string: '{"id":"99","name":"itemName","amount":"500","payment_type":1,"seller_id":"1","buyer_id":"2"}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Access-Control-Allow-Headers:
+      - Origin, Content-Type, Accept, Authorization, Token
+      Access-Control-Allow-Methods:
+      - POST, GET, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Request-Method:
+      - "*"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      - no-cache="set-cookie"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 07 Jun 2015 08:49:14 GMT
+      Etag:
+      - '"1471bdc1b021b1942f57c183b08bc712"'
+      Location:
+      - "/items/99"
+      Server:
+      - nginx/1.4.5 + Phusion Passenger 4.0.41
+      Set-Cookie:
+      - AWSELB=0DBB11830A38E977296412C0A203E644D732F49D5D8B1F8651E4AEE885D7AA8B7B9AC5F3ADB4A6F37B5FF8C730A7468BC5CA58DF2E7376E824BD49918D1818AC6660EDC9BD;PATH=/
+      - request_method=POST; path=/
+      Status:
+      - 201 Created
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Powered-By:
+      - Phusion Passenger 4.0.41
+      X-Request-Id:
+      - e13641ce-5a66-4783-8ba0-d858cccff7fb
+      X-Runtime:
+      - '0.486751'
+      X-Xss-Protection:
+      - 1; mode=block
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"items":{"id":"99","name":"itemName","description":null,"created_at":"2015-06-07T08:49:14.865Z","updated_at":"2015-06-07T08:49:14.865Z","state":"pending","net_amount":500,"refunded_amount":0,"released_amount":0,"buyer_fees":0,"seller_fees":0,"credit_card_fee":0,"deposit_reference":"9140140682","payment_type_id":1,"status":22000,"amount":500,"pending_release_amount":0,"promisepay_fee":500,"total_outstanding":500,"currency":"AUD","payment_method":"pending","buyer_name":"test
+        romain test romain","buyer_email":"aa@aa.com","buyer_country":"AUS","seller_name":"test
+        name last_name","seller_email":"email@email.com","seller_country":"AUS","related":{"buyers":"2","sellers":"1"},"links":{"self":"/items","buyers":"/items/99/buyers","sellers":"/items/99/sellers","status":"/items/99/status","fees":"/items/99/fees","transactions":"/items/99/transactions","wire_details":"/items/99/wire_details","bpay_details":"/items/99/bpay_details"}}}'
+    http_version: 
+  recorded_at: Sun, 07 Jun 2015 08:49:15 GMT
+recorded_with: VCR 2.9.3
