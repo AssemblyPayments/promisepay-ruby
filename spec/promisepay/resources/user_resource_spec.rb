@@ -11,11 +11,11 @@ describe Promisepay::UserResource do
       end
     end
 
-    context 'when multiple are available', vcr: { cassette_name: 'users_multiple' } do
+    context 'when multiple users are available', vcr: { cassette_name: 'users_multiple' } do
       it 'gives back an array of users' do
         users = client.users.find_all
         expect(users).to_not be_empty
-        expect(users.first).to be_kind_of(Promisepay::User)
+        expect(users.first).to be_a(Promisepay::User)
       end
     end
   end
