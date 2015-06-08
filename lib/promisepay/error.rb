@@ -6,25 +6,23 @@ module Promisepay
     # @param [Faraday::Response] response Faraday HTTP response
     # @return [Promisepay::Error]
     def self.from_response(response)
-      if klass =  case response.status
-                  when 400      then Promisepay::BadRequest
-                  when 401      then Promisepay::Unauthorized
-                  when 403      then Promisepay::Forbidden
-                  when 404      then Promisepay::NotFound
-                  when 405      then Promisepay::MethodNotAllowed
-                  when 406      then Promisepay::NotAcceptable
-                  when 409      then Promisepay::Conflict
-                  when 422      then Promisepay::UnprocessableEntity
-                  when 400..499 then Promisepay::ClientError
-                  when 500      then Promisepay::InternalServerError
-                  when 501      then Promisepay::NotImplemented
-                  when 502      then Promisepay::BadGateway
-                  when 503      then Promisepay::ServiceUnavailable
-                  when 500..599 then Promisepay::ServerError
-                  else new(response)
-                  end
-        klass.new(response)
-      end
+      klass = case response.status
+              when 400      then Promisepay::BadRequest
+              when 401      then Promisepay::Unauthorized
+              when 403      then Promisepay::Forbidden
+              when 404      then Promisepay::NotFound
+              when 405      then Promisepay::MethodNotAllowed
+              when 406      then Promisepay::NotAcceptable
+              when 409      then Promisepay::Conflict
+              when 422      then Promisepay::UnprocessableEntity
+              when 400..499 then Promisepay::ClientError
+              when 500      then Promisepay::InternalServerError
+              when 501      then Promisepay::NotImplemented
+              when 502      then Promisepay::BadGateway
+              when 503      then Promisepay::ServiceUnavailable
+              when 500..599 then Promisepay::ServerError
+              end
+      (klass) ? klass.new(response) : new(response)
     end
 
     def initialize(response = nil)
