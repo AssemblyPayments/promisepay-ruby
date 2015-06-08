@@ -70,4 +70,10 @@ describe Promisepay::ItemResource do
       end
     end
   end
+
+  describe 'Item methods' do
+    it 'can be accessed' do
+      expect(client.items.respond_to?(:status)).to be(true)
+    end
+  end
 end

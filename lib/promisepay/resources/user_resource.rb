@@ -1,6 +1,10 @@
 module Promisepay
   # Resource for the Users API
   class UserResource < BaseResource
+    def model
+      Promisepay::User
+    end
+
     # List all users for a marketplace
     #
     # @see http://docs.promisepay.com/v2.2/docs/users
@@ -38,14 +42,6 @@ module Promisepay
     def create(attributes)
       response = JSON.parse(@client.post('users', attributes).body)
       Promisepay::User.new(@client, response['users'])
-    end
-
-    def method_missing(name, *args, &block)
-      if Promisepay::User.instance_methods.include?(name)
-        Promisepay::User.new(@client, id: args[0]).send(name, *args[1..-1])
-      else
-        super
-      end
     end
   end
 end

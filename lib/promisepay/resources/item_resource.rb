@@ -1,6 +1,10 @@
 module Promisepay
   # Resource for the Items API
   class ItemResource < BaseResource
+    def model
+      Promisepay::Item
+    end
+
     # List all items for a marketplace
     #
     # @see http://docs.promisepay.com/v2.2/docs/items
@@ -50,14 +54,6 @@ module Promisepay
     def delete(id)
       @client.delete("items/#{id}")
       true
-    end
-
-    def method_missing(name, *args, &block)
-      if Promisepay::Item.instance_methods.include?(name)
-        Promisepay::Item.new(@client, id: args[0]).send(name, *args[1..-1])
-      else
-        super
-      end
     end
   end
 end

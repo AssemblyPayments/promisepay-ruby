@@ -66,4 +66,10 @@ describe Promisepay::UserResource do
       end
     end
   end
+
+  describe 'User methods' do
+    it 'can be accessed' do
+      expect(client.users.respond_to?(:items)).to be(true)
+    end
+  end
 end
