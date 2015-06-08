@@ -1,8 +1,12 @@
 require_relative 'configurable'
 require_relative 'models/base_model'
+require_relative 'models/account'
+require_relative 'models/bank_account'
 require_relative 'models/item'
 require_relative 'models/user'
 require_relative 'resources/base_resource'
+require_relative 'resources/account_resource'
+require_relative 'resources/bank_account_resource'
 require_relative 'resources/item_resource'
 require_relative 'resources/user_resource'
 require 'json'
@@ -95,6 +99,7 @@ module Promisepay
     # @return [Hash]
     def self.resources
       {
+        bank_accounts: BankAccountResource,
         items: ItemResource,
         users: UserResource
       }
