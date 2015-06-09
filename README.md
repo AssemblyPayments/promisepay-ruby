@@ -59,7 +59,7 @@ puts item.name # => 'myItemName'
 item.seller # => <Promisepay::User:0x007fb11426e950 ...>
 
 account = client.card_account.find('25d34744-8ef0-46a4-8b18-2a8322933cd1')
-item.make_payement!(account.id)
+item.make_payment!(account.id)
 
 item.transactions
 ```
