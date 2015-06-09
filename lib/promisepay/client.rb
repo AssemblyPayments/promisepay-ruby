@@ -5,6 +5,7 @@ require_relative 'models/bank_account'
 require_relative 'models/card_account'
 require_relative 'models/item'
 require_relative 'models/paypal_account'
+require_relative 'models/transaction'
 require_relative 'models/user'
 require_relative 'resources/base_resource'
 require_relative 'resources/account_resource'
@@ -12,6 +13,7 @@ require_relative 'resources/bank_account_resource'
 require_relative 'resources/card_account_resource'
 require_relative 'resources/item_resource'
 require_relative 'resources/paypal_account_resource'
+require_relative 'resources/transaction_resource'
 require_relative 'resources/user_resource'
 require 'json'
 require 'faraday'
@@ -107,6 +109,7 @@ module Promisepay
         card_accounts: CardAccountResource,
         items: ItemResource,
         paypal_accounts: PaypalAccountResource,
+        transactions: TransactionResource,
         users: UserResource
       }
     end
