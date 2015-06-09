@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/card_accounts/25d34744-8ef0-46a4-8b18-2a8322933cd0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Access-Control-Allow-Headers:
+      - Origin, Content-Type, Accept, Authorization, Token, APPROVE_TOKEN, MGMT_TOKEN
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache
+      - no-cache="set-cookie"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 09 Jun 2015 18:03:59 GMT
+      Server:
+      - nginx/1.4.5 + Phusion Passenger 4.0.41
+      Set-Cookie:
+      - AWSELB=0DBB11830A38E977296412C0A203E644D732F49D5D8B1F8651E4AEE885D7AA8B7B9AC5F3ADB4A6F37B5FF8C730A7468BC5CA58DF2E7376E824BD49918D1818AC6660EDC9BD;PATH=/
+      - request_method=GET; path=/
+      Status:
+      - 401 Unauthorized
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Powered-By:
+      - Phusion Passenger 4.0.41
+      X-Request-Id:
+      - 6bef40c1-e1f7-4d5a-878b-8431b73e3249
+      X-Runtime:
+      - '0.304783'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '62'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"code":405,"message":"Not authorized to access that record."}'
+    http_version: 
+  recorded_at: Tue, 09 Jun 2015 18:03:59 GMT
+recorded_with: VCR 2.9.3

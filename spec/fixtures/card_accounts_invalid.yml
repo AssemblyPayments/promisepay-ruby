@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/card_accounts/not_an_id
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Access-Control-Allow-Headers:
+      - Origin, Content-Type, Accept, Authorization, Token, APPROVE_TOKEN, MGMT_TOKEN
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache
+      - no-cache="set-cookie"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 09 Jun 2015 18:04:00 GMT
+      Server:
+      - nginx/1.4.5 + Phusion Passenger 4.0.41
+      Set-Cookie:
+      - AWSELB=0DBB11830A38E977296412C0A203E644D732F49D5D8B1F8651E4AEE885D7AA8B7B9AC5F3ADB4A6F37B5FF8C730A7468BC5CA58DF2E7376E824BD49918D1818AC6660EDC9BD;PATH=/
+      - request_method=GET; path=/
+      Status:
+      - 422 Unprocessable Entity
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Powered-By:
+      - Phusion Passenger 4.0.41
+      X-Request-Id:
+      - a60c537e-1472-4a9e-8bf5-924a2c588790
+      X-Runtime:
+      - '0.299771'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '36'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"errors":{"id":["invalid format"]}}'
+    http_version: 
+  recorded_at: Tue, 09 Jun 2015 18:04:00 GMT
+recorded_with: VCR 2.9.3
