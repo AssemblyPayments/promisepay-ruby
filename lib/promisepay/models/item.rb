@@ -24,22 +24,22 @@ module Promisepay
       response['items']
     end
 
-    # Show the buyers detail for a single item for a marketplace.
+    # Show the buyer detail for a single item for a marketplace.
     #
     # @see http://docs.promisepay.com/v2.2/docs/itemsidbuyers
     #
     # @return [Promisepay::User]
-    def buyers
+    def buyer
       response = JSON.parse(@client.get("items/#{send(:id)}/buyers").body)
       Promisepay::User.new(@client, response['users'])
     end
 
-    # Show the sellers detail for a single item for a marketplace.
+    # Show the seller detail for a single item for a marketplace.
     #
     # @see http://docs.promisepay.com/v2.2/docs/itemsidbuyers
     #
     # @return [Promisepay::User]
-    def sellers
+    def seller
       response = JSON.parse(@client.get("items/#{send(:id)}/sellers").body)
       Promisepay::User.new(@client, response['users'])
     end

@@ -33,16 +33,16 @@ describe Promisepay::Item do
     end
   end
 
-  describe 'buyers', vcr: { cassette_name: 'items_buyers' } do
+  describe 'buyer', vcr: { cassette_name: 'items_buyer' } do
     it 'returns a user' do
-      buyer = item.buyers
+      buyer = item.buyer
       expect(buyer).to be_a(Promisepay::User)
     end
   end
 
-  describe 'sellers', vcr: { cassette_name: 'items_sellers' } do
+  describe 'seller', vcr: { cassette_name: 'items_seller' } do
     it 'returns a user' do
-      seller = item.sellers
+      seller = item.seller
       expect(seller).to be_a(Promisepay::User)
     end
   end
