@@ -45,7 +45,7 @@ describe Promisepay::BankAccountResource do
         }
       end
 
-      it 'gives back a bank_account' do
+      it 'gives back a bank account' do
         bank_account = client.bank_accounts.create(valid_attributes)
         expect(bank_account).to be_a(Promisepay::BankAccount)
         expect(bank_account.bank['bank_name']).to eql('myBank')
