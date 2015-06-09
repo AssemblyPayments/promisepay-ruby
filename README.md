@@ -50,6 +50,22 @@ client = Promisepay::Client.new()
 
 _To get a list of all client configurable parameter check out the [Client Configuration section](#client_conf)._
 
+Once a client initialize you can access Promisepay resources as following:
+```ruby
+items = client.items.find_all
+
+item = client.items.find(1)
+puts item.name # => 'myItemName'
+item.seller # => <Promisepay::User:0x007fb11426e950 ...>
+
+account = client.card_account.find('25d34744-8ef0-46a4-8b18-2a8322933cd1')
+item.make_payement!(account.id)
+
+item.transactions
+```
+
+_Check out the [online documentation](http://google.com) to get a list of available resources and methods._
+
 ##<a name="client_conf"></a> Client Configuration
 
 The following parameters are configurable through the client:
