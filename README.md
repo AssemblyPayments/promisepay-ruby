@@ -28,7 +28,9 @@ Before interacting with Promispay API you need to generate an access token.
 
 See http://docs.promisepay.com/v2.2/docs/request_token for more information.
 
-You can generate a client as following:
+### Client
+
+Create a client as following:
 
 ```ruby
 require 'promisepay'
@@ -37,6 +39,7 @@ client = Promisepay::Client.new(username: 'YOUR_USERNAME', token: 'YOUR_TOKEN')
 ```
 
 Alternatively Promisepay Gem handles client configuration through environment variables.
+
 ```ruby
 ENV['PROMISEPAY_USERNAME'] = 'YOUR_USERNAME'
 ENV['PROMISEPAY_TOKEN'] = 'YOUR_TOKEN'
@@ -48,9 +51,12 @@ require 'promisepay'
 client = Promisepay::Client.new()
 ```
 
-_To get a list of all client configurable parameter check out the [Client Configuration section](#client_conf)._
+_All configurable parameters are available in the Client Configuration section of this README._
+
+### Calls
 
 Once a client initialize you can access Promisepay resources as following:
+
 ```ruby
 items = client.items.find_all
 
@@ -59,16 +65,17 @@ puts item.name # => 'myItemName'
 item.seller # => <Promisepay::User:0x007fb11426e950 ...>
 
 account = client.card_account.find('25d34744-8ef0-46a4-8b18-2a8322933cd1')
-item.make_payment!(account.id)
+item.make_payment(account.id)
 
 item.transactions
 ```
 
 _Check out the [online documentation](http://google.com) to get a list of available resources and methods._
 
-##<a name="client_conf"></a> Client Configuration
+## Client Configuration
 
 The following parameters are configurable through the client:
+
   * `:username` / `ENV['PROMISEPAY_USERNAME']`: username for [basic authentication](http://docs.promisepay.com/v2.2/docs/overview-2)
   * `:token` / `ENV['PROMISEPAY_TOKEN']`: token for [basic authentication](http://docs.promisepay.com/v2.2/docs/overview-2)
   * `:environment` / `ENV['PROMISEPAY_ENVIRONMENT']`: API [environment](http://docs.promisepay.com/v2.2/docs/environments) to use (default: 'test')
@@ -76,7 +83,7 @@ The following parameters are configurable through the client:
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/promisepay-ruby/fork )
+1. Fork it ( https://github.com/PromisePay/promisepay-ruby/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
