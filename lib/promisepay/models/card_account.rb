@@ -17,7 +17,7 @@ module Promisepay
     # @see http://docs.promisepay.com/v2.2/docs/card_accountsid
     #
     # @return [Boolean]
-    def deactivate!
+    def deactivate
       @client.delete("card_accounts/#{id}")
       @attributes['active'] = false
       true

@@ -14,10 +14,10 @@ describe Promisepay::CardAccount do
     end
   end
 
-  describe 'deactivate!' do
+  describe 'deactivate' do
     it 'deactivates the account', vcr: { cassette_name: 'card_accounts_deactivated' } do
       expect(account.active).to be(true)
-      account.deactivate!
+      account.deactivate
       expect(account.active).to be(false)
     end
   end

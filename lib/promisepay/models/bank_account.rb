@@ -19,7 +19,7 @@ module Promisepay
     # @param mobile_pin [String] Mobile PIN.
     #
     # @return [Boolean]
-    def deactivate!(mobile_pin)
+    def deactivate(mobile_pin)
       @client.delete("bank_accounts/#{id}", mobile_pin: mobile_pin)
       @attributes['active'] = false
       true
