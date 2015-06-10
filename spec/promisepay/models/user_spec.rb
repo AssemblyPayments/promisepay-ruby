@@ -19,4 +19,46 @@ describe Promisepay::User do
       end
     end
   end
+
+  describe 'bank_account' do
+    context 'no acccount available', vcr: { cassette_name: 'users_bank_account_empty' } do
+      it 'returns nil' do
+        expect(user.bank_account).to be_nil
+      end
+    end
+
+    # context 'account available', vcr: { cassette_name: 'users_bank_account' } do
+    #   it 'gives back a Bank account' do
+    #     expect(user.bank_account).to be_a(Promisepay::BankAccount)
+    #   end
+    # end
+  end
+
+  describe 'card_account' do
+    context 'no acccount available', vcr: { cassette_name: 'users_card_account_empty' } do
+      it 'returns nil' do
+        expect(user.card_account).to be_nil
+      end
+    end
+
+    # context 'account available', vcr: { cassette_name: 'users_card_account' } do
+    #   it 'gives back a Card account' do
+    #     expect(user.card_account).to be_a(Promisepay::CardAccount)
+    #   end
+    # end
+  end
+
+  describe 'paypal_account' do
+    context 'no acccount available', vcr: { cassette_name: 'users_paypal_account_empty' } do
+      it 'returns nil' do
+        expect(user.paypal_account).to be_nil
+      end
+    end
+
+    context 'account available', vcr: { cassette_name: 'users_paypal_account' } do
+      it 'gives back a PayPal account' do
+        expect(user.paypal_account).to be_a(Promisepay::PaypalAccount)
+      end
+    end
+  end
 end

@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/users/1/card_accounts
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Access-Control-Allow-Headers:
+      - Origin, Content-Type, Accept, Authorization, Token
+      Access-Control-Allow-Methods:
+      - POST, GET, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Request-Method:
+      - "*"
+      Cache-Control:
+      - no-cache
+      - no-cache="set-cookie"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 10 Jun 2015 17:32:17 GMT
+      Server:
+      - nginx/1.4.5 + Phusion Passenger 4.0.41
+      Set-Cookie:
+      - AWSELB=0DBB11830A38E977296412C0A203E644D732F49D5DB84FE5C10C5AA957FEF0305580CD17524FBCE919CE1E508E716B8A24CB5A91E3B1D2213C174FF0A78FE58870CCD67F93;PATH=/
+      - request_method=GET; path=/
+      Status:
+      - 422 Unprocessable Entity
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Powered-By:
+      - Phusion Passenger 4.0.41
+      X-Request-Id:
+      - 6795e8d0-db6f-4022-aa45-f7be357cb63a
+      X-Runtime:
+      - '0.300018'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '43'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"errors":{"account":["no account found"]}}'
+    http_version: 
+  recorded_at: Wed, 10 Jun 2015 17:32:17 GMT
+recorded_with: VCR 2.9.3
