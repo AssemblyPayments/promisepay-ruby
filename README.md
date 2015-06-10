@@ -55,19 +55,92 @@ _All configurable parameters are available in the Client Configuration section o
 
 ### Calls
 
-Once a client initialize you can access Promisepay resources as following:
+The example below is translating [use case #1](http://docs.promisepay.com/v2.2/docs/charge-a-buyer-hold-funds-in-escrow-then-release-t) available on Promispay online documentation.
 
 ```ruby
-items = client.items.find_all
+# 1- Create buyer
+buyer = client.users.create(
+  id: '123456',
+  first_name: 'test',
+  last_name: 'buyer',
+  email: 'buyer@test.com',
+  address_line1: '48 collingwood',
+  state: 'vic',
+  city: 'Mel',
+  zip: '3000',
+  country: 'AUS'
+)
 
-item = client.items.find(1)
-puts item.name # => 'myItemName'
-item.seller # => <Promisepay::User:0x007fb11426e950 ...>
+# 2- Create buyer's card account
+buyer_card_account = client.card_accounts.create(
+  user_id: buyer.id,
+  full_name: 'testBuyer',
+  number: '4111 1111 1111 1111',
+  expiry_month: Date.today.month,
+  expiry_year: Date.today.year + 1,
+  cvv: '123'
+)
 
-account = client.card_account.find('25d34744-8ef0-46a4-8b18-2a8322933cd1')
-item.make_payment(account.id)
+# 3- Create seller
+seller = client.users.create(
+  id: '123457',
+  first_name: 'test',
+  last_name: 'seller',
+  email: 'seller@test.com',
+  mobile: '+61416452321',
+  address_line_1: 'abc',
+  state: 'vic',
+  city: 'Mel',
+  zip: '3000',
+  country: 'AUS'
+)
 
-item.transactions
+# 4- Create seller's bank account
+seller_bank_account = client.bank_accounts.create(
+  user_id: seller.id,
+  bank_name: 'Nab',
+  account_name: 'test seller',
+  rounting_number: '22222222',
+  account_number: '1234567890',
+  account_type: 'savings',
+  holder_type: 'personal',
+  country: 'AUS'
+)
+
+# 5. Create seller's disbursement account
+seller.disbursement_account(seller_bank_account.id)
+
+# 6. Create fee
+fee = client.fees.create(
+  name: 'test fee for 5 AUD',
+  fee_type_id: '1',
+  amount: '75',
+  to: 'seller'
+)
+
+# 7. Create item and link buyer, seller and fee to it
+item = client.items.create(
+  id: '12345',
+  name: 'test item for 5AUD',
+  amount: '500',
+  payement_type: '1',
+  buyer_id: buyer.id,
+  seller_id: seller.id,
+  fee_id: fee.id,
+  description: '5AUD transfer'
+)
+
+# 8. Pay for item using the buyer's CC account
+item.make_payement(
+  user_id: buyer_id,
+  account_id: buyer_card_account.id
+)
+
+# 9. Buyer releases payment
+item.release_payment(user_id: buyer.id)
+
+# 10. Check payment status at any time (optional)
+item.status
 ```
 
 _Check out the [online documentation](http://google.com) to get a list of available resources and methods._
