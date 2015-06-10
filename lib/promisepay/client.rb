@@ -3,6 +3,7 @@ require_relative 'models/base_model'
 require_relative 'models/account'
 require_relative 'models/bank_account'
 require_relative 'models/card_account'
+require_relative 'models/fee'
 require_relative 'models/item'
 require_relative 'models/paypal_account'
 require_relative 'models/transaction'
@@ -11,6 +12,7 @@ require_relative 'resources/base_resource'
 require_relative 'resources/account_resource'
 require_relative 'resources/bank_account_resource'
 require_relative 'resources/card_account_resource'
+require_relative 'resources/fee_resource'
 require_relative 'resources/item_resource'
 require_relative 'resources/paypal_account_resource'
 require_relative 'resources/transaction_resource'
@@ -107,6 +109,7 @@ module Promisepay
       {
         bank_accounts: BankAccountResource,
         card_accounts: CardAccountResource,
+        fees: FeeResource,
         items: ItemResource,
         paypal_accounts: PaypalAccountResource,
         transactions: TransactionResource,
