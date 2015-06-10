@@ -17,7 +17,6 @@ module Promisepay
     # @see http://docs.promisepay.com/v2.2/docs/paypal_accountsid
     #
     # @return [Boolean]
-    # def deactivate!(mobile_pin)
     def deactivate
       @client.delete("paypal_accounts/#{id}")
       @attributes['active'] = false

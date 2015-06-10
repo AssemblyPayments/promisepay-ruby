@@ -41,7 +41,7 @@ describe Promisepay::BankAccountResource do
           account_type: 'savings',
           holder_type: 'personal',
           country: 'AUS',
-          mobile_pin: '123'
+          mobile_pin: '123456'
         }
       end
 

@@ -35,7 +35,7 @@ describe Promisepay::CardAccountResource do
         {
           user_id: user.id,
           full_name: 'myCardName',
-          number: '371449635398431',
+          number: '4111111111111111',
           expiry_month: Time.now.month,
           expiry_year: Time.now.year + 1,
           cvv: '123'
