@@ -27,11 +27,11 @@ describe Promisepay::User do
       end
     end
 
-    # context 'account available', vcr: { cassette_name: 'users_bank_account' } do
-    #   it 'gives back a Bank account' do
-    #     expect(user.bank_account).to be_a(Promisepay::BankAccount)
-    #   end
-    # end
+    context 'account available', vcr: { cassette_name: 'users_bank_account' } do
+      it 'gives back a Bank account' do
+        expect(user.bank_account).to be_a(Promisepay::BankAccount)
+      end
+    end
   end
 
   describe 'card_account' do
@@ -41,11 +41,11 @@ describe Promisepay::User do
       end
     end
 
-    # context 'account available', vcr: { cassette_name: 'users_card_account' } do
-    #   it 'gives back a Card account' do
-    #     expect(user.card_account).to be_a(Promisepay::CardAccount)
-    #   end
-    # end
+    context 'account available', vcr: { cassette_name: 'users_card_account' } do
+      it 'gives back a Card account' do
+        expect(user.card_account).to be_a(Promisepay::CardAccount)
+      end
+    end
   end
 
   describe 'paypal_account' do
