@@ -63,5 +63,45 @@ module Promisepay
       response = JSON.parse(@client.get("items/#{send(:id)}/bpay_details").body)
       response['items']['bpay_details']
     end
+
+    # .
+    #
+    # @see http://docs.promisepay.com/v2.2/docs/itemsidaction
+    #
+    # @return [Boolean]
+    def make_payment(options = {})
+      JSON.parse(@client.patch("items/#{send(:id)}/make_payment", options).body)
+      true
+    end
+
+    # .
+    #
+    # @see http://docs.promisepay.com/v2.2/docs/itemsidrequest_payment
+    #
+    # @return [Boolean]
+    def request_payment(options = {})
+      JSON.parse(@client.patch("items/#{send(:id)}/request_payment", options).body)
+      true
+    end
+
+    # .
+    #
+    # @see http://docs.promisepay.com/v2.2/docs/itemsidrequest_payment
+    #
+    # @return [Boolean]
+    def release_payment(options = {})
+      JSON.parse(@client.patch("items/#{send(:id)}/release_payment", options).body)
+      true
+    end
+
+    # .
+    #
+    # @see http://docs.promisepay.com/v2.2/docs/itemsidrequest_release
+    #
+    # @return [Boolean]
+    def request_release(options = {})
+      JSON.parse(@client.patch("items/#{send(:id)}/request_release", options).body)
+      true
+    end
   end
 end

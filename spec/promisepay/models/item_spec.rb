@@ -62,4 +62,20 @@ describe Promisepay::Item do
       expect(details).to have_key('reference')
     end
   end
+
+  describe 'make_payment', vcr: { cassette_name: 'items_make_payment' } do
+    it 'has to be tested'
+  end
+
+  describe 'request_payment', vcr: { cassette_name: 'items_request_payment' } do
+    it 'has to be tested'
+  end
+
+  describe 'release_payment', vcr: { cassette_name: 'items_release_payment' } do
+    it 'has to be tested'
+  end
+
+  describe 'request_release', vcr: { cassette_name: 'items_request_release' } do
+    it 'has to be tested'
+  end
 end
