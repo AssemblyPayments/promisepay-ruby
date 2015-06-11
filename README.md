@@ -74,10 +74,10 @@ buyer = client.users.create(
 # 2- Create buyer's card account
 buyer_card_account = client.card_accounts.create(
   user_id: buyer.id,
-  full_name: 'testBuyer',
+  full_name: 'test Buyer',
   number: '4111 1111 1111 1111',
-  expiry_month: Date.today.month,
-  expiry_year: Date.today.year + 1,
+  expiry_month: Time.now.month,
+  expiry_year: Time.now.year + 1,
   cvv: '123'
 )
 
@@ -88,7 +88,7 @@ seller = client.users.create(
   last_name: 'seller',
   email: 'seller@test.com',
   mobile: '+61416452321',
-  address_line_1: 'abc',
+  address_line1: 'abc',
   state: 'vic',
   city: 'Mel',
   zip: '3000',
@@ -100,7 +100,7 @@ seller_bank_account = client.bank_accounts.create(
   user_id: seller.id,
   bank_name: 'Nab',
   account_name: 'test seller',
-  rounting_number: '22222222',
+  routing_number: '22222222',
   account_number: '1234567890',
   account_type: 'savings',
   holder_type: 'personal',
@@ -131,8 +131,8 @@ item = client.items.create(
 )
 
 # 8. Pay for item using the buyer's CC account
-item.make_payement(
-  user_id: buyer_id,
+item.make_payment(
+  user_id: buyer.id,
   account_id: buyer_card_account.id
 )
 
