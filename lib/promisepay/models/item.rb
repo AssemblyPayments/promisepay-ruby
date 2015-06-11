@@ -44,6 +44,36 @@ module Promisepay
       Promisepay::User.new(@client, response['users'])
     end
 
+    # Get fees associated to the item.
+    #
+    # @see http://docs.promisepay.com/v2.2/docs/itemsidfees
+    #
+    # @param options [Hash] Optional options.
+    # @option options [Integer] :limit Can ask for up to 200 fees. default: 10
+    # @option options [Integer] :offset Pagination help. default: 0
+    #
+    # @return [Array<Promisepay::Fee>]
+    def fees(options = {})
+      response = JSON.parse(@client.get("items/#{send(:id)}/fees", options).body)
+      fees = response.key?('fees') ? response['fees'] : []
+      fees.map { |attributes| Promisepay::Fee.new(@client, attributes) }
+    end
+
+    # Get historical transaction for the item.
+    #
+    # @see http://docs.promisepay.com/v2.2/docs/itemsidtransactions
+    #
+    # @param options [Hash] Optional options.
+    # @option options [Integer] :limit Can ask for up to 200 transactions. default: 10
+    # @option options [Integer] :offset Pagination help. default: 0
+    #
+    # @return [Array<Promisepay::Transaction>]
+    def transactions(options = {})
+      response = JSON.parse(@client.get("items/#{send(:id)}/transactions", options).body)
+      transactions = response.key?('transactions') ? response['transactions'] : []
+      transactions.map { |attributes| Promisepay::Transaction.new(@client, attributes) }
+    end
+
     # Show the wire details for payment.
     #
     # @see http://docs.promisepay.com/v2.2/docs/itemsidwire_details

@@ -47,6 +47,40 @@ describe Promisepay::Item do
     end
   end
 
+  describe 'fees' do
+    context 'when no fees are available', vcr: { cassette_name: 'items_fees_empty' } do
+      it 'gives back en empty array' do
+        fees = item.fees
+        expect(fees).to be_empty
+      end
+    end
+
+    # context 'when fees are available', vcr: { cassette_name: 'items_fees' } do
+    #   it 'gives back an array of fees' do
+    #     fees = item.fees
+    #     expect(fees).to_not be_empty
+    #     expect(fees.first).to be_a(Promisepay::Fee)
+    #   end
+    # end
+  end
+
+  describe 'transactions' do
+    context 'when no transactions are available', vcr: { cassette_name: 'items_transactions_empty' } do
+      it 'gives back en empty array' do
+        transactions = item.transactions
+        expect(transactions).to be_empty
+      end
+    end
+
+    # context 'when transactions are available', vcr: { cassette_name: 'items_transactions' } do
+    #   it 'gives back an array of transactions' do
+    #     transactions = item.transactions
+    #     expect(transactions).to_not be_empty
+    #     expect(transactions.first).to be_a(Promisepay::Transaction)
+    #   end
+    # end
+  end
+
   describe 'wire_details', vcr: { cassette_name: 'items_wire_details' } do
     it 'returns a Hash' do
       details = item.wire_details
