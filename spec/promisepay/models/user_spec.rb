@@ -61,4 +61,16 @@ describe Promisepay::User do
       end
     end
   end
+
+  describe 'disbursement_account', vcr: { cassette_name: 'users_disbursement_account' } do
+    let(:bank_account) do
+      VCR.use_cassette('bank_account_single') do
+        client.bank_accounts.find('8d34d271-80bb-44c3-8733-9ab2665d7bd6')
+      end
+    end
+
+    it 'returns true' do
+      expect(user.disbursement_account(bank_account.id)).to be(true)
+    end
+  end
 end

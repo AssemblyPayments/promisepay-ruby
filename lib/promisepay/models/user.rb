@@ -1,3 +1,4 @@
+
 module Promisepay
   # Manage Users
   class User < BaseModel
@@ -46,6 +47,17 @@ module Promisepay
       Promisepay::PaypalAccount.new(@client, response['paypal_accounts'])
     rescue Promisepay::UnprocessableEntity
       nil
+    end
+
+    # Set the disbursement account for a user.
+    #
+    # @see http://docs.promisepay.com/v2.2/docs/usersiddisbursement_account
+    #
+    # @return [Boolean]
+    def disbursement_account(account_id)
+      options = { account_id: account_id }
+      JSON.parse(@client.post("users/#{send(:id)}/disbursement_account", options).body)
+      true
     end
   end
 end
