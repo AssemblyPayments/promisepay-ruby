@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/transactions/e842e9f5-4603-4969-aa42-2e60abe2d638/users
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - Origin, Content-Type, Accept, Authorization, Token
+      Access-Control-Allow-Methods:
+      - POST, GET, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Request-Method:
+      - "*"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      - no-cache="set-cookie"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 13 Jun 2015 12:51:39 GMT
+      Server:
+      - nginx/1.4.5 + Phusion Passenger 4.0.41
+      Set-Cookie:
+      - AWSELB=0DBB11830A38E977296412C0A203E644D732F49D5DB84FE5C10C5AA957FEF0305580CD17524FBCE919CE1E508E716B8A24CB5A91E3B1D2213C174FF0A78FE58870CCD67F93;PATH=/
+      - request_method=GET; path=/
+      Status:
+      - 200 OK
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Powered-By:
+      - Phusion Passenger 4.0.41
+      X-Request-Id:
+      - 8993545c-ed19-482d-9cb2-1c74ef07115d
+      X-Runtime:
+      - '0.618767'
+      X-Xss-Protection:
+      - 1; mode=block
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"users":{"created_at":"2015-06-10T18:33:21.392Z","updated_at":"2015-06-10T18:33:21.392Z","full_name":"test
+        buyer","email":"buyer@test.com","mobile":null,"phone":null,"first_name":"test","last_name":"buyer","id":"123456","location":"AUS","verification_state":"pending","held_state":false,"dob":null,"government_number":null,"drivers_license":null,"related":{"addresses":"6e0471dc-58a4-4826-9922-3714873ab990"},"links":{"self":"/transactions/e842e9f5-4603-4969-aa42-2e60abe2d638/users","items":"/users/123456/items","card_accounts":"/users/123456/card_accounts","paypal_accounts":"/users/123456/paypal_accounts","bank_accounts":"/users/123456/bank_accounts"}}}'
+    http_version: 
+  recorded_at: Sat, 13 Jun 2015 12:51:39 GMT
+recorded_with: VCR 2.9.3
