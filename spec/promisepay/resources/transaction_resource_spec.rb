@@ -41,9 +41,9 @@ describe Promisepay::TransactionResource do
     end
   end
 
-  # describe 'transaction methods' do
-  #   it 'can be accessed' do
-  #     expect(client.transactions.respond_to?(:users)).to be(true)
-  #   end
-  # end
+  describe 'transaction methods' do
+    it 'can be accessed' do
+      expect(client.transactions.respond_to?(:user)).to be(true)
+    end
+  end
 end

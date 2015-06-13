@@ -71,6 +71,10 @@ describe Promisepay::ItemResource do
     end
   end
 
+  describe 'delete' do
+    it 'has to be tested'
+  end
+
   describe 'Item methods' do
     it 'can be accessed' do
       expect(client.items.respond_to?(:status)).to be(true)

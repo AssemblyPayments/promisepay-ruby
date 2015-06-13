@@ -133,5 +133,55 @@ module Promisepay
       JSON.parse(@client.patch("items/#{send(:id)}/request_release", options).body)
       true
     end
+
+    # .
+    #
+    # @see http://docs.promisepay.com/v2.2/docs/itemsidacknowledge_wire
+    #
+    # @return [Boolean]
+    def acknowledge_wire(options = {})
+      JSON.parse(@client.patch("items/#{send(:id)}/acknowledge_wire", options).body)
+      true
+    end
+
+    # .
+    #
+    # @see http://docs.promisepay.com/v2.2/docs/itemsidacknowledge_paypal
+    #
+    # @return [Boolean]
+    def acknowledge_paypal(options = {})
+      JSON.parse(@client.patch("items/#{send(:id)}/acknowledge_paypal", options).body)
+      true
+    end
+
+    # .
+    #
+    # @see http://docs.promisepay.com/v2.2/docs/itemsidrevert_wire
+    #
+    # @return [Boolean]
+    def revert_wire(options = {})
+      JSON.parse(@client.patch("items/#{send(:id)}/revert_wire", options).body)
+      true
+    end
+
+    # .
+    #
+    # @see http://docs.promisepay.com/v2.2/docs/itemsidrequest_refund
+    #
+    # @return [Boolean]
+    def request_refund(options = {})
+      JSON.parse(@client.patch("items/#{send(:id)}/request_refund", options).body)
+      true
+    end
+
+    # .
+    #
+    # @see http://docs.promisepay.com/v2.2/docs/itemsidrefund
+    #
+    # @return [Boolean]
+    def refund(options = {})
+      JSON.parse(@client.patch("items/#{send(:id)}/refund", options).body)
+      true
+    end
   end
 end

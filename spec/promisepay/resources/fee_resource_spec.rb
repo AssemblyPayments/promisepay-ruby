@@ -30,11 +30,12 @@ describe Promisepay::FeeResource do
       end
     end
 
-    # context 'an unknown fee', vcr: { cassette_name: 'fees_unknown' } do
-    #   it 'raises an error' do
-    #     expect { client.fees.find('unkown_id') }.to raise_error(Promisepay::Unauthorized)
-    #   end
-    # end
+    context 'an unknown fee', vcr: { cassette_name: 'fees_unknown' } do
+      it 'raises an error'
+      # it 'raises an error' do
+      #   expect { client.fees.find('unkown_id') }.to raise_error(Promisepay::Unauthorized)
+      # end
+    end
   end
 
   describe 'create' do

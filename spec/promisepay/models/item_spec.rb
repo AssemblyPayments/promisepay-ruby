@@ -55,13 +55,14 @@ describe Promisepay::Item do
       end
     end
 
-    # context 'when fees are available', vcr: { cassette_name: 'items_fees' } do
-    #   it 'gives back an array of fees' do
-    #     fees = item.fees
-    #     expect(fees).to_not be_empty
-    #     expect(fees.first).to be_a(Promisepay::Fee)
-    #   end
-    # end
+    context 'when fees are available', vcr: { cassette_name: 'items_fees' } do
+      it 'gives back an array of fees'
+      # it 'gives back an array of fees' do
+      #   fees = item.fees
+      #   expect(fees).to_not be_empty
+      #   expect(fees.first).to be_a(Promisepay::Fee)
+      # end
+    end
   end
 
   describe 'transactions' do
@@ -72,13 +73,14 @@ describe Promisepay::Item do
       end
     end
 
-    # context 'when transactions are available', vcr: { cassette_name: 'items_transactions' } do
-    #   it 'gives back an array of transactions' do
-    #     transactions = item.transactions
-    #     expect(transactions).to_not be_empty
-    #     expect(transactions.first).to be_a(Promisepay::Transaction)
-    #   end
-    # end
+    context 'when transactions are available', vcr: { cassette_name: 'items_transactions' } do
+      it 'gives back an array of transactions'
+      # it 'gives back an array of transactions' do
+      #   transactions = item.transactions
+      #   expect(transactions).to_not be_empty
+      #   expect(transactions.first).to be_a(Promisepay::Transaction)
+      # end
+    end
   end
 
   describe 'wire_details', vcr: { cassette_name: 'items_wire_details' } do
@@ -110,6 +112,26 @@ describe Promisepay::Item do
   end
 
   describe 'request_release', vcr: { cassette_name: 'items_request_release' } do
+    it 'has to be tested'
+  end
+
+  describe 'acknowledge_wire', vcr: { cassette_name: 'items_acknowledge_wire' } do
+    it 'has to be tested'
+  end
+
+  describe 'acknowledge_paypal', vcr: { cassette_name: 'items_acknowledge_paypal' } do
+    it 'has to be tested'
+  end
+
+  describe 'revert_wire', vcr: { cassette_name: 'items_revert_wire' } do
+    it 'has to be tested'
+  end
+
+  describe 'request_refund', vcr: { cassette_name: 'items_request_refund' } do
+    it 'has to be tested'
+  end
+
+  describe 'refund', vcr: { cassette_name: 'items_refund' } do
     it 'has to be tested'
   end
 end
