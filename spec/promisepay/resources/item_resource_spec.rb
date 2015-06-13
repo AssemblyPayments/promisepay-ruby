@@ -2,7 +2,6 @@ require 'spec_helper'
 
 describe Promisepay::ItemResource do
   let(:client) { Promisepay::Client.new }
-  let(:users) { VCR.use_cassette('users_multiple') { client.users.find_all } }
 
   describe 'find_all' do
     context 'when no items are available', vcr: { cassette_name: 'items_empty' } do
@@ -40,14 +39,16 @@ describe Promisepay::ItemResource do
 
   describe 'create' do
     context 'with valid attributes', vcr: { cassette_name: 'items_created' } do
+      let(:seller) { VCR.use_cassette('users_multiple') { client.users.find_all.first } }
+      let(:buyer) { VCR.use_cassette('users_multiple') { client.users.find_all.last } }
       let(:valid_attributes) do
         {
           id: '99',
           name: 'itemName',
           amount: 500,
           payment_type: 1,  # Escrow
-          seller_id: users.first.id,
-          buyer_id: users.last.id
+          seller_id: seller.id,
+          buyer_id: buyer.id
         }
       end
 
