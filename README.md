@@ -143,7 +143,7 @@ item.release_payment(user_id: buyer.id)
 item.status
 ```
 
-_Check out the [online documentation](http://google.com) to get a list of available resources and methods._
+_Check out the [online documentation](http://promisepay.github.io/promisepay-ruby/) to get a list of available resources and methods._
 
 ## Client Configuration
 
