@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>
+  File: README
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!file.README.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><div id='filecontents'>
+<h1 id="label-The+PromisePay+Ruby+Gem">The PromisePay Ruby Gem</h1>
+
+<p><a href="https://travis-ci.org/PromisePay/promisepay-ruby"><img
+src="https://travis-ci.org/PromisePay/promisepay-ruby.svg?branch=develop"></a>
+<a
+href="https://coveralls.io/r/PromisePay/promisepay-ruby?branch=develop"><img
+src="https://coveralls.io/repos/PromisePay/promisepay-ruby/badge.svg?branch=develop"></a>
+<a href="https://codeclimate.com/github/PromisePay/promisepay-ruby"><img
+src="https://codeclimate.com/github/PromisePay/promisepay-ruby/badges/gpa.svg"></a></p>
+
+<p>A Ruby interface to the Promisepay API.</p>
+
+<h2 id="label-Installation">Installation</h2>
+
+<p>Add this line to your application&#39;s Gemfile:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>promisepay</span><span class='tstring_end'>&#39;</span></span>
+</code></pre>
+
+<p>And then execute:</p>
+
+<pre class="code ruby"><code class="ruby">$ bundle</code></pre>
+
+<p>Or install it yourself as:</p>
+
+<pre class="code ruby"><code class="ruby">$ gem install promisepay</code></pre>
+
+<h2 id="label-Usage">Usage</h2>
+
+<p>Before interacting with Promispay API you need to generate an access token.</p>
+
+<p>See <a
+href="http://docs.promisepay.com/v2.2/docs/request_token">docs.promisepay.com/v2.2/docs/request_token</a>
+for more information.</p>
+
+<h3 id="label-Client">Client</h3>
+
+<p>Create a client as following:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>promisepay</span><span class='tstring_end'>&#39;</span></span>
+
+<span class='id identifier rubyid_client'>client</span> <span class='op'>=</span> <span class='const'>Promisepay</span><span class='op'>::</span><span class='const'>Client</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='label'>username:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>YOUR_USERNAME</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>token:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>YOUR_TOKEN</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+</code></pre>
+
+<p>Alternatively Promisepay Gem handles client configuration through
+environment variables.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>PROMISEPAY_USERNAME</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>YOUR_USERNAME</span><span class='tstring_end'>&#39;</span></span>
+<span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>PROMISEPAY_TOKEN</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>YOUR_TOKEN</span><span class='tstring_end'>&#39;</span></span>
+</code></pre>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>promisepay</span><span class='tstring_end'>&#39;</span></span>
+
+<span class='id identifier rubyid_client'>client</span> <span class='op'>=</span> <span class='const'>Promisepay</span><span class='op'>::</span><span class='const'>Client</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='rparen'>)</span>
+</code></pre>
+
+<p><em>All configurable parameters are available in the Client Configuration
+section of this README.</em></p>
+
+<h3 id="label-Calls">Calls</h3>
+
+<p>The example below is translating <a
+href="http://docs.promisepay.com/v2.2/docs/charge-a-buyer-hold-funds-in-escrow-then-release-t">use
+case #1</a> available on Promispay online documentation.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='comment'># 1- Create buyer
+</span><span class='id identifier rubyid_buyer'>buyer</span> <span class='op'>=</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_users'>users</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span>
+  <span class='label'>id:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>123456</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>first_name:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>test</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>last_name:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>buyer</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>email:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>buyer@test.com</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>address_line1:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>48 collingwood</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>state:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>vic</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>city:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Mel</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>zip:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>3000</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>country:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>AUS</span><span class='tstring_end'>&#39;</span></span>
+<span class='rparen'>)</span>
+
+<span class='comment'># 2- Create buyer&#39;s card account
+</span><span class='id identifier rubyid_buyer_card_account'>buyer_card_account</span> <span class='op'>=</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_card_accounts'>card_accounts</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span>
+  <span class='label'>user_id:</span> <span class='id identifier rubyid_buyer'>buyer</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span>
+  <span class='label'>full_name:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>test Buyer</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>number:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>4111 1111 1111 1111</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>expiry_month:</span> <span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='period'>.</span><span class='id identifier rubyid_month'>month</span><span class='comma'>,</span>
+  <span class='label'>expiry_year:</span> <span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='period'>.</span><span class='id identifier rubyid_year'>year</span> <span class='op'>+</span> <span class='int'>1</span><span class='comma'>,</span>
+  <span class='label'>cvv:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>123</span><span class='tstring_end'>&#39;</span></span>
+<span class='rparen'>)</span>
+
+<span class='comment'># 3- Create seller
+</span><span class='id identifier rubyid_seller'>seller</span> <span class='op'>=</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_users'>users</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span>
+  <span class='label'>id:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>123457</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>first_name:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>test</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>last_name:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>seller</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>email:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>seller@test.com</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>mobile:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>+61416452321</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>address_line1:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>abc</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>state:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>vic</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>city:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Mel</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>zip:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>3000</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>country:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>AUS</span><span class='tstring_end'>&#39;</span></span>
+<span class='rparen'>)</span>
+
+<span class='comment'># 4- Create seller&#39;s bank account
+</span><span class='id identifier rubyid_seller_bank_account'>seller_bank_account</span> <span class='op'>=</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_bank_accounts'>bank_accounts</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span>
+  <span class='label'>user_id:</span> <span class='id identifier rubyid_seller'>seller</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span>
+  <span class='label'>bank_name:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Nab</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>account_name:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>test seller</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>routing_number:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>22222222</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>account_number:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>1234567890</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>account_type:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>savings</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>holder_type:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>personal</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>country:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>AUS</span><span class='tstring_end'>&#39;</span></span>
+<span class='rparen'>)</span>
+
+<span class='comment'># 5. Create seller&#39;s disbursement account
+</span><span class='id identifier rubyid_seller'>seller</span><span class='period'>.</span><span class='id identifier rubyid_disbursement_account'>disbursement_account</span><span class='lparen'>(</span><span class='id identifier rubyid_seller_bank_account'>seller_bank_account</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+
+<span class='comment'># 6. Create fee
+</span><span class='id identifier rubyid_fee'>fee</span> <span class='op'>=</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_fees'>fees</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span>
+  <span class='label'>name:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>test fee for 5 AUD</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>fee_type_id:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>1</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>amount:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>75</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>to:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>seller</span><span class='tstring_end'>&#39;</span></span>
+<span class='rparen'>)</span>
+
+<span class='comment'># 7. Create item and link buyer, seller and fee to it
+</span><span class='id identifier rubyid_item'>item</span> <span class='op'>=</span> <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_items'>items</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span>
+  <span class='label'>id:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>12345</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>name:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>test item for 5AUD</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>amount:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>500</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>payement_type:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>1</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span>
+  <span class='label'>buyer_id:</span> <span class='id identifier rubyid_buyer'>buyer</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span>
+  <span class='label'>seller_id:</span> <span class='id identifier rubyid_seller'>seller</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span>
+  <span class='label'>fee_id:</span> <span class='id identifier rubyid_fee'>fee</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span>
+  <span class='label'>description:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>5AUD transfer</span><span class='tstring_end'>&#39;</span></span>
+<span class='rparen'>)</span>
+
+<span class='comment'># 8. Pay for item using the buyer&#39;s CC account
+</span><span class='id identifier rubyid_item'>item</span><span class='period'>.</span><span class='id identifier rubyid_make_payment'>make_payment</span><span class='lparen'>(</span>
+  <span class='label'>user_id:</span> <span class='id identifier rubyid_buyer'>buyer</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span>
+  <span class='label'>account_id:</span> <span class='id identifier rubyid_buyer_card_account'>buyer_card_account</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span>
+<span class='rparen'>)</span>
+
+<span class='comment'># 9. Buyer releases payment
+</span><span class='id identifier rubyid_item'>item</span><span class='period'>.</span><span class='id identifier rubyid_release_payment'>release_payment</span><span class='lparen'>(</span><span class='label'>user_id:</span> <span class='id identifier rubyid_buyer'>buyer</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+
+<span class='comment'># 10. Check payment status at any time (optional)
+</span><span class='id identifier rubyid_item'>item</span><span class='period'>.</span><span class='id identifier rubyid_status'>status</span>
+</code></pre>
+
+<p><em>Check out the <a href="http://google.com">online documentation</a> to
+get a list of available resources and methods.</em></p>
+
+<h2 id="label-Client+Configuration">Client Configuration</h2>
+
+<p>The following parameters are configurable through the client:</p>
+<ul><li>
+<p><code>:username</code> / <code>ENV['PROMISEPAY_USERNAME']</code>: username
+for <a href="http://docs.promisepay.com/v2.2/docs/overview-2">basic
+authentication</a></p>
+</li><li>
+<p><code>:token</code> / <code>ENV['PROMISEPAY_TOKEN']</code>: token for <a
+href="http://docs.promisepay.com/v2.2/docs/overview-2">basic
+authentication</a></p>
+</li><li>
+<p><code>:environment</code> / <code>ENV['PROMISEPAY_ENVIRONMENT']</code>: API
+<a href="http://docs.promisepay.com/v2.2/docs/environments">environment</a>
+to use (default: &#39;test&#39;)</p>
+</li><li>
+<p><code>:api_domain</code> / <code>ENV['PROMISEPAY_API_DOMAIN']</code>: API
+domain name to use (default: &#39;api.promisepay.com&#39;)</p>
+</li></ul>
+
+<h2 id="label-Contributing">Contributing</h2>
+<ol><li>
+<p>Fork it ( <a
+href="https://github.com/PromisePay/promisepay-ruby/fork">github.com/PromisePay/promisepay-ruby/fork</a>
+)</p>
+</li><li>
+<p>Create your feature branch (<code>git checkout -b my-new-feature</code>)</p>
+</li><li>
+<p>Commit your changes (<code>git commit -am &#39;Add some
+feature&#39;</code>)</p>
+</li><li>
+<p>Push to the branch (<code>git push origin my-new-feature</code>)</p>
+</li><li>
+<p>Create a new Pull Request</p>
+</li></ol>
+</div></div>
+
+    <div id="footer">
+  Generated on Tue Jun 16 21:16:03 2015 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.2.0).
+</div>
+
+  </body>
+</html>
