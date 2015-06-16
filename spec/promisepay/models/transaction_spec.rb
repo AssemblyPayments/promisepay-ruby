@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Promisepay::User do
+describe Promisepay::Transaction do
   let(:client) { Promisepay::Client.new }
   let(:transaction) { VCR.use_cassette('transactions_multiple') { client.transactions.find_all.first } }
 

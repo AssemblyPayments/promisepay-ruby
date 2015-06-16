@@ -103,20 +103,23 @@ describe Promisepay::Item do
     let(:seller) { VCR.use_cassette('users_multiple') { client.users.find_all.first } }
     let(:buyer) { VCR.use_cassette('users_multiple') { client.users.find_all.last } }
 
-    describe 'make_payment', vcr: { cassette_name: 'items_make_payment' } do
+    describe 'make_payment' do
       it 'has to be tested'
-      # it 'makes the payement' do
-      #   expect {
+      # it 'makes the payment', vcr: { cassette_name: 'items_make_payment' } do
+      #   expect(
       #     item.make_payment(
       #       user_id: buyer.id,
-      #       account_id: buyer_card_account.id
+      #       account_id: buyer.card_account.id
       #     )
-      #   }.to be(true)
+      #   ).to be(true)
       # end
     end
 
     describe 'request_payment', vcr: { cassette_name: 'items_request_payment' } do
       it 'has to be tested'
+      # it 'requests the payment' do
+      #   expect(item.request_payment).to be(true)
+      # end
     end
 
     describe 'release_payment', vcr: { cassette_name: 'items_release_payment' } do
@@ -125,30 +128,45 @@ describe Promisepay::Item do
 
     describe 'request_release', vcr: { cassette_name: 'items_request_release' } do
       it 'has to be tested'
+      # it 'requests a release' do
+      #   expect(item.request_release(release_amount: '1000')).to be(true)
+      # end
     end
 
-    describe 'acknowledge_wire', vcr: { cassette_name: 'items_acknowledge_wire' } do
-      it 'has to be tested'
+    describe 'acknowledge_wire' do
+      it 'acknowledges the wire', vcr: { cassette_name: 'items_acknowledge_wire' } do
+        expect(item.acknowledge_wire).to be(true)
+      end
     end
 
-    describe 'acknowledge_paypal', vcr: { cassette_name: 'items_acknowledge_paypal' } do
-      it 'has to be tested'
+    describe 'acknowledge_paypal' do
+      it 'acknowledges paypal', vcr: { cassette_name: 'items_acknowledge_paypal' } do
+        expect(item.acknowledge_paypal).to be(true)
+      end
     end
 
-    describe 'revert_wire', vcr: { cassette_name: 'items_revert_wire' } do
-      it 'has to be tested'
+    describe 'revert_wire' do
+      it 'reverts the wire', vcr: { cassette_name: 'items_revert_wire' } do
+        expect(item.revert_wire).to be(true)
+      end
     end
 
     describe 'request_refund', vcr: { cassette_name: 'items_request_refund' } do
       it 'has to be tested'
+      # it 'requests a refund' do
+      #   expect(item.request_refund(refund_amount: '1000', refund_message: 'because')).to be(true)
+      # end
     end
 
     describe 'refund', vcr: { cassette_name: 'items_refund' } do
       it 'has to be tested'
     end
 
-    describe 'cancel', vcr: { cassette_name: 'items_cancel' } do
+    describe 'cancel' do
       it 'has to be tested'
+      # it 'cancels the item', vcr: { cassette_name: 'items_cancel' } do
+      #   expect(item.cancel).to be(true)
+      # end
     end
   end
 end
