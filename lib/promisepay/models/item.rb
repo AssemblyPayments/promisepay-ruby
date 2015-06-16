@@ -100,7 +100,7 @@ module Promisepay
     #
     # @return [Boolean]
     def make_payment(options = {})
-      JSON.parse(@client.patch("items/#{send(:id)}/make_payment", options).body)
+      @client.patch("items/#{send(:id)}/make_payment", options).body
       true
     end
 
@@ -110,7 +110,7 @@ module Promisepay
     #
     # @return [Boolean]
     def request_payment(options = {})
-      JSON.parse(@client.patch("items/#{send(:id)}/request_payment", options).body)
+      @client.patch("items/#{send(:id)}/request_payment", options).body
       true
     end
 
@@ -120,7 +120,7 @@ module Promisepay
     #
     # @return [Boolean]
     def release_payment(options = {})
-      JSON.parse(@client.patch("items/#{send(:id)}/release_payment", options).body)
+      @client.patch("items/#{send(:id)}/release_payment", options).body
       true
     end
 
@@ -130,7 +130,7 @@ module Promisepay
     #
     # @return [Boolean]
     def request_release(options = {})
-      JSON.parse(@client.patch("items/#{send(:id)}/request_release", options).body)
+      @client.patch("items/#{send(:id)}/request_release", options).body
       true
     end
 
@@ -140,7 +140,7 @@ module Promisepay
     #
     # @return [Boolean]
     def acknowledge_wire(options = {})
-      JSON.parse(@client.patch("items/#{send(:id)}/acknowledge_wire", options).body)
+      @client.patch("items/#{send(:id)}/acknowledge_wire", options).body
       true
     end
 
@@ -150,7 +150,7 @@ module Promisepay
     #
     # @return [Boolean]
     def acknowledge_paypal(options = {})
-      JSON.parse(@client.patch("items/#{send(:id)}/acknowledge_paypal", options).body)
+      @client.patch("items/#{send(:id)}/acknowledge_paypal", options).body
       true
     end
 
@@ -160,7 +160,7 @@ module Promisepay
     #
     # @return [Boolean]
     def revert_wire(options = {})
-      JSON.parse(@client.patch("items/#{send(:id)}/revert_wire", options).body)
+      @client.patch("items/#{send(:id)}/revert_wire", options).body
       true
     end
 
@@ -170,7 +170,7 @@ module Promisepay
     #
     # @return [Boolean]
     def request_refund(options = {})
-      JSON.parse(@client.patch("items/#{send(:id)}/request_refund", options).body)
+      @client.patch("items/#{send(:id)}/request_refund", options).body
       true
     end
 
@@ -180,7 +180,17 @@ module Promisepay
     #
     # @return [Boolean]
     def refund(options = {})
-      JSON.parse(@client.patch("items/#{send(:id)}/refund", options).body)
+      @client.patch("items/#{send(:id)}/refund", options).body
+      true
+    end
+
+    # .
+    #
+    # @see http://docs.promisepay.com/v2.2/docs/itemsidcancel
+    #
+    # @return [Boolean]
+    def cancel
+      @client.patch("items/#{id}/cancel")
       true
     end
   end

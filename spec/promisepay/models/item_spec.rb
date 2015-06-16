@@ -99,39 +99,56 @@ describe Promisepay::Item do
     end
   end
 
-  describe 'make_payment', vcr: { cassette_name: 'items_make_payment' } do
-    it 'has to be tested'
-  end
+  describe 'action methods' do
+    let(:seller) { VCR.use_cassette('users_multiple') { client.users.find_all.first } }
+    let(:buyer) { VCR.use_cassette('users_multiple') { client.users.find_all.last } }
 
-  describe 'request_payment', vcr: { cassette_name: 'items_request_payment' } do
-    it 'has to be tested'
-  end
+    describe 'make_payment', vcr: { cassette_name: 'items_make_payment' } do
+      it 'has to be tested'
+      # it 'makes the payement' do
+      #   expect {
+      #     item.make_payment(
+      #       user_id: buyer.id,
+      #       account_id: buyer_card_account.id
+      #     )
+      #   }.to be(true)
+      # end
+    end
 
-  describe 'release_payment', vcr: { cassette_name: 'items_release_payment' } do
-    it 'has to be tested'
-  end
+    describe 'request_payment', vcr: { cassette_name: 'items_request_payment' } do
+      it 'has to be tested'
+    end
 
-  describe 'request_release', vcr: { cassette_name: 'items_request_release' } do
-    it 'has to be tested'
-  end
+    describe 'release_payment', vcr: { cassette_name: 'items_release_payment' } do
+      it 'has to be tested'
+    end
 
-  describe 'acknowledge_wire', vcr: { cassette_name: 'items_acknowledge_wire' } do
-    it 'has to be tested'
-  end
+    describe 'request_release', vcr: { cassette_name: 'items_request_release' } do
+      it 'has to be tested'
+    end
 
-  describe 'acknowledge_paypal', vcr: { cassette_name: 'items_acknowledge_paypal' } do
-    it 'has to be tested'
-  end
+    describe 'acknowledge_wire', vcr: { cassette_name: 'items_acknowledge_wire' } do
+      it 'has to be tested'
+    end
 
-  describe 'revert_wire', vcr: { cassette_name: 'items_revert_wire' } do
-    it 'has to be tested'
-  end
+    describe 'acknowledge_paypal', vcr: { cassette_name: 'items_acknowledge_paypal' } do
+      it 'has to be tested'
+    end
 
-  describe 'request_refund', vcr: { cassette_name: 'items_request_refund' } do
-    it 'has to be tested'
-  end
+    describe 'revert_wire', vcr: { cassette_name: 'items_revert_wire' } do
+      it 'has to be tested'
+    end
 
-  describe 'refund', vcr: { cassette_name: 'items_refund' } do
-    it 'has to be tested'
+    describe 'request_refund', vcr: { cassette_name: 'items_request_refund' } do
+      it 'has to be tested'
+    end
+
+    describe 'refund', vcr: { cassette_name: 'items_refund' } do
+      it 'has to be tested'
+    end
+
+    describe 'cancel', vcr: { cassette_name: 'items_cancel' } do
+      it 'has to be tested'
+    end
   end
 end

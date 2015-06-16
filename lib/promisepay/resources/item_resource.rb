@@ -43,17 +43,5 @@ module Promisepay
       response = JSON.parse(@client.post('items', attributes).body)
       Promisepay::Item.new(@client, response['items'])
     end
-
-    # Delete an item for a marketplace
-    #
-    # @see http://docs.promisepay.com/v2.2/docs/items-2
-    #
-    # @param id [String] Marketplace item ID.
-    #
-    # @return [Boolean]
-    def delete(id)
-      @client.delete("items/#{id}")
-      true
-    end
   end
 end
