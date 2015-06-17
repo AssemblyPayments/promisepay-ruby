@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/bank_accounts
+    body:
+      encoding: UTF-8
+      string: '{"user_id":null}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Access-Control-Allow-Headers:
+      - Origin, Content-Type, Accept, Authorization, Token, APPROVE_TOKEN, MGMT_TOKEN
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache
+      - no-cache="set-cookie"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 08 Jun 2015 17:56:35 GMT
+      Server:
+      - nginx/1.4.5 + Phusion Passenger 4.0.41
+      Set-Cookie:
+      - AWSELB=0DBB11830A38E977296412C0A203E644D732F49D5D8B1F8651E4AEE885D7AA8B7B9AC5F3ADB4A6F37B5FF8C730A7468BC5CA58DF2E7376E824BD49918D1818AC6660EDC9BD;PATH=/
+      - request_method=POST; path=/
+      Status:
+      - 422 Unprocessable Entity
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Powered-By:
+      - Phusion Passenger 4.0.41
+      X-Request-Id:
+      - c908ea2d-be29-4535-8775-8b78378386d0
+      X-Runtime:
+      - '0.300736'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '49'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"errors":{"user_id":["required field missing"]}}'
+    http_version: 
+  recorded_at: Mon, 08 Jun 2015 17:56:36 GMT
+recorded_with: VCR 2.9.3

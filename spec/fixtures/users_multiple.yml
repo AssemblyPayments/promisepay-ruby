@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/users
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - Origin, Content-Type, Accept, Authorization, Token
+      Access-Control-Allow-Methods:
+      - POST, GET, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Request-Method:
+      - "*"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      - no-cache="set-cookie"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 04 Jun 2015 18:49:08 GMT
+      Server:
+      - nginx/1.4.5 + Phusion Passenger 4.0.41
+      Set-Cookie:
+      - AWSELB=0DBB11830A38E977296412C0A203E644D732F49D5DB84FE5C10C5AA957FEF0305580CD17524FBCE919CE1E508E716B8A24CB5A91E3B1D2213C174FF0A78FE58870CCD67F93;PATH=/
+      - request_method=GET; path=/
+      Status:
+      - 200 OK
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Powered-By:
+      - Phusion Passenger 4.0.41
+      X-Request-Id:
+      - 346c0641-5385-403a-99e7-4e923e2064ea
+      X-Runtime:
+      - '0.315819'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '342'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"users":[{"id":"1","full_name":"test name last_name","first_name":"test
+        name","last_name":"last_name","created_at":"2015-05-20T18:48:34.325Z","updated_at":"2015-05-20T18:48:34.325Z","email":"email@email.com","mobile":null,"phone":null,"location":"AUS","links":{"self":"/users/1","items":"/users/1/items","card_accounts":"/users/1/card_accounts","paypal_accounts":"/users/1/paypal_accounts","bank_accounts":"/users/1/bank_accounts"}},{"id":"2","full_name":"test
+        romain test romain","first_name":"test romain","last_name":"test romain","created_at":"2015-06-04T18:42:32.187Z","updated_at":"2015-06-04T18:42:32.187Z","email":"aa@aa.com","mobile":null,"phone":null,"location":"AUS","links":{"self":"/users/2","items":"/users/2/items","card_accounts":"/users/2/card_accounts","paypal_accounts":"/users/2/paypal_accounts","bank_accounts":"/users/2/bank_accounts"}}],"meta":{"limit":10,"offset":0,"total":2},"links":{"self":"/users"}}'
+    http_version: 
+  recorded_at: Thu, 04 Jun 2015 18:49:08 GMT
+recorded_with: VCR 2.9.3

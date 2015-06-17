@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/bank_accounts/8d34d271-80bb-44c3-8733-9ab2665d7bd6/users
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - Origin, Content-Type, Accept, Authorization, Token
+      Access-Control-Allow-Methods:
+      - POST, GET, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Request-Method:
+      - "*"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      - no-cache="set-cookie"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 08 Jun 2015 18:11:30 GMT
+      Server:
+      - nginx/1.4.5 + Phusion Passenger 4.0.41
+      Set-Cookie:
+      - AWSELB=0DBB11830A38E977296412C0A203E644D732F49D5D8B1F8651E4AEE885D7AA8B7B9AC5F3ADB4A6F37B5FF8C730A7468BC5CA58DF2E7376E824BD49918D1818AC6660EDC9BD;PATH=/
+      - request_method=GET; path=/
+      Status:
+      - 200 OK
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Powered-By:
+      - Phusion Passenger 4.0.41
+      X-Request-Id:
+      - 5ec59806-ae13-45fc-87a1-d552076af4cd
+      X-Runtime:
+      - '0.657948'
+      X-Xss-Protection:
+      - 1; mode=block
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"users":{"created_at":"2015-05-20T18:48:34.325Z","updated_at":"2015-05-20T18:48:34.325Z","full_name":"test
+        name last_name","email":"email@email.com","mobile":null,"phone":null,"first_name":"test
+        name","last_name":"last_name","id":"1","location":"AUS","verification_state":"pending","held_state":false,"dob":"Provided.","government_number":"Not
+        provided.","drivers_license":"Not provided.","related":{"addresses":"217d0dc9-7963-4fc9-bd25-74f62aab7534"},"links":{"self":"/bank_accounts/8d34d271-80bb-44c3-8733-9ab2665d7bd6/users","items":"/users/1/items","card_accounts":"/users/1/card_accounts","paypal_accounts":"/users/1/paypal_accounts","bank_accounts":"/users/1/bank_accounts"}}}'
+    http_version: 
+  recorded_at: Mon, 08 Jun 2015 18:11:30 GMT
+recorded_with: VCR 2.9.3

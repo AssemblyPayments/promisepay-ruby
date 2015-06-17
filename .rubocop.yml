@@ -1,0 +1,13 @@
+Metrics/LineLength:
+  Max: 100
+
+Metrics/MethodLength:
+  CountComments: false # count full line comments?
+  Max: 20
+
+Metrics/ClassLength:
+  CountComments: false # count full line comments?
+  Max: 200
+
+Style/Encoding:
+  EnforcedStyle: when_needed

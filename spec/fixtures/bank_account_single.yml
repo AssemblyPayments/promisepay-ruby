@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/bank_accounts/8d34d271-80bb-44c3-8733-9ab2665d7bd6
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - Origin, Content-Type, Accept, Authorization, Token
+      Access-Control-Allow-Methods:
+      - POST, GET, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Request-Method:
+      - "*"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      - no-cache="set-cookie"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 11 Jun 2015 17:38:50 GMT
+      Server:
+      - nginx/1.4.5 + Phusion Passenger 4.0.41
+      Set-Cookie:
+      - AWSELB=0DBB11830A38E977296412C0A203E644D732F49D5D8B1F8651E4AEE885D7AA8B7B9AC5F3ADB4A6F37B5FF8C730A7468BC5CA58DF2E7376E824BD49918D1818AC6660EDC9BD;PATH=/
+      - request_method=GET; path=/
+      Status:
+      - 200 OK
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Powered-By:
+      - Phusion Passenger 4.0.41
+      X-Request-Id:
+      - 0f70c2da-59eb-40ae-a903-9be0bedefa79
+      X-Runtime:
+      - '0.425584'
+      X-Xss-Protection:
+      - 1; mode=block
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"bank_accounts":{"id":"8d34d271-80bb-44c3-8733-9ab2665d7bd6","active":false,"created_at":"2015-06-08T17:56:34.787Z","updated_at":"2015-06-08T18:22:08.658Z","currency":"AUD","bank":{"bank_name":"myBank","country":"AUS","account_name":"myAccount","routing_number":"XXXXXXXXXXXX0","account_number":"XXXXXXXXXX000","holder_type":"personal","account_type":"savings","direct_debit_authority_status":null},"links":{"self":"/bank_accounts/8d34d271-80bb-44c3-8733-9ab2665d7bd6","users":"/bank_accounts/8d34d271-80bb-44c3-8733-9ab2665d7bd6/users","direct_debit_authorities":"/bank_accounts/8d34d271-80bb-44c3-8733-9ab2665d7bd6/direct_debit_authorities"}}}'
+    http_version: 
+  recorded_at: Thu, 11 Jun 2015 17:38:51 GMT
+recorded_with: VCR 2.9.3

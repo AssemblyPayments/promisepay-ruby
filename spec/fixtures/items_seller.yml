@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/items/1/sellers
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - Origin, Content-Type, Accept, Authorization, Token
+      Access-Control-Allow-Methods:
+      - POST, GET, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Request-Method:
+      - "*"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      - no-cache="set-cookie"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 07 Jun 2015 09:18:32 GMT
+      Server:
+      - nginx/1.4.5 + Phusion Passenger 4.0.41
+      Set-Cookie:
+      - AWSELB=0DBB11830A38E977296412C0A203E644D732F49D5DB84FE5C10C5AA957FEF0305580CD17524FBCE919CE1E508E716B8A24CB5A91E3B1D2213C174FF0A78FE58870CCD67F93;PATH=/
+      - request_method=GET; path=/
+      Status:
+      - 200 OK
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Powered-By:
+      - Phusion Passenger 4.0.41
+      X-Request-Id:
+      - 97f31e29-0db2-42e9-8c1c-8ea99ae2cde4
+      X-Runtime:
+      - '0.617000'
+      X-Xss-Protection:
+      - 1; mode=block
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"users":{"created_at":"2015-05-20T18:48:34.325Z","updated_at":"2015-05-20T18:48:34.325Z","full_name":"test
+        name last_name","email":"email@email.com","mobile":null,"phone":null,"first_name":"test
+        name","last_name":"last_name","id":"1","location":"AUS","verification_state":"pending","held_state":false,"dob":"Provided.","government_number":"Not
+        provided.","drivers_license":"Not provided.","related":{"addresses":"217d0dc9-7963-4fc9-bd25-74f62aab7534"},"links":{"self":"/items/1/sellers","items":"/users/1/items","card_accounts":"/users/1/card_accounts","paypal_accounts":"/users/1/paypal_accounts","bank_accounts":"/users/1/bank_accounts"}}}'
+    http_version: 
+  recorded_at: Sun, 07 Jun 2015 09:18:32 GMT
+recorded_with: VCR 2.9.3

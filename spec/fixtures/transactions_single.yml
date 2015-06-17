@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/transactions/e842e9f5-4603-4969-aa42-2e60abe2d638
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - Origin, Content-Type, Accept, Authorization, Token
+      Access-Control-Allow-Methods:
+      - POST, GET, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Request-Method:
+      - "*"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      - no-cache="set-cookie"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 11 Jun 2015 18:13:50 GMT
+      Server:
+      - nginx/1.4.5 + Phusion Passenger 4.0.41
+      Set-Cookie:
+      - AWSELB=0DBB11830A38E977296412C0A203E644D732F49D5D8B1F8651E4AEE885D7AA8B7B9AC5F3ADB4A6F37B5FF8C730A7468BC5CA58DF2E7376E824BD49918D1818AC6660EDC9BD;PATH=/
+      - request_method=GET; path=/
+      Status:
+      - 200 OK
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Powered-By:
+      - Phusion Passenger 4.0.41
+      X-Request-Id:
+      - 9506fd1f-630c-4f31-ada8-c3d37ba4911c
+      X-Runtime:
+      - '0.380614'
+      X-Xss-Protection:
+      - 1; mode=block
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"transactions":{"id":"e842e9f5-4603-4969-aa42-2e60abe2d638","created_at":"2015-06-11T17:57:37.064Z","updated_at":"2015-06-11T17:57:37.083Z","description":"test
+        item for 5AUD","amount":500,"currency":"AUD","type":"debit","from":"test buyer","to":"Escrow
+        Vault","related":{"transactions":"9b4a24d4-1722-4a22-8c15-2fb14140a9f8"},"links":{"self":"/transactions/e842e9f5-4603-4969-aa42-2e60abe2d638","users":"/transactions/e842e9f5-4603-4969-aa42-2e60abe2d638/users"}}}'
+    http_version: 
+  recorded_at: Thu, 11 Jun 2015 18:13:50 GMT
+recorded_with: VCR 2.9.3
