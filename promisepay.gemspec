@@ -10,8 +10,10 @@ Gem::Specification.new do |spec|
   spec.email         = ['romain.vigobenia@gmail.com']
   spec.summary       = 'Gem to wrap promisepay.com API.'
   spec.description   = 'Gem to wrap promisepay.com API.'
-  spec.homepage      = ''
+  spec.homepage      = 'https://github.com/PromisePay/promisepay-ruby'
   spec.license       = 'MIT'
+
+  spec.required_ruby_version = '>= 1.9.3'
 
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
