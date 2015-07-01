@@ -15,8 +15,11 @@ module Promisepay
     def create(type = :session, attributes)
       case type
         when :session
+          if attributes && attributes[:fee_ids] && attributes[:fee_ids].is_a?(Array)
+            attributes[:fee_ids] = attributes[:fee_ids].join(",")
+          end
           response = JSON.parse(@client.get('request_session_token', attributes).body)
-          Promisepay::Token.new(@client, response.token)
+          response[:token]
       end
     end
 

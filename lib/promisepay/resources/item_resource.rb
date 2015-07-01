@@ -27,9 +27,15 @@ module Promisepay
     # @param id [String] Marketplace item ID.
     #
     # @return [Promisepay::Item]
-    def find(id)
-      response = JSON.parse(@client.get("items/#{id}").body)
-      Promisepay::Item.new(@client, response['items'])
+    def find(id, type = :full)
+      case type
+        when :full
+          response = JSON.parse(@client.get("items/#{id}").body)
+          Promisepay::Item.new(@client, response['items'])
+        when :status
+          response = JSON.parse(@client.get("items/#{id}/status").body)
+          Promisepay::Item.new(@client, response['items'])
+      end
     end
 
     # Create an item for a marketplace

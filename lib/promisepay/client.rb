@@ -115,7 +115,8 @@ module Promisepay
         items: ItemResource,
         paypal_accounts: PaypalAccountResource,
         transactions: TransactionResource,
-        users: UserResource
+        users: UserResource,
+        tokens: TokenResource
       }
     end
 
