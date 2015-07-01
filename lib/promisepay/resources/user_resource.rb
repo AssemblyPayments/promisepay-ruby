@@ -43,5 +43,17 @@ module Promisepay
       response = JSON.parse(@client.post('users', attributes).body)
       Promisepay::User.new(@client, response['users'])
     end
+
+    # Update a user for a marketplace
+    #
+    # @see http://docs.promisepay.com/v2.2/docs/users-1
+    #
+    # @param attributes [Hash] User's attributes.
+    #
+    # @return [Promisepay::User]
+    def update(attributes)
+      response = JSON.parse(@client.patch('users', attributes).body)
+      Promisepay::User.new(@client, response['users'])
+    end
   end
 end
