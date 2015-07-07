@@ -1,6 +1,7 @@
 
 module Promisepay
-  # Manage Users
+  # Manage Tokens
   class Token < BaseModel
+
   end
 end
