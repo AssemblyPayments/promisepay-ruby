@@ -58,8 +58,6 @@ The following parameters are configurable through the client:
 
 #3. Examples
 
-```ruby
-
 ##Tokens
 ##### Example 1 - Request session token
 The below example shows the request for a marketplace configured to have the Item and User IDs generated automatically for them.
@@ -222,8 +220,6 @@ The below example shows the request for a marketplace that passes the Item and U
 #####Get a transaction's users
 #####Get a transaction's fees
 
-
-```
 
 #4. Contributing
 
