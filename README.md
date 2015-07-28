@@ -62,63 +62,72 @@ The following parameters are configurable through the client:
 ##### Example 1 - Request session token
 The below example shows the request for a marketplace configured to have the Item and User IDs generated automatically for them.
 
-	var repo = container.Resolve<ITokenRepository>();
-	var session_token = new Token {
-		current_user = "seller",
-		item_name = "Test Item",
-		amount = "2500",
-		seller_lastname = "Seller",
-		seller_firstname = "Sally",
-		buyer_lastname = "Buyer",
-		buyer_firstname = "Bobby",
-		buyer_country = "AUS",
-		seller_country = "USA",
-		seller_email = "sally.seller@promisepay.com",
-		buyer_email = "bobby.buyer@promisepay.com",
-		fee_ids = "",
-		payment_type_id = "2"		
-	};
+```ruby
+var repo = container.Resolve<ITokenRepository>();
+var session_token = new Token {
+	current_user = "seller",
+	item_name = "Test Item",
+	amount = "2500",
+	seller_lastname = "Seller",
+	seller_firstname = "Sally",
+	buyer_lastname = "Buyer",
+	buyer_firstname = "Bobby",
+	buyer_country = "AUS",
+	seller_country = "USA",
+	seller_email = "sally.seller@promisepay.com",
+	buyer_email = "bobby.buyer@promisepay.com",
+	fee_ids = "",
+	payment_type_id = "2"		
+};
+```
 #####Example 2 - Request session token
 The below example shows the request for a marketplace that passes the Item and User IDs.
 
-	var repo = container.Resolve<ITokenRepository>();
-	var session_token = new Token {
-		current_user_id = "seller1234",
-		item_name = "Test Item",
-		amount = "2500",
-		seller_lastname = "Seller",
-		seller_firstname = "Sally",
-		buyer_lastname = "Buyer",
-		buyer_firstname = "Bobby",
-		buyer_country = "AUS",
-		seller_country = "USA",
-		seller_email = "sally.seller@promisepay.com",
-		buyer_email = "bobby.buyer@promisepay.com",
-		external_item_id = "TestItemId1234",
-		external_seller_id = "seller1234",
-		external_buyer_id = "buyer1234",
-		fee_ids = "",
-		payment_type_id = "2"		
-	};
+```ruby
+var repo = container.Resolve<ITokenRepository>();
+var session_token = new Token {
+	current_user_id = "seller1234",
+	item_name = "Test Item",
+	amount = "2500",
+	seller_lastname = "Seller",
+	seller_firstname = "Sally",
+	buyer_lastname = "Buyer",
+	buyer_firstname = "Bobby",
+	buyer_country = "AUS",
+	seller_country = "USA",
+	seller_email = "sally.seller@promisepay.com",
+	buyer_email = "bobby.buyer@promisepay.com",
+	external_item_id = "TestItemId1234",
+	external_seller_id = "seller1234",
+	external_buyer_id = "buyer1234",
+	fee_ids = "",
+	payment_type_id = "2"		
+};
+```
 ##Items
 
 #####Create an item
-	item = client.items.create(
-	  id: '12345',
-	  name: 'test item for 5AUD',
-	  amount: '500',
-	  payement_type: '1',
-	  buyer_id: buyer.id,
-	  seller_id: seller.id,
-	  fee_id: fee.id,
-	  description: '5AUD transfer'
-	)
+```ruby
+item = client.items.create(
+  id: '12345',
+  name: 'test item for 5AUD',
+  amount: '500',
+  payement_type: '1',
+  buyer_id: buyer.id,
+  seller_id: seller.id,
+  fee_id: fee.id,
+  description: '5AUD transfer'
+)
+```
 #####Get an item
 #####Get a list of items
 #####Update an item
 #####Delete an item
 #####Get an item status
-	item.status
+
+```ruby
+item.status
+```
 #####Get an item's buyer
 #####Get an item's seller
 #####Get an item's fees
@@ -129,17 +138,20 @@ The below example shows the request for a marketplace that passes the Item and U
 ##Users
 
 #####Create a user
-	user = client.users.create(
-	  id: '123456',
-	  first_name: 'test',
-	  last_name: 'buyer',
-	  email: 'buyer@test.com',
-	  address_line1: '48 collingwood',
-	  state: 'vic',
-	  city: 'Mel',
-	  zip: '3000',
-	  country: 'AUS'
-	)
+
+```ruby
+user = client.users.create(
+  id: '123456',
+  first_name: 'test',
+  last_name: 'buyer',
+  email: 'buyer@test.com',
+  address_line1: '48 collingwood',
+  state: 'vic',
+  city: 'Mel',
+  zip: '3000',
+  country: 'AUS'
+)
+```
 #####Get a user
 #####Get a list of users
 #####Delete a User
@@ -148,16 +160,24 @@ The below example shows the request for a marketplace that passes the Item and U
 #####Get a user's bank accounts
 #####Get a user's items
 #####Set a user's disbursement account
-	user.disbursement_account(bank_account.id)
 
+```ruby
+user.disbursement_account(bank_account.id)
+```
 ##Item Actions
 #####Make payment
-	item.make_payment(
-	  account_id: buyer_card_account.id
-	)
+
+```ruby
+item.make_payment(
+  account_id: buyer_card_account.id
+)
+```ruby
 #####Request payment
 #####Release payment
-	item.release_payment()
+
+```ruby
+item.release_payment
+```
 #####Request release
 #####Cancel
 #####Acknowledge wire
@@ -169,30 +189,35 @@ The below example shows the request for a marketplace that passes the Item and U
 ##Card Accounts
 #####Create a card account
 
-	card_account = client.card_accounts.create(
-	  user_id: buyer.id,
-	  full_name: 'test Buyer',
-	  number: '4111 1111 1111 1111',
-	  expiry_month: Time.now.month,
-	  expiry_year: Time.now.year + 1,
-	  cvv: '123'
-	)
+```ruby
+card_account = client.card_accounts.create(
+  user_id: buyer.id,
+  full_name: 'test Buyer',
+  number: '4111 1111 1111 1111',
+  expiry_month: Time.now.month,
+  expiry_year: Time.now.year + 1,
+  cvv: '123'
+)
+```
 #####Get a card account
 #####Delete a card account
 #####Get a card account's users
 
 ##Bank Accounts
 #####Create a bank account
-	bank_account = client.bank_accounts.create(
-	  user_id: seller.id,
-	  bank_name: 'Nab',
-	  account_name: 'test seller',
-	  routing_number: '22222222',
-	  account_number: '1234567890',
-	  account_type: 'savings',
-	  holder_type: 'personal',
-	  country: 'AUS'
-	)
+
+```ruby
+bank_account = client.bank_accounts.create(
+  user_id: seller.id,
+  bank_name: 'Nab',
+  account_name: 'test seller',
+  routing_number: '22222222',
+  account_number: '1234567890',
+  account_type: 'savings',
+  holder_type: 'personal',
+  country: 'AUS'
+)
+```
 #####Get a bank account
 #####Delete a bank account
 #####Get a bank account's users
@@ -207,13 +232,15 @@ The below example shows the request for a marketplace that passes the Item and U
 #####Get a list of fees
 #####Get a fee
 #####Create a fee
-	fee = client.fees.create(
-	  name: 'test fee for 5 AUD',
-	  fee_type_id: '1',
-	  amount: '75',
-	  to: 'seller'
-	)
 
+```ruby
+fee = client.fees.create(
+  name: 'test fee for 5 AUD',
+  fee_type_id: '1',
+  amount: '75',
+  to: 'seller'
+)
+```
 ##Transactions
 #####Get a list of transactions
 #####Get a transactions
