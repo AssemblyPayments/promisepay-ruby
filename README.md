@@ -171,7 +171,7 @@ user.disbursement_account(bank_account.id)
 item.make_payment(
   account_id: buyer_card_account.id
 )
-```ruby
+```
 #####Request payment
 #####Release payment
 
