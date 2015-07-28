@@ -1,5 +1,7 @@
 # Ruby SDK - PromisePay API
+
 [![Join the chat at https://gitter.im/PromisePay/promisepay-ruby](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/PromisePay/promisepay-ruby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Gem Version](https://badge.fury.io/rb/promisepay.svg)](http://badge.fury.io/rb/promisepay)
 [![Build Status](https://travis-ci.org/PromisePay/promisepay-ruby.svg?branch=develop)](https://travis-ci.org/PromisePay/promisepay-ruby)
 [![Coverage Status](https://coveralls.io/repos/PromisePay/promisepay-ruby/badge.svg?branch=develop)](https://coveralls.io/r/PromisePay/promisepay-ruby?branch=develop)
