@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/request_session_token?amount=250000&buyer_country=AUS&buyer_email=bobby.buyer@promisepay.com&buyer_firstname=Bobby&buyer_lastname=Buyer&current_user=seller&fee_ids=&item_name=Sample%20Item&payment_type_id=2&seller_country=AUS&seller_email=sally.seller@promisepay.com&seller_firstname=Sally&seller_lastname=Seller
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - Origin, Content-Type, Accept, Authorization, Token
+      Access-Control-Allow-Methods:
+      - POST, GET, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Request-Method:
+      - "*"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      - no-cache="set-cookie"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 30 Jul 2015 17:16:54 GMT
+      Server:
+      - nginx/1.4.5 + Phusion Passenger 4.0.41
+      Set-Cookie:
+      - AWSELB=0DBB11830A38E977296412C0A203E644D732F49D5DB84FE5C10C5AA957FEF0305580CD17524FBCE919CE1E508E716B8A24CB5A91E3B1D2213C174FF0A78FE58870CCD67F93;PATH=/
+      - request_method=GET; path=/
+      Status:
+      - 200 OK
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Powered-By:
+      - Phusion Passenger 4.0.41
+      X-Request-Id:
+      - a7110895-b0c2-4825-8573-1e9a187e9388
+      X-Runtime:
+      - '2.165316'
+      X-Xss-Protection:
+      - 1; mode=block
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"token":"f892b996fe5f3ec875e9f8efd456eb02","item":"88172e11-af3e-41d8-bc04-cd028d8fa654","buyer":"31a0feaa-af62-46a7-9465-ae61f806171f","seller":"da945ad1-4c91-4f5d-8334-6b169eb9be33"}'
+    http_version: 
+  recorded_at: Thu, 30 Jul 2015 17:16:54 GMT
+recorded_with: VCR 2.9.3
