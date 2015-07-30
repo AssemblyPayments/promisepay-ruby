@@ -64,7 +64,7 @@ The following parameters are configurable through the client:
 The below example shows the request for a marketplace configured to have the Item and User IDs generated automatically for them.
 
 ```ruby
-token = client.tokens.create(:session, {
+token_request = client.tokens.create(:session, {
   current_user: 'seller',
   item_name: 'Test Item',
   amount: '2500',
@@ -79,12 +79,33 @@ token = client.tokens.create(:session, {
   fee_ids: [],
   payment_type_id: 2
 })
+token = token_request['token']
+item_id = token_request['item']
+buyer_id = token_request['buyer']
+seller_id = token_request['seller']
 ```
 #####Example 2 - Request session token
 The below example shows the request for a marketplace that passes the Item and User IDs.
 
 ```ruby
-TODO
+token = client.tokens.create(:session, {
+  current_user_id: 'seller1234',
+  item_name: 'Test Item',
+  amount: '2500',
+  seller_lastname: 'Seller',
+  seller_firstname: 'Sally',
+  buyer_lastname: 'Buyer',
+  buyer_firstname: 'Bobby',
+  buyer_country: 'AUS',
+  seller_country: 'USA',
+  seller_email: 'sally.seller@promisepay.com',
+  buyer_email: 'bobby.buyer@promisepay.com',
+  external_item_id: 'TestItemId1234',
+  external_seller_id: 'seller1234',
+  external_buyer_id: 'buyer1234',
+  fee_ids: [],
+  payment_type_id: 2
+})['token']
 ```
 ##Items
 

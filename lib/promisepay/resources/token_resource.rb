@@ -7,7 +7,7 @@ module Promisepay
     #
     # @param attributes [Hash] Token's attributes.
     #
-    # @return [Promisepay::Token]
+    # @return [Hash]
     def create(type = :session, attributes)
       case type
       when :session
@@ -15,7 +15,7 @@ module Promisepay
           attributes[:fee_ids] = attributes[:fee_ids].join(',')
         end
         response = @client.get('request_session_token', attributes)
-        JSON.parse(response.body)['token']
+        JSON.parse(response.body)
       end
     end
   end
