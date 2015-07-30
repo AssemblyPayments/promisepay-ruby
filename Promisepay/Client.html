@@ -411,17 +411,17 @@
       <pre class="lines">
 
 
-30
 31
 32
 33
 34
 35
 36
-37</pre>
+37
+38</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/promisepay/client.rb', line 30</span>
+      <pre class="code"><span class="info file"># File 'lib/promisepay/client.rb', line 31</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='comment'># Use options passed in, but fall back to module defaults
@@ -470,17 +470,17 @@
       <pre class="lines">
 
 
-122
-123
 124
 125
 126
 127
 128
-129</pre>
+129
+130
+131</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/promisepay/client.rb', line 122</span>
+      <pre class="code"><span class="info file"># File 'lib/promisepay/client.rb', line 124</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_method_missing'>method_missing</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_resources'>resources</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
@@ -541,7 +541,6 @@
       <pre class="lines">
 
 
-108
 109
 110
 111
@@ -551,10 +550,12 @@
 115
 116
 117
-118</pre>
+118
+119
+120</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/promisepay/client.rb', line 108</span>
+      <pre class="code"><span class="info file"># File 'lib/promisepay/client.rb', line 109</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_resources'>resources</span>
   <span class='lbrace'>{</span>
@@ -564,7 +565,8 @@
     <span class='label'>items:</span> <span class='const'>ItemResource</span><span class='comma'>,</span>
     <span class='label'>paypal_accounts:</span> <span class='const'>PaypalAccountResource</span><span class='comma'>,</span>
     <span class='label'>transactions:</span> <span class='const'>TransactionResource</span><span class='comma'>,</span>
-    <span class='label'>users:</span> <span class='const'>UserResource</span>
+    <span class='label'>users:</span> <span class='const'>UserResource</span><span class='comma'>,</span>
+    <span class='label'>tokens:</span> <span class='const'>TokenResource</span>
   <span class='rbrace'>}</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -617,15 +619,15 @@
       <pre class="lines">
 
 
-42
 43
 44
 45
 46
-47</pre>
+47
+48</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/promisepay/client.rb', line 42</span>
+      <pre class="code"><span class="info file"># File 'lib/promisepay/client.rb', line 43</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_connection'>connection</span>
   <span class='const'>Faraday</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='label'>url:</span> <span class='ivar'>@api_endpoint</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_builder'>builder</span><span class='op'>|</span>
@@ -715,7 +717,6 @@
       <pre class="lines">
 
 
-95
 96
 97
 98
@@ -723,10 +724,11 @@
 100
 101
 102
-103</pre>
+103
+104</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/promisepay/client.rb', line 95</span>
+      <pre class="code"><span class="info file"># File 'lib/promisepay/client.rb', line 96</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_url'>url</span><span class='comma'>,</span> <span class='id identifier rubyid_parameters'>parameters</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='id identifier rubyid_connection'>connection</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_req'>req</span><span class='op'>|</span>
@@ -819,14 +821,14 @@
       <pre class="lines">
 
 
-54
 55
 56
 57
-58</pre>
+58
+59</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/promisepay/client.rb', line 54</span>
+      <pre class="code"><span class="info file"># File 'lib/promisepay/client.rb', line 55</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_url'>url</span><span class='comma'>,</span> <span class='id identifier rubyid_parameters'>parameters</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='id identifier rubyid_connection'>connection</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_api_endpoint'>api_endpoint</span><span class='embexpr_end'>}</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_url'>url</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_parameters'>parameters</span><span class='rparen'>)</span>
@@ -915,7 +917,6 @@
       <pre class="lines">
 
 
-80
 81
 82
 83
@@ -923,10 +924,11 @@
 85
 86
 87
-88</pre>
+88
+89</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/promisepay/client.rb', line 80</span>
+      <pre class="code"><span class="info file"># File 'lib/promisepay/client.rb', line 81</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_patch'>patch</span><span class='lparen'>(</span><span class='id identifier rubyid_url'>url</span><span class='comma'>,</span> <span class='id identifier rubyid_parameters'>parameters</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='id identifier rubyid_connection'>connection</span><span class='period'>.</span><span class='id identifier rubyid_patch'>patch</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_req'>req</span><span class='op'>|</span>
@@ -1019,7 +1021,6 @@
       <pre class="lines">
 
 
-65
 66
 67
 68
@@ -1027,10 +1028,11 @@
 70
 71
 72
-73</pre>
+73
+74</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/promisepay/client.rb', line 65</span>
+      <pre class="code"><span class="info file"># File 'lib/promisepay/client.rb', line 66</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='id identifier rubyid_url'>url</span><span class='comma'>,</span> <span class='id identifier rubyid_parameters'>parameters</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='id identifier rubyid_connection'>connection</span><span class='period'>.</span><span class='id identifier rubyid_post'>post</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_req'>req</span><span class='op'>|</span>
@@ -1085,12 +1087,12 @@
       <pre class="lines">
 
 
-134
-135
-136</pre>
+136
+137
+138</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/promisepay/client.rb', line 134</span>
+      <pre class="code"><span class="info file"># File 'lib/promisepay/client.rb', line 136</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_resources'>resources</span>
   <span class='ivar'>@resources</span> <span class='op'>||=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
@@ -1105,7 +1107,7 @@
 </div>
 
     <div id="footer">
-  Generated on Tue Jun 16 21:16:03 2015 by
+  Generated on Thu Jul 30 18:34:25 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.2.0).
 </div>

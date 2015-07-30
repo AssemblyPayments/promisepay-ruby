@@ -221,6 +221,30 @@
 </li>
 
       
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#update-instance_method" title="#update (instance method)">- (Promisepay::User) <strong>update</strong>(attributes) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Update a user for a marketplace.</p>
+</div></span>
+  
+</li>
+
+      
     </ul>
   
 
@@ -580,12 +604,95 @@
 </table>
 </div>
     
+      <div class="method_details ">
+  <h3 class="signature " id="update-instance_method">
+  
+    - (<tt><span class='object_link'><a href="User.html" title="Promisepay::User (class)">Promisepay::User</a></span></tt>) <strong>update</strong>(attributes) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Update a user for a marketplace</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>attributes</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>User&#39;s attributes.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="User.html" title="Promisepay::User (class)">Promisepay::User</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="http://docs.promisepay.com/v2.2/docs/users-1" target="_parent" title="http://docs.promisepay.com/v2.2/docs/users-1">http://docs.promisepay.com/v2.2/docs/users-1</a></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+54
+55
+56
+57</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/promisepay/resources/user_resource.rb', line 54</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_attributes'>attributes</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='const'>JSON</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='ivar'>@client</span><span class='period'>.</span><span class='id identifier rubyid_patch'>patch</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>users</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_attributes'>attributes</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='rparen'>)</span>
+  <span class='const'>Promisepay</span><span class='op'>::</span><span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='ivar'>@client</span><span class='comma'>,</span> <span class='id identifier rubyid_response'>response</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>users</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
   </div>
 
 </div>
 
     <div id="footer">
-  Generated on Tue Jun 16 21:16:04 2015 by
+  Generated on Thu Jul 30 18:34:25 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-2.2.0).
 </div>
