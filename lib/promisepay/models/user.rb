@@ -59,5 +59,17 @@ module Promisepay
       JSON.parse(@client.post("users/#{send(:id)}/disbursement_account", options).body)
       true
     end
+
+    # Gets company for a user on a marketplace.
+    #
+    # @see 
+    #
+    # @return [Promisepay::Company]
+    def company
+      response = JSON.parse(@client.get("users/#{send(:id)}/companies").body)
+      Promisepay::Company.new(@client, response['companies'])
+    rescue Promisepay::UnprocessableEntity
+      nil
+    end
   end
 end
