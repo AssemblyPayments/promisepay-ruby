@@ -115,10 +115,10 @@ item = client.items.create(
   id: '12345',
   name: 'test item for 5AUD',
   amount: '500',
-  payement_type: '1',
+  payment_type: '1',
   buyer_id: buyer.id,
   seller_id: seller.id,
-  fee_id: fee.id,
+  fee_ids: fee.id,
   description: '5AUD transfer'
 )
 ```
@@ -220,7 +220,7 @@ item.make_payment(
 ```
 #####Request payment
 ```ruby
-item.request_payement
+item.request_payment
 ```
 #####Release payment
 ```ruby
