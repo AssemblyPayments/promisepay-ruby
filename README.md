@@ -64,46 +64,48 @@ The following parameters are configurable through the client:
 The below example shows the request for a marketplace configured to have the Item and User IDs generated automatically for them.
 
 ```ruby
-var repo = container.Resolve<ITokenRepository>();
-var session_token = new Token {
-	current_user = "seller",
-	item_name = "Test Item",
-	amount = "2500",
-	seller_lastname = "Seller",
-	seller_firstname = "Sally",
-	buyer_lastname = "Buyer",
-	buyer_firstname = "Bobby",
-	buyer_country = "AUS",
-	seller_country = "USA",
-	seller_email = "sally.seller@promisepay.com",
-	buyer_email = "bobby.buyer@promisepay.com",
-	fee_ids = "",
-	payment_type_id = "2"		
-};
+token_request = client.tokens.create(:session, {
+  current_user: 'seller',
+  item_name: 'Test Item',
+  amount: '2500',
+  seller_lastname: 'Seller',
+  seller_firstname: 'Sally',
+  buyer_lastname: 'Buyer',
+  buyer_firstname: 'Bobby',
+  buyer_country: 'AUS',
+  seller_country: 'USA',
+  seller_email: 'sally.seller@promisepay.com',
+  buyer_email: 'bobby.buyer@promisepay.com',
+  fee_ids: [],
+  payment_type_id: 2
+})
+token = token_request['token']
+item_id = token_request['item']
+buyer_id = token_request['buyer']
+seller_id = token_request['seller']
 ```
 #####Example 2 - Request session token
 The below example shows the request for a marketplace that passes the Item and User IDs.
 
 ```ruby
-var repo = container.Resolve<ITokenRepository>();
-var session_token = new Token {
-	current_user_id = "seller1234",
-	item_name = "Test Item",
-	amount = "2500",
-	seller_lastname = "Seller",
-	seller_firstname = "Sally",
-	buyer_lastname = "Buyer",
-	buyer_firstname = "Bobby",
-	buyer_country = "AUS",
-	seller_country = "USA",
-	seller_email = "sally.seller@promisepay.com",
-	buyer_email = "bobby.buyer@promisepay.com",
-	external_item_id = "TestItemId1234",
-	external_seller_id = "seller1234",
-	external_buyer_id = "buyer1234",
-	fee_ids = "",
-	payment_type_id = "2"		
-};
+token = client.tokens.create(:session, {
+  current_user_id: 'seller1234',
+  item_name: 'Test Item',
+  amount: '2500',
+  seller_lastname: 'Seller',
+  seller_firstname: 'Sally',
+  buyer_lastname: 'Buyer',
+  buyer_firstname: 'Bobby',
+  buyer_country: 'AUS',
+  seller_country: 'USA',
+  seller_email: 'sally.seller@promisepay.com',
+  buyer_email: 'bobby.buyer@promisepay.com',
+  external_item_id: 'TestItemId1234',
+  external_seller_id: 'seller1234',
+  external_buyer_id: 'buyer1234',
+  fee_ids: [],
+  payment_type_id: 2
+})['token']
 ```
 ##Items
 
@@ -121,25 +123,53 @@ item = client.items.create(
 )
 ```
 #####Get an item
+```ruby
+item = client.items.find('1')
+```
 #####Get a list of items
+```ruby
+items = client.items.find_all
+```
 #####Update an item
-#####Delete an item
+```ruby
+item.update(name: 'new name')
+```
+#####Cancel an item
+```ruby
+item.cancel
+```
 #####Get an item status
-
 ```ruby
 item.status
 ```
 #####Get an item's buyer
+```ruby
+item.buyer
+```
 #####Get an item's seller
+```ruby
+item.seller
+```
 #####Get an item's fees
+```ruby
+item.fees
+```
 #####Get an item's transactions
+```ruby
+item.transaction
+```
 #####Get an item's wire details
+```ruby
+item.wire_details
+```
 #####Get an item's BPAY details
+```ruby
+item.bpay_details
+```
 
 ##Users
 
 #####Create a user
-
 ```ruby
 user = client.users.create(
   id: '123456',
@@ -154,42 +184,81 @@ user = client.users.create(
 )
 ```
 #####Get a user
+```ruby
+user = client.users.find('1')
+```
 #####Get a list of users
-#####Delete a User
+```ruby
+users = client.users.find_all
+```
 #####Get a user's card accounts
+```ruby
+user.card_account
+```
 #####Get a user's PayPal accounts
+```ruby
+user.paypal_account
+```
 #####Get a user's bank accounts
+```ruby
+user.bank_account
+```
 #####Get a user's items
+```ruby
+user.items
+```
 #####Set a user's disbursement account
-
 ```ruby
 user.disbursement_account(bank_account.id)
 ```
 ##Item Actions
 #####Make payment
-
 ```ruby
 item.make_payment(
   account_id: buyer_card_account.id
 )
 ```
 #####Request payment
+```ruby
+item.request_payement
+```
 #####Release payment
-
 ```ruby
 item.release_payment
 ```
 #####Request release
+```ruby
+item.request_release
+```
 #####Cancel
+```ruby
+item.cancel
+```
 #####Acknowledge wire
+```ruby
+item.acknowledge_wire
+```
 #####Acknowledge PayPal
+```ruby
+item.acknowledge_paypal
+```
 #####Revert wire
+```ruby
+item.revert_wire
+```
 #####Request refund
+```ruby
+item.release_payment
+```
 #####Refund
-
+```ruby
+item.request_refund(
+  refund_amount: '1000',
+  refund_message: 'because'
+)
+```
 ##Card Accounts
 #####Create a card account
-
 ```ruby
 card_account = client.card_accounts.create(
   user_id: buyer.id,
@@ -201,12 +270,20 @@ card_account = client.card_accounts.create(
 )
 ```
 #####Get a card account
-#####Delete a card account
+```ruby
+card_account = client.card_accounts.find('1')
+```
+#####Deactivate a card account
+```ruby
+card_account.deactivate
+```
 #####Get a card account's users
+```ruby
+card_account.user
+```
 
 ##Bank Accounts
 #####Create a bank account
-
 ```ruby
 bank_account = client.bank_accounts.create(
   user_id: seller.id,
@@ -220,20 +297,49 @@ bank_account = client.bank_accounts.create(
 )
 ```
 #####Get a bank account
-#####Delete a bank account
+```ruby
+bank_account = client.bank_accounts.find('1')
+```
+#####Deactivate a bank account
+```ruby
+bank_account.deactivate('mobile_pin')
+```
 #####Get a bank account's users
+```ruby
+bank_account.user
+```
 
 ##PayPal Accounts
 #####Create a PayPal account
+```ruby
+paypal_account = client.paypal_accounts.create(
+  user_id: seller.id,
+  paypal_email: 'seller@promisepay.com'
+)
+```
 #####Get a PayPal account
-#####Delete a PayPal account
+```ruby
+paypal_account = client.paypal_accounts.find('1')
+```
+#####Deactivate a PayPal account
+```ruby
+paypal_account.deactivate
+```
 #####Get a PayPal account's users
+```ruby
+paypal_account.user
+```
 
 ##Fees
 #####Get a list of fees
+```ruby
+fees = client.fees.find_all
+```
 #####Get a fee
+```ruby
+fees = client.fees.find('1')
+```
 #####Create a fee
-
 ```ruby
 fee = client.fees.create(
   name: 'test fee for 5 AUD',
@@ -242,12 +348,26 @@ fee = client.fees.create(
   to: 'seller'
 )
 ```
+
 ##Transactions
 #####Get a list of transactions
-#####Get a transactions
+```ruby
+transactions = client.transactions.find_all
+```
+#####Get a transaction
+```ruby
+transaction = client.transactions.find('1')
+```
 #####Get a transaction's users
+```ruby
+transaction.users
+```
 #####Get a transaction's fees
+```ruby
+transaction.fees
+```
 
+_Check out the [online documentation](http://promisepay.github.io/promisepay-ruby/) to get a full list of available resources and methods._
 
 #4. Contributing
 
