@@ -180,7 +180,23 @@ user = client.users.create(
   state: 'vic',
   city: 'Mel',
   zip: '3000',
-  country: 'AUS'
+  country: 'AUS',
+  dob:'12/06/1980'
+)
+```
+#####Update a user
+```ruby
+user = client.users.update(
+  id: '123456',
+  first_name: 'test',
+  last_name: 'buyer',
+  email: 'buyer@test.com',
+  address_line1: '48 collingwood',
+  state: 'vic',
+  city: 'Mel',
+  zip: '3000',
+  country: 'AUS',
+  dob:'12/06/1980'
 )
 ```
 #####Get a user
@@ -191,15 +207,15 @@ user = client.users.find('1')
 ```ruby
 users = client.users.find_all
 ```
-#####Get a user's card accounts
+#####Get a user's card account
 ```ruby
 user.card_account
 ```
-#####Get a user's PayPal accounts
+#####Get a user's PayPal account
 ```ruby
 user.paypal_account
 ```
-#####Get a user's bank accounts
+#####Get a user's bank account
 ```ruby
 user.bank_account
 ```
@@ -248,11 +264,14 @@ item.revert_wire
 ```
 #####Request refund
 ```ruby
-item.release_payment
+item.request_refund(
+  refund_amount: '1000',
+  refund_message: 'because'
+)
 ```
 #####Refund
 ```ruby
-item.request_refund(
+item.refund(
   refund_amount: '1000',
   refund_message: 'because'
 )
@@ -302,7 +321,7 @@ bank_account = client.bank_accounts.find('1')
 ```
 #####Deactivate a bank account
 ```ruby
-bank_account.deactivate('mobile_pin')
+bank_account.deactivate
 ```
 #####Get a bank account's users
 ```ruby
@@ -313,8 +332,8 @@ bank_account.user
 #####Create a PayPal account
 ```ruby
 paypal_account = client.paypal_accounts.create(
-  user_id: seller.id,
-  paypal_email: 'seller@promisepay.com'
+	user_id: seller.id,
+	paypal_email: 'seller@promisepay.com'
 )
 ```
 #####Get a PayPal account
@@ -328,6 +347,51 @@ paypal_account.deactivate
 #####Get a PayPal account's users
 ```ruby
 paypal_account.user
+```
+##Companies
+
+#####Create a company
+```ruby
+client.companies.create(
+	user_id: "1",
+	name: "Acme Co",
+	legal_name: "Acme Co Pty Ltd",
+	tax_number: "1231231",
+	charge_tax: true,
+	address_line1: "123 Test St",
+	address_line2: "",
+	city: "Melbourne",
+	state: "VIC",
+	zip: "3000",
+	country: "AUS"
+)
+```
+
+#####Get a company
+```ruby
+client.companies.find('compamy_id')
+```
+
+#####Get a list of companies
+```ruby
+client.companies.find_all
+```
+
+#####Update a company
+```ruby
+client.companies.update(
+	id: "8d578b9c-5b79-11e5-885d-feff819cdc9f",
+	name: "Acme Co",
+	legal_name: "Acme Co Pty Ltd",
+	tax_number: "1231231",
+	charge_tax: true,
+	address_line1: "123 Test St",
+	address_line2: "",
+	city: "Melbourne",
+	state: "VIC",
+	zip: "3000",
+	country: "AUS"
+)
 ```
 
 ##Fees
