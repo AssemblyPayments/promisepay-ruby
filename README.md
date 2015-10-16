@@ -9,10 +9,11 @@
 
 #1. Installation
 
-Add this line to your application's Gemfile:
+Add these line to your application's Gemfile:
 
 ```ruby
 gem 'promisepay'
+gem 'dotenv-rails'
 ```
 
 And then execute:
@@ -22,32 +23,28 @@ And then execute:
 Or install it yourself as:
 
     $ gem install promisepay
+    $ gem install dotenv-rails
 
 #2. Configuration
 
 Before interacting with Promispay API you need to generate an access token.
 
-See http://docs.promisepay.com/v2.2/docs/request_token for more information.
+See [PromisePay documentation](https://promisepay-docs.readme.io/v1.0/docs/fetching-your-api-key) for more information.
 
 **Create a PromisePay client**
 
 ```ruby
-require 'promisepay'
-
-client = Promisepay::Client.new(username: 'YOUR_USERNAME', token: 'YOUR_TOKEN')
+#In the Gemfile
+gem 'promisepay'
+gem 'dotenv-rails', :groups => [:development, :test]
 ```
 
-The client can be configured through environment variables.
+The client can be configured through environment variables. Don't forget to add the .env file to .gitignore to protect your credentials!
 
 ```ruby
-ENV['PROMISEPAY_USERNAME'] = 'YOUR_USERNAME'
-ENV['PROMISEPAY_TOKEN'] = 'YOUR_TOKEN'
-```
-
-```ruby
-require 'promisepay'
-
-client = Promisepay::Client.new()
+#In the .env file
+PROMISEPAY_USERNAME=youremailaddress
+PROMISEPAY_TOKEN=y0urt0k3n12345678910123456789101
 ```
 
 The following parameters are configurable through the client:
@@ -57,11 +54,17 @@ The following parameters are configurable through the client:
   * `:environment` / `ENV['PROMISEPAY_ENVIRONMENT']`: API [environment](http://docs.promisepay.com/v2.2/docs/environments) to use (default: 'test')
   * `:api_domain` / `ENV['PROMISEPAY_API_DOMAIN']`: API domain name to use (default: 'api.promisepay.com')
 
+ Instantiate client in the appropriate controller
+
+```ruby
+client = Promisepay::Client.new(username: ENV['PROMISEPAY_USERNAME'], token: ENV['PROMISEPAY_TOKEN'])
+```
+
 #3. Examples
 
 ##Tokens
 ##### Example 1 - Request session token
-The below example shows the request for a marketplace configured to have the Item and User IDs generated automatically for them.
+The below example shows the controller request for a marketplace configured to have the Item and User IDs generated automatically for them.
 
 ```ruby
 token_request = client.tokens.create(:session, {
