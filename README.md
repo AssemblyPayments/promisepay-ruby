@@ -7,6 +7,8 @@
 [![Coverage Status](https://coveralls.io/repos/PromisePay/promisepay-ruby/badge.svg?branch=develop)](https://coveralls.io/r/PromisePay/promisepay-ruby?branch=develop)
 [![Code Climate](https://codeclimate.com/github/PromisePay/promisepay-ruby/badges/gpa.svg)](https://codeclimate.com/github/PromisePay/promisepay-ruby)
 
+To see a completed integration in a Ruby on Rails app, visit this [repository](https://github.com/dannyshafer/PromisePay_api_integration).
+
 #1. Installation
 
 Add these line to your application's Gemfile:
