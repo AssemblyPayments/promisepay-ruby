@@ -11,7 +11,7 @@ To see a completed integration in a Ruby on Rails app, visit this [repository](h
 
 #1. Installation
 
-Add these line to your application's Gemfile:
+Add these lines to your application's Gemfile:
 
 ```ruby
 gem 'promisepay'
