@@ -15,7 +15,6 @@ Add these lines to your application's Gemfile:
 
 ```ruby
 gem 'promisepay'
-gem 'dotenv-rails'
 ```
 
 And then execute:
@@ -25,7 +24,6 @@ And then execute:
 Or install it yourself as:
 
     $ gem install promisepay
-    $ gem install dotenv-rails
 
 #2. Configuration
 
@@ -38,15 +36,14 @@ See [PromisePay documentation](https://promisepay-docs.readme.io/v1.0/docs/fetch
 ```ruby
 #In the Gemfile
 gem 'promisepay'
-gem 'dotenv-rails', :groups => [:development, :test]
 ```
 
-The client can be configured through environment variables. Don't forget to add the .env file to .gitignore to protect your credentials!
+The client can be configured through environment variables.
 
 ```ruby
-#In the .env file
-PROMISEPAY_USERNAME=youremailaddress
-PROMISEPAY_TOKEN=y0urt0k3n12345678910123456789101
+# In your environment file
+PROMISEPAY_USERNAME ||= youremailaddress
+PROMISEPAY_TOKEN ||= y0urt0k3n12345678910123456789101
 ```
 
 The following parameters are configurable through the client:
