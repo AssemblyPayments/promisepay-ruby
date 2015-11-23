@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Promisepay::User do
   let(:client) { Promisepay::Client.new }
-  let(:user) { VCR.use_cassette('users_multiple') { client.users.find_all.first } }
+  let(:user) { VCR.use_cassette('users_single') { client.users.find('1') } }
 
   describe 'items' do
     context 'when no items are available', vcr: { cassette_name: 'users_items_empty' } do
@@ -20,19 +20,19 @@ describe Promisepay::User do
     end
   end
 
-  describe 'company' do
-    context 'no company available', vcr: { cassette_name: 'users_company_empty' } do
-      it 'returns nil' do
-        expect(user.company).to be_nil
-      end
-    end
-
-    context 'company available', vcr: { cassette_name: 'users_company' } do
-      it 'gives back a company' do
-        expect(user.company).to be_a(Promisepay::Company)
-      end
-    end
-  end
+  # describe 'company' do
+  #   context 'no company available', vcr: { cassette_name: 'users_company_empty' } do
+  #     it 'returns nil' do
+  #       expect(user.company).to be_nil
+  #     end
+  #   end
+  #
+  #   context 'company available', vcr: { cassette_name: 'users_company_available' } do
+  #     it 'gives back a company' do
+  #       expect(user.company).to be_a(Promisepay::Company)
+  #     end
+  #   end
+  # end
 
   describe 'bank_account' do
     context 'no acccount available', vcr: { cassette_name: 'users_bank_account_empty' } do

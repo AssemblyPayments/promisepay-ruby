@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/users/1
+    uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/companies
     body:
       encoding: US-ASCII
       string: ''
@@ -34,7 +34,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 23 Nov 2015 04:11:36 GMT
+      - Mon, 23 Nov 2015 03:45:31 GMT
       Server:
       - nginx/1.6.2 + Phusion Passenger 4.0.59
       Set-Cookie:
@@ -48,9 +48,9 @@ http_interactions:
       X-Powered-By:
       - Phusion Passenger 4.0.59
       X-Request-Id:
-      - 1669d5e2-8d5f-4538-94b6-0a40cf7fd89c
+      - 6d0e34a4-4cd3-4418-a277-4920c9e5bc4e
       X-Runtime:
-      - '0.371896'
+      - '2.288769'
       X-Xss-Protection:
       - 1; mode=block
       Transfer-Encoding:
@@ -59,8 +59,9 @@ http_interactions:
       - keep-alive
     body:
       encoding: ASCII-8BIT
-      string: '{"users":{"created_at":"2015-10-20T06:24:44.343Z","updated_at":"2015-10-20T06:24:44.343Z","full_name":"buyerFirst
-        buyerLast","email":"buyer@hip.local","mobile":"+0061421212131","phone":null,"first_name":"buyerFirst","last_name":"buyerLast","id":"1","location":"AUS","verification_state":"pending","held_state":false,"dob":null,"government_number":null,"drivers_license":null,"related":{"addresses":"0561b95b-8b72-4403-98dd-35156a044070","companies":"7593edac-4609-457b-aac4-1e5e3390f3df"},"links":{"self":"/users/1","items":"/users/1/items","card_accounts":"/users/1/card_accounts","paypal_accounts":"/users/1/paypal_accounts","bank_accounts":"/users/1/bank_accounts","wallet_accounts":"/users/1/wallet_accounts"}}}'
+      string: '{"companies":[{"legal_name":"Test edit company","name":"Modified company
+        name","id":"e466dfb4-f05c-4c7f-92a3-09a0a28c7af5","related":{"address":"07ed45e5-bb9d-459f-bb7b-a02ecb38f443"},"links":{"self":"/companies/e466dfb4-f05c-4c7f-92a3-09a0a28c7af5"}},{"legal_name":"Test
+        edit company","name":"test company name edit","id":"c1f23f9e-27d9-46a4-8c34-95787627f65e","related":{"address":"9b2444aa-337f-4515-9012-c4063313c9f1","users":"ec9bf096-c505-4bef-87f6-18822b9dbf2c"},"links":{"self":"/companies/c1f23f9e-27d9-46a4-8c34-95787627f65e"}},{"legal_name":null,"name":null,"id":"4a3c53ff-4e86-4c78-a8ff-3ed21438dede","related":{"address":"9608d4de-0108-475b-8f6b-353401f5b4aa","users":"1"},"links":{"self":"/companies/4a3c53ff-4e86-4c78-a8ff-3ed21438dede"}}],"meta":{"limit":10,"offset":0,"total":3},"links":{"self":"/companies"}}'
     http_version: 
-  recorded_at: Mon, 23 Nov 2015 04:11:36 GMT
+  recorded_at: Mon, 23 Nov 2015 03:45:31 GMT
 recorded_with: VCR 3.0.0

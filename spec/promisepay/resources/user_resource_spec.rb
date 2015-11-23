@@ -21,12 +21,11 @@ describe Promisepay::UserResource do
   end
 
   describe 'find' do
-    let(:single_user) { VCR.use_cassette('users_multiple') { client.users.find_all.first } }
+    let(:single_user) { VCR.use_cassette('users_single_find') { client.users.find("ec9bf096-c505-4bef-87f6-18822b9dbf2c") } }
 
-    context 'an existing user', vcr: { cassette_name: 'users_single' } do
+    context 'an existing user' do
       it 'gives back a single user' do
-        user = client.users.find(single_user.id)
-        expect(user).to be_a(Promisepay::User)
+        expect(single_user).to be_a(Promisepay::User)
       end
     end
 
