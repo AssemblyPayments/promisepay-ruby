@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.9.1
+      - Faraday v0.9.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -34,12 +34,11 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Thu, 04 Jun 2015 18:49:08 GMT
+      - Mon, 23 Nov 2015 04:09:58 GMT
       Server:
-      - nginx/1.4.5 + Phusion Passenger 4.0.41
+      - nginx/1.6.2 + Phusion Passenger 4.0.59
       Set-Cookie:
-      - AWSELB=0DBB11830A38E977296412C0A203E644D732F49D5DB84FE5C10C5AA957FEF0305580CD17524FBCE919CE1E508E716B8A24CB5A91E3B1D2213C174FF0A78FE58870CCD67F93;PATH=/
-      - request_method=GET; path=/
+      - AWSELB=4B5B2DD110EABA5FA77A3AC1E2BE2969C702386A63663A24575E16802B4E1D4DE2485513C94700F78E3CBE252686A0F6A8AF106A9684B4327BD89BE4A3D5D92D8C8154395E;PATH=/
       Status:
       - 200 OK
       X-Content-Type-Options:
@@ -47,22 +46,30 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       X-Powered-By:
-      - Phusion Passenger 4.0.41
+      - Phusion Passenger 4.0.59
       X-Request-Id:
-      - 346c0641-5385-403a-99e7-4e923e2064ea
+      - 396765c1-c591-423c-92d6-17be1065fe5d
       X-Runtime:
-      - '0.315819'
+      - '0.440837'
       X-Xss-Protection:
       - 1; mode=block
-      Content-Length:
-      - '342'
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
     body:
       encoding: ASCII-8BIT
-      string: '{"users":[{"id":"1","full_name":"test name last_name","first_name":"test
-        name","last_name":"last_name","created_at":"2015-05-20T18:48:34.325Z","updated_at":"2015-05-20T18:48:34.325Z","email":"email@email.com","mobile":null,"phone":null,"location":"AUS","links":{"self":"/users/1","items":"/users/1/items","card_accounts":"/users/1/card_accounts","paypal_accounts":"/users/1/paypal_accounts","bank_accounts":"/users/1/bank_accounts"}},{"id":"2","full_name":"test
-        romain test romain","first_name":"test romain","last_name":"test romain","created_at":"2015-06-04T18:42:32.187Z","updated_at":"2015-06-04T18:42:32.187Z","email":"aa@aa.com","mobile":null,"phone":null,"location":"AUS","links":{"self":"/users/2","items":"/users/2/items","card_accounts":"/users/2/card_accounts","paypal_accounts":"/users/2/paypal_accounts","bank_accounts":"/users/2/bank_accounts"}}],"meta":{"limit":10,"offset":0,"total":2},"links":{"self":"/users"}}'
+      string: '{"users":[{"id":"ec9bf096-c505-4bef-87f6-18822b9dbf2c","full_name":"test
+        sdfdf edited Test","first_name":"test sdfdf edited","last_name":"Test","created_at":"2015-05-21T15:28:46.039Z","updated_at":"2015-08-13T16:41:27.887Z","email":"d51de457-2aa1-4f6f-8f5d-216739b5e58a@google.com","mobile":"+514572146852167395583213125551223","phone":null,"location":"AUS","links":{"self":"/users/ec9bf096-c505-4bef-87f6-18822b9dbf2c","items":"/users/ec9bf096-c505-4bef-87f6-18822b9dbf2c/items","card_accounts":"/users/ec9bf096-c505-4bef-87f6-18822b9dbf2c/card_accounts","paypal_accounts":"/users/ec9bf096-c505-4bef-87f6-18822b9dbf2c/paypal_accounts","bank_accounts":"/users/ec9bf096-c505-4bef-87f6-18822b9dbf2c/bank_accounts","wallet_accounts":"/users/ec9bf096-c505-4bef-87f6-18822b9dbf2c/wallet_accounts"}},{"id":"254bde46-f122-43a4-be64-95372c33af09","full_name":"Test
+        Test","first_name":"Test","last_name":"Test","created_at":"2015-05-21T15:44:44.049Z","updated_at":"2015-05-21T15:44:44.049Z","email":"254bde46-f122-43a4-be64-95372c33af09@google.com","mobile":null,"phone":null,"location":"AUS","links":{"self":"/users/254bde46-f122-43a4-be64-95372c33af09","items":"/users/254bde46-f122-43a4-be64-95372c33af09/items","card_accounts":"/users/254bde46-f122-43a4-be64-95372c33af09/card_accounts","paypal_accounts":"/users/254bde46-f122-43a4-be64-95372c33af09/paypal_accounts","bank_accounts":"/users/254bde46-f122-43a4-be64-95372c33af09/bank_accounts","wallet_accounts":"/users/254bde46-f122-43a4-be64-95372c33af09/wallet_accounts"}},{"id":"991f7644-fbd5-4863-ad90-b6cf7cdb44ad","full_name":"Test
+        Test","first_name":"Test","last_name":"Test","created_at":"2015-05-21T15:55:18.921Z","updated_at":"2015-05-21T15:55:18.921Z","email":"991f7644-fbd5-4863-ad90-b6cf7cdb44ad@google.com","mobile":null,"phone":null,"location":"AUS","links":{"self":"/users/991f7644-fbd5-4863-ad90-b6cf7cdb44ad","items":"/users/991f7644-fbd5-4863-ad90-b6cf7cdb44ad/items","card_accounts":"/users/991f7644-fbd5-4863-ad90-b6cf7cdb44ad/card_accounts","paypal_accounts":"/users/991f7644-fbd5-4863-ad90-b6cf7cdb44ad/paypal_accounts","bank_accounts":"/users/991f7644-fbd5-4863-ad90-b6cf7cdb44ad/bank_accounts","wallet_accounts":"/users/991f7644-fbd5-4863-ad90-b6cf7cdb44ad/wallet_accounts"}},{"id":"fdf58725-96bd-4bf8-b5e6-9b61be20662e","full_name":"Test
+        Test","first_name":"Test","last_name":"Test","created_at":"2015-05-21T16:17:26.477Z","updated_at":"2015-05-21T16:17:26.477Z","email":"fdf58725-96bd-4bf8-b5e6-9b61be20662e@google.com","mobile":null,"phone":null,"location":"AUS","links":{"self":"/users/fdf58725-96bd-4bf8-b5e6-9b61be20662e","items":"/users/fdf58725-96bd-4bf8-b5e6-9b61be20662e/items","card_accounts":"/users/fdf58725-96bd-4bf8-b5e6-9b61be20662e/card_accounts","paypal_accounts":"/users/fdf58725-96bd-4bf8-b5e6-9b61be20662e/paypal_accounts","bank_accounts":"/users/fdf58725-96bd-4bf8-b5e6-9b61be20662e/bank_accounts","wallet_accounts":"/users/fdf58725-96bd-4bf8-b5e6-9b61be20662e/wallet_accounts"}},{"id":"9f92e9fe-3c6d-471f-82a7-d3997b22f088","full_name":"Test
+        Test","first_name":"Test","last_name":"Test","created_at":"2015-05-21T16:18:23.378Z","updated_at":"2015-05-21T16:18:23.378Z","email":"9f92e9fe-3c6d-471f-82a7-d3997b22f088@google.com","mobile":null,"phone":null,"location":"AUS","links":{"self":"/users/9f92e9fe-3c6d-471f-82a7-d3997b22f088","items":"/users/9f92e9fe-3c6d-471f-82a7-d3997b22f088/items","card_accounts":"/users/9f92e9fe-3c6d-471f-82a7-d3997b22f088/card_accounts","paypal_accounts":"/users/9f92e9fe-3c6d-471f-82a7-d3997b22f088/paypal_accounts","bank_accounts":"/users/9f92e9fe-3c6d-471f-82a7-d3997b22f088/bank_accounts","wallet_accounts":"/users/9f92e9fe-3c6d-471f-82a7-d3997b22f088/wallet_accounts"}},{"id":"1cd55a4b-d919-4513-993b-56bb0cd1a105","full_name":"Test
+        Test","first_name":"Test","last_name":"Test","created_at":"2015-05-21T16:18:35.503Z","updated_at":"2015-05-21T16:18:35.503Z","email":"1cd55a4b-d919-4513-993b-56bb0cd1a105@google.com","mobile":null,"phone":null,"location":"AUS","links":{"self":"/users/1cd55a4b-d919-4513-993b-56bb0cd1a105","items":"/users/1cd55a4b-d919-4513-993b-56bb0cd1a105/items","card_accounts":"/users/1cd55a4b-d919-4513-993b-56bb0cd1a105/card_accounts","paypal_accounts":"/users/1cd55a4b-d919-4513-993b-56bb0cd1a105/paypal_accounts","bank_accounts":"/users/1cd55a4b-d919-4513-993b-56bb0cd1a105/bank_accounts","wallet_accounts":"/users/1cd55a4b-d919-4513-993b-56bb0cd1a105/wallet_accounts"}},{"id":"9ff01400-2a35-4f3b-9495-4e53b9f218e0","full_name":"Test
+        Test","first_name":"Test","last_name":"Test","created_at":"2015-05-21T16:21:33.721Z","updated_at":"2015-05-21T16:21:33.721Z","email":"9ff01400-2a35-4f3b-9495-4e53b9f218e0@google.com","mobile":null,"phone":null,"location":"AUS","links":{"self":"/users/9ff01400-2a35-4f3b-9495-4e53b9f218e0","items":"/users/9ff01400-2a35-4f3b-9495-4e53b9f218e0/items","card_accounts":"/users/9ff01400-2a35-4f3b-9495-4e53b9f218e0/card_accounts","paypal_accounts":"/users/9ff01400-2a35-4f3b-9495-4e53b9f218e0/paypal_accounts","bank_accounts":"/users/9ff01400-2a35-4f3b-9495-4e53b9f218e0/bank_accounts","wallet_accounts":"/users/9ff01400-2a35-4f3b-9495-4e53b9f218e0/wallet_accounts"}},{"id":"7fa0850d-8f8b-4429-89f1-713cfde63396","full_name":"Test
+        Test","first_name":"Test","last_name":"Test","created_at":"2015-05-21T16:32:47.766Z","updated_at":"2015-05-21T16:32:47.766Z","email":"7fa0850d-8f8b-4429-89f1-713cfde63396@google.com","mobile":null,"phone":null,"location":"AUS","links":{"self":"/users/7fa0850d-8f8b-4429-89f1-713cfde63396","items":"/users/7fa0850d-8f8b-4429-89f1-713cfde63396/items","card_accounts":"/users/7fa0850d-8f8b-4429-89f1-713cfde63396/card_accounts","paypal_accounts":"/users/7fa0850d-8f8b-4429-89f1-713cfde63396/paypal_accounts","bank_accounts":"/users/7fa0850d-8f8b-4429-89f1-713cfde63396/bank_accounts","wallet_accounts":"/users/7fa0850d-8f8b-4429-89f1-713cfde63396/wallet_accounts"}},{"id":"3ee93cfe-bfe0-485d-8701-35b9b57ff1f8","full_name":"Test
+        Test","first_name":"Test","last_name":"Test","created_at":"2015-05-21T16:38:37.382Z","updated_at":"2015-05-21T16:38:37.382Z","email":"3ee93cfe-bfe0-485d-8701-35b9b57ff1f8@google.com","mobile":null,"phone":null,"location":"AUS","links":{"self":"/users/3ee93cfe-bfe0-485d-8701-35b9b57ff1f8","items":"/users/3ee93cfe-bfe0-485d-8701-35b9b57ff1f8/items","card_accounts":"/users/3ee93cfe-bfe0-485d-8701-35b9b57ff1f8/card_accounts","paypal_accounts":"/users/3ee93cfe-bfe0-485d-8701-35b9b57ff1f8/paypal_accounts","bank_accounts":"/users/3ee93cfe-bfe0-485d-8701-35b9b57ff1f8/bank_accounts","wallet_accounts":"/users/3ee93cfe-bfe0-485d-8701-35b9b57ff1f8/wallet_accounts"}},{"id":"647be9a1-2faa-4889-81f1-aca9b3c25a93","full_name":"Test
+        Test","first_name":"Test","last_name":"Test","created_at":"2015-05-21T16:57:03.967Z","updated_at":"2015-05-21T16:57:03.967Z","email":"647be9a1-2faa-4889-81f1-aca9b3c25a93@google.com","mobile":null,"phone":null,"location":"AUS","links":{"self":"/users/647be9a1-2faa-4889-81f1-aca9b3c25a93","items":"/users/647be9a1-2faa-4889-81f1-aca9b3c25a93/items","card_accounts":"/users/647be9a1-2faa-4889-81f1-aca9b3c25a93/card_accounts","paypal_accounts":"/users/647be9a1-2faa-4889-81f1-aca9b3c25a93/paypal_accounts","bank_accounts":"/users/647be9a1-2faa-4889-81f1-aca9b3c25a93/bank_accounts","wallet_accounts":"/users/647be9a1-2faa-4889-81f1-aca9b3c25a93/wallet_accounts"}}],"meta":{"limit":10,"offset":0,"total":5258},"links":{"self":"/users"}}'
     http_version: 
-  recorded_at: Thu, 04 Jun 2015 18:49:08 GMT
-recorded_with: VCR 2.9.3
+  recorded_at: Mon, 23 Nov 2015 04:09:59 GMT
+recorded_with: VCR 3.0.0

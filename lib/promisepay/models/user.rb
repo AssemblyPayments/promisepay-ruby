@@ -68,7 +68,7 @@ module Promisepay
     def company
       response = JSON.parse(@client.get("users/#{send(:id)}/companies").body)
       Promisepay::Company.new(@client, response['companies'])
-    rescue Promisepay::UnprocessableEntity
+    rescue Promisepay::NotFound
       nil
     end
   end

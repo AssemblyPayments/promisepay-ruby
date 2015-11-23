@@ -6,10 +6,10 @@ module Promisepay
     #
     # @see 
     #
-    # @return [Promisepay::Company]
+    # @return [Promisepay::User]
     def user
       response = JSON.parse(@client.get("companies/#{send(:id)}/users").body)
-      Promisepay::Company.new(@client, response['users'])
+      Promisepay::User.new(@client, response['users'])
     end
   end
 end
