@@ -33,11 +33,6 @@ See [PromisePay documentation](https://promisepay-docs.readme.io/v1.0/docs/fetch
 
 **Create a PromisePay client**
 
-```ruby
-#In the Gemfile
-gem 'promisepay'
-```
-
 The client can be configured through environment variables.
 
 ```ruby
@@ -53,7 +48,7 @@ The following parameters are configurable through the client:
   * `:environment` / `ENV['PROMISEPAY_ENVIRONMENT']`: API [environment](http://docs.promisepay.com/v2.2/docs/environments) to use (default: 'test')
   * `:api_domain` / `ENV['PROMISEPAY_API_DOMAIN']`: API domain name to use (default: 'api.promisepay.com')
 
- Instantiate client in the appropriate controller
+ Instantiate the PromisePay client.
 
 ```ruby
 client = Promisepay::Client.new(username: ENV['PROMISEPAY_USERNAME'], token: ENV['PROMISEPAY_TOKEN'])
