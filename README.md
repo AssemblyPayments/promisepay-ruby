@@ -58,7 +58,7 @@ client = Promisepay::Client.new(username: ENV['PROMISEPAY_USERNAME'], token: ENV
 
 ##Tokens
 ##### Example 1 - Request session token
-The below example shows the controller request for a marketplace configured to have the Item and User IDs generated automatically for them.
+The below example shows the controller request for a marketplace configured to have the Item and User IDs generated automatically for them. Note: by default, the ability to have PromisePay auto generate IDs is turned off. However, it can easily be requested by contacting PromisePay support.
 
 ```ruby
 token_request = client.tokens.create(:session, {
