@@ -39,7 +39,7 @@ module Promisepay
       message = ''
       message << json_response['message'] if json_response.key?('message')
       if json_response.key?('errors')
-        message << json_response['errors'].map{|attribute, content| "#{attribute}: #{content.join(", ")}"}.join(", ")
+        message << json_response['errors'].map{|attribute, content| "#{attribute}: #{content}"}.join(", ")
       end
 
       message
