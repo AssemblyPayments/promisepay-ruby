@@ -39,9 +39,7 @@ module Promisepay
       message = ''
       message << json_response['message'] if json_response.key?('message')
       if json_response.key?('errors')
-        json_response['errors'].each do |attribute, content|
-          message << "#{attribute}: #{content}"
-        end
+        message << json_response['errors'].map{|attribute, content| "#{attribute}: #{content}"}.join(", ")
       end
 
       message
