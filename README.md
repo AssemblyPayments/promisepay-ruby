@@ -324,6 +324,10 @@ bank_account.deactivate
 ```ruby
 bank_account.user
 ```
+#####Validate Routing Number
+```ruby
+client.bank_accounts.validate('122235821')
+```
 
 ##PayPal Accounts
 #####Create a PayPal account
