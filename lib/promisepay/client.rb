@@ -55,9 +55,9 @@ module Promisepay
     # @param url [String] The path, relative to {#api_endpoint}
     # @param parameters [Hash] Query params for request
     # @return [Faraday::Response]
-    def get(url, parameters = {})
+    def get(url, parameters = {}, skip_status_check = false)
       response = connection.get("#{api_endpoint}#{url}", parameters)
-      on_complete(response)
+      on_complete(response) unless skip_status_check
       response
     end
 
