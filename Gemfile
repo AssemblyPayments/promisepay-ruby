@@ -4,7 +4,7 @@ group :test do
   gem 'coveralls'
   gem 'rspec'
   gem 'vcr'
-  gem 'webmock'
+  gem 'webmock', '1.21.0'
   gem 'yard'
 end
 
