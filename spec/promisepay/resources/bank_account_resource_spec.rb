@@ -83,9 +83,10 @@ describe Promisepay::BankAccountResource do
     end
     context 'with an invalid routing number', vcr: { cassette_name: 'bank_accounts_validate_invalid_number' } do
       let(:routing_number) { '111' }
-      it 'returns nil' do
+      it 'returns an empty hash' do
         info = client.bank_accounts.validate(routing_number)
-        expect(info).to be_nil
+        expect(info).to be_a(Hash)
+        expect(info).to be_empty
       end
     end
   end

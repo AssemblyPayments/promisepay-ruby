@@ -40,11 +40,7 @@ module Promisepay
     # @return [Hash]
     def validate(routing_number)
       response = @client.get('tools/routing_number', { routing_number: routing_number }, true)
-      if response.status == 200
-        JSON.parse(response.body)['routing_number']
-      else
-        nil
-      end
+      (response.status == 200) ? JSON.parse(response.body)['routing_number'] : {}
     end
   end
 end
