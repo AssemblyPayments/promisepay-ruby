@@ -3,7 +3,7 @@ module Promisepay
   class Item < BaseModel
     # Update the attributes of an item.
     #
-    # @see http://docs.promisepay.com/v2.2/docs/itemsiduseraction
+    # @see https://reference.promisepay.com/#update-item
     #
     # @param attributes [Hash] Item's attributes to be updated.
     #
@@ -16,7 +16,7 @@ module Promisepay
 
     # Show the item status for a marketplace.
     #
-    # @see http://docs.promisepay.com/v2.2/docs/itemsidstatus
+    # @see https://reference.promisepay.com/#show-item-status
     #
     # @return [Hash]
     def status
@@ -26,7 +26,7 @@ module Promisepay
 
     # Show the buyer detail for a single item for a marketplace.
     #
-    # @see http://docs.promisepay.com/v2.2/docs/itemsidbuyers
+    # @see https://reference.promisepay.com/#show-item-buyer
     #
     # @return [Promisepay::User]
     def buyer
@@ -36,7 +36,7 @@ module Promisepay
 
     # Show the seller detail for a single item for a marketplace.
     #
-    # @see http://docs.promisepay.com/v2.2/docs/itemsidbuyers
+    # @see https://reference.promisepay.com/#show-item-seller
     #
     # @return [Promisepay::User]
     def seller
@@ -46,7 +46,7 @@ module Promisepay
 
     # Get fees associated to the item.
     #
-    # @see http://docs.promisepay.com/v2.2/docs/itemsidfees
+    # @see https://reference.promisepay.com/#show-item-fees
     #
     # @param options [Hash] Optional options.
     # @option options [Integer] :limit Can ask for up to 200 fees. default: 10
@@ -61,7 +61,7 @@ module Promisepay
 
     # Get historical transaction for the item.
     #
-    # @see http://docs.promisepay.com/v2.2/docs/itemsidtransactions
+    # @see https://reference.promisepay.com/#list-item-transactions
     #
     # @param options [Hash] Optional options.
     # @option options [Integer] :limit Can ask for up to 200 transactions. default: 10
@@ -76,7 +76,7 @@ module Promisepay
 
     # Show the wire details for payment.
     #
-    # @see http://docs.promisepay.com/v2.2/docs/itemsidwire_details
+    # @see https://reference.promisepay.com/#show-item-wire-details
     #
     # @return [Hash]
     def wire_details
@@ -86,7 +86,7 @@ module Promisepay
 
     # Show the bpay details details for payment.
     #
-    # @see http://docs.promisepay.com/v2.2/docs/itemsidbpay_details
+    # @see https://reference.promisepay.com/#show-item-bpay-details
     #
     # @return [Hash]
     def bpay_details
@@ -94,9 +94,9 @@ module Promisepay
       response['items']['bpay_details']
     end
 
-    # .
+    # Make a payment for an Item.
     #
-    # @see http://docs.promisepay.com/v2.2/docs/itemsidaction
+    # @see https://reference.promisepay.com/#make-payment
     #
     # @return [Boolean]
     def make_payment(options = {})
@@ -104,9 +104,9 @@ module Promisepay
       true
     end
 
-    # .
+    # Request payment for an Item.
     #
-    # @see http://docs.promisepay.com/v2.2/docs/itemsidrequest_payment
+    # @see https://reference.promisepay.com/#request-payment
     #
     # @return [Boolean]
     def request_payment(options = {})
@@ -114,9 +114,10 @@ module Promisepay
       true
     end
 
-    # .
+    # Release funds held in escrow from an Item with an Escrow or Escrow Partial Release
+    # payment type.
     #
-    # @see http://docs.promisepay.com/v2.2/docs/itemsidrequest_payment
+    # @see https://reference.promisepay.com/#release-payment
     #
     # @return [Boolean]
     def release_payment(options = {})
@@ -124,9 +125,10 @@ module Promisepay
       true
     end
 
-    # .
+    # Request release of funds held in escrow, from an Item with an Escrow or Escrow Partial
+    # Release payment type.
     #
-    # @see http://docs.promisepay.com/v2.2/docs/itemsidrequest_release
+    # @see https://reference.promisepay.com/#request-release
     #
     # @return [Boolean]
     def request_release(options = {})
@@ -134,9 +136,9 @@ module Promisepay
       true
     end
 
-    # .
+    # Acknowledge that funds are being wired for payment.
     #
-    # @see http://docs.promisepay.com/v2.2/docs/itemsidacknowledge_wire
+    # @see https://reference.promisepay.com/#acknowledge-wire-transfer
     #
     # @return [Boolean]
     def acknowledge_wire(options = {})
@@ -154,9 +156,9 @@ module Promisepay
       true
     end
 
-    # .
+    # Revert an acknowledge wire Item Action.
     #
-    # @see http://docs.promisepay.com/v2.2/docs/itemsidrevert_wire
+    # @see https://reference.promisepay.com/#revert-wire-transfer
     #
     # @return [Boolean]
     def revert_wire(options = {})
@@ -164,9 +166,9 @@ module Promisepay
       true
     end
 
-    # .
+    # Request a refund for an Item.
     #
-    # @see http://docs.promisepay.com/v2.2/docs/itemsidrequest_refund
+    # @see https://reference.promisepay.com/#request-refund
     #
     # @return [Boolean]
     def request_refund(options = {})
@@ -174,9 +176,9 @@ module Promisepay
       true
     end
 
-    # .
+    # Refund an Item’s funds held in escrow.
     #
-    # @see http://docs.promisepay.com/v2.2/docs/itemsidrefund
+    # @see https://reference.promisepay.com/#refund
     #
     # @return [Boolean]
     def refund(options = {})
@@ -184,9 +186,9 @@ module Promisepay
       true
     end
 
-    # .
+    # Cancel an Item.
     #
-    # @see http://docs.promisepay.com/v2.2/docs/itemsidcancel
+    # @see https://reference.promisepay.com/#cancel
     #
     # @return [Boolean]
     def cancel

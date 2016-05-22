@@ -7,7 +7,7 @@ module Promisepay
 
     # List all transactions for a marketplace
     #
-    # @see http://docs.promisepay.com/v2.2/docs/transactions
+    # @see https://reference.promisepay.com/#list-transactions
     #
     # @param options [Hash] Optional options.
     # @option options [Integer] :limit Can ask for up to 200 transactions. default: 10
@@ -22,7 +22,7 @@ module Promisepay
 
     # Get a single transaction for a marketplace
     #
-    # @see http://docs.promisepay.com/v2.2/docs/transactionsid
+    # @see https://reference.promisepay.com/#show-transaction
     #
     # @param id [String] transaction ID.
     #

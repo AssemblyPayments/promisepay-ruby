@@ -1,9 +1,9 @@
 module Promisepay
   # Manage Transactions
   class Transaction < Account
-    # .
+    # Show the User associated with the Transaction.
     #
-    # @see https://test.api.promisepay.com/transactions/:id/users
+    # @see https://reference.promisepay.com/#show-transaction-user
     #
     # @return [Promisepay::User]
     def user
@@ -13,7 +13,7 @@ module Promisepay
 
     # Gets a transactions fee details if applicable.
     #
-    # @see http://docs.promisepay.com/v2.2/docs/transactionsidfees
+    # @see https://reference.promisepay.com/#shows-transaction-fees
     #
     # @return [Promisepay::Fee]
     def fee

@@ -7,7 +7,7 @@ module Promisepay
 
     # Get paypal account for a user on a marketplace.
     #
-    # @see http://docs.promisepay.com/v2.2/docs/paypal_accountsid-1
+    # @see https://reference.promisepay.com/#show-paypal-account
     #
     # @param id [String] Paypal Account ID.
     #
@@ -19,7 +19,7 @@ module Promisepay
 
     # Create a Paypal account for a user on a marketplace.
     #
-    # @see http://docs.promisepay.com/v2.2/docs/paypal_accountsid-2
+    # @see https://reference.promisepay.com/#create-paypal-account
     #
     # @param attributes [Hash] Paypal Account's attributes.
     #

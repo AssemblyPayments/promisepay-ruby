@@ -3,7 +3,7 @@ module Promisepay
   class TokenResource < BaseResource
     # Create a new token for an item
     #
-    # @see http://docs.promisepay.com/v2.2/docs/request_session_token
+    # @see https://reference.promisepay.com/#generate-card-token
     #
     # @param attributes [Hash] Token's attributes.
     #

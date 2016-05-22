@@ -7,7 +7,7 @@ module Promisepay
 
     # List all items for a marketplace
     #
-    # @see http://docs.promisepay.com/v2.2/docs/items
+    # @see https://reference.promisepay.com/#list-items
     #
     # @param options [Hash] Optional options.
     # @option options [Integer] :limit Can ask for up to 200 items. default: 10
@@ -22,7 +22,7 @@ module Promisepay
 
     # Get a single item for a marketplace
     #
-    # @see http://docs.promisepay.com/v2.2/docs/itemsid
+    # @see https://reference.promisepay.com/#show-item
     #
     # @param id [String] Marketplace item ID.
     #
@@ -40,7 +40,7 @@ module Promisepay
 
     # Create an item for a marketplace
     #
-    # @see http://docs.promisepay.com/v2.2/docs/items-1
+    # @see https://reference.promisepay.com/#create-item
     #
     # @param attributes [Hash] Item's attributes.
     #

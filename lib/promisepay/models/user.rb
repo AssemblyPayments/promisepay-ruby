@@ -4,7 +4,7 @@ module Promisepay
   class User < BaseModel
     # Lists items for a user on a marketplace.
     #
-    # @see http://docs.promisepay.com/v2.2/docs/usersiditems
+    # @see https://reference.promisepay.com/#list-user-items
     #
     # @return [Array<Promisepay::Item>]
     def items
@@ -15,7 +15,7 @@ module Promisepay
 
     # Gets Bank account for a user on a marketplace.
     #
-    # @see http://docs.promisepay.com/v2.2/docs/usersidbank_accounts
+    # @see https://reference.promisepay.com/#show-user-bank-account
     #
     # @return [Promisepay::BankAccount]
     def bank_account
@@ -27,7 +27,7 @@ module Promisepay
 
     # Gets Card account for a user on a marketplace.
     #
-    # @see http://docs.promisepay.com/v2.2/docs/usersidcard_accounts
+    # @see https://reference.promisepay.com/#show-user-card-account
     #
     # @return [Promisepay::CardAccount]
     def card_account
@@ -39,7 +39,7 @@ module Promisepay
 
     # Gets PayPal account for a user on a marketplace.
     #
-    # @see http://docs.promisepay.com/v2.2/docs/usersidpaypal_accounts
+    # @see https://reference.promisepay.com/#show-user-paypal-account
     #
     # @return [Promisepay::PaypalAccount]
     def paypal_account
@@ -51,7 +51,7 @@ module Promisepay
 
     # Set the disbursement account for a user.
     #
-    # @see http://docs.promisepay.com/v2.2/docs/usersiddisbursement_account
+    # @see https://reference.promisepay.com/#set-user-disbursement-account
     #
     # @return [Boolean]
     def disbursement_account(account_id)
@@ -62,7 +62,7 @@ module Promisepay
 
     # Gets company for a user on a marketplace.
     #
-    # @see 
+    # @see
     #
     # @return [Promisepay::Company]
     def company

@@ -3,7 +3,7 @@ module Promisepay
   class PaypalAccount < Account
     # Get the user the paypal account belongs to.
     #
-    # @see http://docs.promisepay.com/v2.2/docs/paypal_accountsidusers
+    # @see https://reference.promisepay.com/#show-paypal-account-user
     #
     # @return [Promisepay::User]
     def user
@@ -14,7 +14,7 @@ module Promisepay
     # Deletes a Paypal account for a user on a marketplace.
     # Sets the account to in-active.
     #
-    # @see http://docs.promisepay.com/v2.2/docs/paypal_accountsid
+    # @see https://reference.promisepay.com/#redact-paypal-account
     #
     # @return [Boolean]
     def deactivate

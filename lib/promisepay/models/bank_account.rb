@@ -3,7 +3,7 @@ module Promisepay
   class BankAccount < Account
     # Get the user the bank account belongs to.
     #
-    # @see http://docs.promisepay.com/v2.2/docs/bank_accountsidusers
+    # @see https://reference.promisepay.com/#show-bank-account-user
     #
     # @return [Promisepay::User]
     def user
@@ -14,7 +14,7 @@ module Promisepay
     # Deletes a bank account for a user on a marketplace.
     # Sets the account to in-active.
     #
-    # @see http://docs.promisepay.com/v2.2/docs/bank_accountsid
+    # @see https://reference.promisepay.com/#redact-bank-account
     #
     # @param mobile_pin [String] Mobile PIN.
     #

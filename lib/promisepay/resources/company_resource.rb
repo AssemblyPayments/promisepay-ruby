@@ -7,7 +7,7 @@ module Promisepay
 
     # List all companies for a marketplace
     #
-    # @see http://docs.promisepay.com/v2.2/docs/companies
+    # @see https://reference.promisepay.com/#list-companies
     #
     # @param options [Hash] Optional options.
     # @option options [Integer] :limit Can ask for up to 200 users. default: 10
@@ -22,7 +22,7 @@ module Promisepay
 
     # Get a company
     #
-    # @see 
+    # @see https://reference.promisepay.com/#show-company
     #
     # @param id [String] Company id
     #
@@ -34,7 +34,7 @@ module Promisepay
 
     # Create a company for a user
     #
-    # @see 
+    # @see https://reference.promisepay.com/#create-company
     #
     # @param attributes [Hash] Company's attributes.
     #
@@ -46,7 +46,7 @@ module Promisepay
 
     # Update a company for a user
     #
-    # @see 
+    # @see https://reference.promisepay.com/#update-company
     #
     # @param attributes [Hash] Company's attributes.
     #

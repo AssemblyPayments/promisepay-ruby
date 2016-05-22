@@ -7,7 +7,7 @@ module Promisepay
 
     # List all fees for a marketplace
     #
-    # @see http://docs.promisepay.com/v2.2/docs/fees-1
+    # @see https://reference.promisepay.com/#list-fees
     #
     # @param options [Hash] Optional options.
     # @option options [Integer] :limit Can ask for up to 200 fees. default: 10
@@ -22,7 +22,7 @@ module Promisepay
 
     # Get a single fee for a marketplace
     #
-    # @see http://docs.promisepay.com/v2.2/docs/feesid
+    # @see https://reference.promisepay.com/#show-fee
     #
     # @param id [String] Marketplace Fee ID.
     #
@@ -34,7 +34,7 @@ module Promisepay
 
     # Create a fee for a marketplace
     #
-    # @see http://docs.promisepay.com/v2.2/docs/fee_lists
+    # @see https://reference.promisepay.com/#create-fee
     #
     # @param attributes [Hash] Item's attributes.
     #

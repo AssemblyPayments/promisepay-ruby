@@ -3,7 +3,7 @@ module Promisepay
   class CardAccount < Account
     # Get the user the card account belongs to.
     #
-    # @see http://docs.promisepay.com/v2.2/docs/card_accountsidusers
+    # @see https://reference.promisepay.com/#show-card-account-user
     #
     # @return [Promisepay::User]
     def user
@@ -14,7 +14,7 @@ module Promisepay
     # Deletes a card account for a user on a marketplace.
     # Sets the account to in-active.
     #
-    # @see http://docs.promisepay.com/v2.2/docs/card_accountsid
+    # @see https://reference.promisepay.com/#redact-card-account
     #
     # @return [Boolean]
     def deactivate

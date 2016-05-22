@@ -7,7 +7,7 @@ module Promisepay
 
     # List all users for a marketplace
     #
-    # @see http://docs.promisepay.com/v2.2/docs/users
+    # @see https://reference.promisepay.com/#list-users
     #
     # @param options [Hash] Optional options.
     # @option options [Integer] :limit Can ask for up to 200 users. default: 10
@@ -22,7 +22,7 @@ module Promisepay
 
     # Get a single user
     #
-    # @see http://docs.promisepay.com/v2.2/docs/usersid
+    # @see https://reference.promisepay.com/#show-user
     #
     # @param id [String] Marketplace user ID.
     #
@@ -34,7 +34,7 @@ module Promisepay
 
     # Create a new user for a marketplace
     #
-    # @see http://docs.promisepay.com/v2.2/docs/users-1
+    # @see https://reference.promisepay.com/#create-user
     #
     # @param attributes [Hash] User's attributes.
     #
@@ -46,7 +46,7 @@ module Promisepay
 
     # Update a user for a marketplace
     #
-    # @see http://docs.promisepay.com/v2.2/docs/users-1
+    # @see https://reference.promisepay.com/#update-user
     #
     # @param attributes [Hash] User's attributes.
     #

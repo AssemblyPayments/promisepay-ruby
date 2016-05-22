@@ -7,7 +7,7 @@ module Promisepay
 
     # Get bank account for a user on a marketplace.
     #
-    # @see http://docs.promisepay.com/v2.2/docs/bank_accountsid-1
+    # @see https://reference.promisepay.com/#show-bank-account
     #
     # @param id [String] Bank Account ID.
     #
@@ -19,7 +19,7 @@ module Promisepay
 
     # Create a bank account for a user on a marketplace.
     #
-    # @see http://docs.promisepay.com/v2.2/docs/bank_accountsid-2
+    # @see https://reference.promisepay.com/#create-bank-account
     #
     # @param attributes [Hash] Bank Account's attributes.
     #
