@@ -63,6 +63,34 @@ describe Promisepay::BankAccountResource do
     end
   end
 
+  describe 'validate' do
+    context 'with a valid routing number', vcr: { cassette_name: 'bank_accounts_validate_valid_number' } do
+      let(:routing_number) { '122235821' }
+      it 'returns account information' do
+        info = client.bank_accounts.validate(routing_number)
+        expect(info).to be_a(Hash)
+        expect(info).to have_key('routing_number')
+        expect(info).to have_key('customer_name')
+        expect(info).to have_key('address')
+        expect(info).to have_key('city')
+        expect(info).to have_key('state_code')
+        expect(info).to have_key('zip')
+        expect(info).to have_key('zip_extension')
+        expect(info).to have_key('phone_area_code')
+        expect(info).to have_key('phone_prefix')
+        expect(info).to have_key('phone_suffix')
+      end
+    end
+    context 'with an invalid routing number', vcr: { cassette_name: 'bank_accounts_validate_invalid_number' } do
+      let(:routing_number) { '111' }
+      it 'returns an empty hash' do
+        info = client.bank_accounts.validate(routing_number)
+        expect(info).to be_a(Hash)
+        expect(info).to be_empty
+      end
+    end
+  end
+
   describe 'bank_account methods' do
     it 'can be accessed' do
       expect(client.bank_accounts.respond_to?(:user)).to be(true)

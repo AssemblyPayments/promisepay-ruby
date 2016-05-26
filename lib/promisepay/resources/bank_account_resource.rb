@@ -28,5 +28,19 @@ module Promisepay
       response = JSON.parse(@client.post('bank_accounts', attributes).body)
       Promisepay::BankAccount.new(@client, response['bank_accounts'])
     end
+
+    # Validate a US bank routing number before creating an account.
+    # This can be used to provide on-demand verification,
+    # and further information of the bank information a User is providing.
+    #
+    # @see https://reference.promisepay.com/#validate-routing-number
+    #
+    # @param routing_number [String] Bank account Routing Number
+    #
+    # @return [Hash]
+    def validate(routing_number)
+      response = @client.get('tools/routing_number', { routing_number: routing_number }, true)
+      (response.status == 200) ? JSON.parse(response.body)['routing_number'] : {}
+    end
   end
 end
