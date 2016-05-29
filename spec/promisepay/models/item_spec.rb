@@ -100,8 +100,7 @@ describe Promisepay::Item do
   end
 
   describe 'action methods' do
-    let(:seller) { VCR.use_cassette('users_multiple') { client.users.find_all.first } }
-    let(:buyer) { VCR.use_cassette('users_multiple') { client.users.find_all.last } }
+    let(:item) { PromisepayFactory.create_item }
 
     describe 'make_payment' do
       it 'has to be tested'
@@ -135,19 +134,25 @@ describe Promisepay::Item do
 
     describe 'acknowledge_wire' do
       it 'acknowledges the wire', vcr: { cassette_name: 'items_acknowledge_wire' } do
+        expect(item.state).to eq('pending')
         expect(item.acknowledge_wire).to be(true)
+        expect(client.items.find(item.id).state).to eq('wire_pending')
       end
     end
 
     describe 'acknowledge_paypal' do
-      it 'acknowledges paypal', vcr: { cassette_name: 'items_acknowledge_paypal' } do
-        expect(item.acknowledge_paypal).to be(true)
-      end
+      it 'has to be tested'
+      # it 'acknowledges paypal', vcr: { cassette_name: 'items_acknowledge_paypal' } do
+      #   expect(item.acknowledge_paypal).to be(true)
+      # end
     end
 
     describe 'revert_wire' do
+      before { item.acknowledge_wire }
       it 'reverts the wire', vcr: { cassette_name: 'items_revert_wire' } do
+        expect(client.items.find(item.id).state).to eq('wire_pending')
         expect(item.revert_wire).to be(true)
+        expect(client.items.find(item.id).state).to eq('pending')
       end
     end
 
