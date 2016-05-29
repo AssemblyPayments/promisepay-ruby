@@ -11,6 +11,9 @@ RSpec.configure do |config|
   config.include EnvironmentVariables
 end
 
+raise 'missing PROMISEPAY_USERNAME environment variable' if ENV['PROMISEPAY_USERNAME'].nil?
+raise 'missing PROMISEPAY_TOKEN environment variable' if ENV['PROMISEPAY_TOKEN'].nil?
+
 VCR.configure do |config|
   config.cassette_library_dir = 'spec/fixtures'
   config.hook_into :webmock
