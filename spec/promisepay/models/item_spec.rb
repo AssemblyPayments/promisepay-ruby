@@ -115,10 +115,11 @@ describe Promisepay::Item do
     end
 
     describe 'request_payment', vcr: { cassette_name: 'items_request_payment' } do
-      it 'has to be tested'
-      # it 'requests the payment' do
-      #   expect(item.request_payment).to be(true)
-      # end
+      it 'requests the payment' do
+        expect(item.state).to eq('pending')
+        expect(item.request_payment).to be(true)
+        expect(client.items.find(item.id).state).to eq('payment_required')
+      end
     end
 
     describe 'release_payment', vcr: { cassette_name: 'items_release_payment' } do
@@ -157,9 +158,10 @@ describe Promisepay::Item do
     end
 
     describe 'request_refund', vcr: { cassette_name: 'items_request_refund' } do
-      it 'has to be tested'
+      # it 'has to be tested'
       # it 'requests a refund' do
       #   expect(item.request_refund(refund_amount: '1000', refund_message: 'because')).to be(true)
+      #   expect(client.items.find(item.id).state).to eq('refund_flagged')
       # end
     end
 
@@ -168,10 +170,11 @@ describe Promisepay::Item do
     end
 
     describe 'cancel' do
-      it 'has to be tested'
-      # it 'cancels the item', vcr: { cassette_name: 'items_cancel' } do
-      #   expect(item.cancel).to be(true)
-      # end
+      it 'cancels the item', vcr: { cassette_name: 'items_cancel' } do
+        expect(item.state).to eq('pending')
+        expect(item.cancel).to be(true)
+        expect(client.items.find(item.id).state).to eq('cancelled')
+      end
     end
   end
 end
