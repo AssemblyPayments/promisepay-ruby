@@ -40,6 +40,16 @@ module PromisepayFactory
     client.card_accounts.create(default_options.merge(options))
   end
 
+  def self.create_fee options={}
+    default_options = {
+      fee_type_id: '1', # Fixed
+      name: 'feeName',
+      amount: 500,
+      to: 'buyer'
+    }
+    client.fees.create(default_options.merge(options))
+  end
+
   private
 
   def self.client

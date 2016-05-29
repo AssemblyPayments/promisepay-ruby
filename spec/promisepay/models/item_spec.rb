@@ -1,8 +1,7 @@
 require 'spec_helper'
 
 describe Promisepay::Item do
-  let(:client) { Promisepay::Client.new }
-  let(:item) { VCR.use_cassette('items_multiple') { client.items.find_all.first } }
+  let(:item) { PromisepayFactory.create_item }
 
   describe 'update' do
     context 'with valid attributes', vcr: { cassette_name: 'items_updated' } do
@@ -56,6 +55,7 @@ describe Promisepay::Item do
     end
 
     context 'when fees are available', vcr: { cassette_name: 'items_fees' } do
+      let(:fee) { PromisepayFactory.create_fee }
       it 'gives back an array of fees'
       # it 'gives back an array of fees' do
       #   fees = item.fees
@@ -100,7 +100,6 @@ describe Promisepay::Item do
   end
 
   describe 'action methods' do
-    let(:item) { PromisepayFactory.create_item }
     let(:buyer) { item.buyer }
     let(:card_account) { PromisepayFactory.create_card_account({}, buyer) }
 
