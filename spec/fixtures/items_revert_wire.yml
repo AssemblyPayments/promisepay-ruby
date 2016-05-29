@@ -5,7 +5,7 @@ http_interactions:
     uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/users
     body:
       encoding: UTF-8
-      string: '{"id":"dda27c3b-21c5-448a-9eb9-e1cffc10039d","first_name":"myFirstName","email":"dda27c3b-21c5-448a-9eb9-e1cffc10039d@mail.com","country":"AUS"}'
+      string: '{"id":"dee3c604-07fe-4b4d-9725-03761d300179","first_name":"myFirstName","email":"dee3c604-07fe-4b4d-9725-03761d300179@mail.com","country":"AUS"}'
     headers:
       User-Agent:
       - Faraday v0.9.2
@@ -35,11 +35,11 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 29 May 2016 18:27:01 GMT
+      - Sun, 29 May 2016 18:51:48 GMT
       Etag:
-      - W/"2a7cfbbc8de90588d7538734b0470719"
+      - W/"d020fcc24cb04b06d10631ccdb0f272e"
       Location:
-      - "/users/dda27c3b-21c5-448a-9eb9-e1cffc10039d"
+      - "/users/dee3c604-07fe-4b4d-9725-03761d300179"
       Server:
       - nginx/1.8.0 + Phusion Passenger 4.0.59
       Set-Cookie:
@@ -53,9 +53,9 @@ http_interactions:
       X-Powered-By:
       - Phusion Passenger 4.0.59
       X-Request-Id:
-      - 7a2fa88b-c0ff-42e9-94f5-3a7ed8d6429c
+      - fb6b2ece-899c-4acc-ba10-e073fd261de1
       X-Runtime:
-      - '0.947576'
+      - '0.956391'
       X-Xss-Protection:
       - 1; mode=block
       Transfer-Encoding:
@@ -64,15 +64,15 @@ http_interactions:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"users":{"created_at":"2016-05-29T18:27:01.020Z","updated_at":"2016-05-29T18:27:01.020Z","full_name":"myFirstName","email":"dda27c3b-21c5-448a-9eb9-e1cffc10039d@mail.com","mobile":null,"phone":null,"logo_url":null,"color_1":null,"color_2":null,"first_name":"myFirstName","last_name":null,"id":"dda27c3b-21c5-448a-9eb9-e1cffc10039d","location":"AUS","verification_state":"pending","held_state":false,"dob":null,"government_number":null,"drivers_license":null,"flags":{},"related":{"addresses":"24786c35-5fc2-4bc9-80b4-1c811eff30e4"},"links":{"self":"/users","items":"/users/dda27c3b-21c5-448a-9eb9-e1cffc10039d/items","card_accounts":"/users/dda27c3b-21c5-448a-9eb9-e1cffc10039d/card_accounts","paypal_accounts":"/users/dda27c3b-21c5-448a-9eb9-e1cffc10039d/paypal_accounts","bank_accounts":"/users/dda27c3b-21c5-448a-9eb9-e1cffc10039d/bank_accounts","wallet_accounts":"/users/dda27c3b-21c5-448a-9eb9-e1cffc10039d/wallet_accounts"}}}'
+      string: '{"users":{"created_at":"2016-05-29T18:51:48.146Z","updated_at":"2016-05-29T18:51:48.146Z","full_name":"myFirstName","email":"dee3c604-07fe-4b4d-9725-03761d300179@mail.com","mobile":null,"phone":null,"logo_url":null,"color_1":null,"color_2":null,"first_name":"myFirstName","last_name":null,"id":"dee3c604-07fe-4b4d-9725-03761d300179","location":"AUS","verification_state":"pending","held_state":false,"dob":null,"government_number":null,"drivers_license":null,"flags":{},"related":{"addresses":"40bb609c-0b15-48f2-87a4-ef797821adfc"},"links":{"self":"/users","items":"/users/dee3c604-07fe-4b4d-9725-03761d300179/items","card_accounts":"/users/dee3c604-07fe-4b4d-9725-03761d300179/card_accounts","paypal_accounts":"/users/dee3c604-07fe-4b4d-9725-03761d300179/paypal_accounts","bank_accounts":"/users/dee3c604-07fe-4b4d-9725-03761d300179/bank_accounts","wallet_accounts":"/users/dee3c604-07fe-4b4d-9725-03761d300179/wallet_accounts"}}}'
     http_version: 
-  recorded_at: Sun, 29 May 2016 18:27:01 GMT
+  recorded_at: Sun, 29 May 2016 18:51:48 GMT
 - request:
     method: post
     uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/users
     body:
       encoding: UTF-8
-      string: '{"id":"e349efad-9551-4cd9-ba71-fbb3f5f6b449","first_name":"myFirstName","email":"e349efad-9551-4cd9-ba71-fbb3f5f6b449@mail.com","country":"AUS"}'
+      string: '{"id":"78fa57fc-e5a2-47fb-9e30-f810b482fc72","first_name":"myFirstName","email":"78fa57fc-e5a2-47fb-9e30-f810b482fc72@mail.com","country":"AUS"}'
     headers:
       User-Agent:
       - Faraday v0.9.2
@@ -102,11 +102,11 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 29 May 2016 18:27:02 GMT
+      - Sun, 29 May 2016 18:51:50 GMT
       Etag:
-      - W/"4b799ec4052a68953ae53249f59caa99"
+      - W/"26c4368cef012dcbb06c5c3b2509604b"
       Location:
-      - "/users/e349efad-9551-4cd9-ba71-fbb3f5f6b449"
+      - "/users/78fa57fc-e5a2-47fb-9e30-f810b482fc72"
       Server:
       - nginx/1.8.0 + Phusion Passenger 4.0.59
       Set-Cookie:
@@ -120,9 +120,9 @@ http_interactions:
       X-Powered-By:
       - Phusion Passenger 4.0.59
       X-Request-Id:
-      - 288c4258-5d7c-4d02-8ea0-3344e85a20c3
+      - b8d75be9-c2ea-4f16-9734-c9a45ecc3420
       X-Runtime:
-      - '0.776429'
+      - '0.823313'
       X-Xss-Protection:
       - 1; mode=block
       Transfer-Encoding:
@@ -131,15 +131,15 @@ http_interactions:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"users":{"created_at":"2016-05-29T18:27:02.742Z","updated_at":"2016-05-29T18:27:02.742Z","full_name":"myFirstName","email":"e349efad-9551-4cd9-ba71-fbb3f5f6b449@mail.com","mobile":null,"phone":null,"logo_url":null,"color_1":null,"color_2":null,"first_name":"myFirstName","last_name":null,"id":"e349efad-9551-4cd9-ba71-fbb3f5f6b449","location":"AUS","verification_state":"pending","held_state":false,"dob":null,"government_number":null,"drivers_license":null,"flags":{},"related":{"addresses":"932c94f1-c20d-45d8-8284-8b3fe3f80ad9"},"links":{"self":"/users","items":"/users/e349efad-9551-4cd9-ba71-fbb3f5f6b449/items","card_accounts":"/users/e349efad-9551-4cd9-ba71-fbb3f5f6b449/card_accounts","paypal_accounts":"/users/e349efad-9551-4cd9-ba71-fbb3f5f6b449/paypal_accounts","bank_accounts":"/users/e349efad-9551-4cd9-ba71-fbb3f5f6b449/bank_accounts","wallet_accounts":"/users/e349efad-9551-4cd9-ba71-fbb3f5f6b449/wallet_accounts"}}}'
+      string: '{"users":{"created_at":"2016-05-29T18:51:49.908Z","updated_at":"2016-05-29T18:51:49.908Z","full_name":"myFirstName","email":"78fa57fc-e5a2-47fb-9e30-f810b482fc72@mail.com","mobile":null,"phone":null,"logo_url":null,"color_1":null,"color_2":null,"first_name":"myFirstName","last_name":null,"id":"78fa57fc-e5a2-47fb-9e30-f810b482fc72","location":"AUS","verification_state":"pending","held_state":false,"dob":null,"government_number":null,"drivers_license":null,"flags":{},"related":{"addresses":"5f74bb3d-f956-44a0-ae58-3948f10959da"},"links":{"self":"/users","items":"/users/78fa57fc-e5a2-47fb-9e30-f810b482fc72/items","card_accounts":"/users/78fa57fc-e5a2-47fb-9e30-f810b482fc72/card_accounts","paypal_accounts":"/users/78fa57fc-e5a2-47fb-9e30-f810b482fc72/paypal_accounts","bank_accounts":"/users/78fa57fc-e5a2-47fb-9e30-f810b482fc72/bank_accounts","wallet_accounts":"/users/78fa57fc-e5a2-47fb-9e30-f810b482fc72/wallet_accounts"}}}'
     http_version: 
-  recorded_at: Sun, 29 May 2016 18:27:03 GMT
+  recorded_at: Sun, 29 May 2016 18:51:50 GMT
 - request:
     method: post
     uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/items
     body:
       encoding: UTF-8
-      string: '{"id":"57b0cea5-2219-4198-ad04-4ad9211cdc54","name":"itemName","amount":500,"payment_type":1,"seller_id":"dda27c3b-21c5-448a-9eb9-e1cffc10039d","buyer_id":"e349efad-9551-4cd9-ba71-fbb3f5f6b449"}'
+      string: '{"id":"27381e54-95ef-49eb-be9f-d7d5a7780299","name":"itemName","amount":500,"payment_type":1,"seller_id":"dee3c604-07fe-4b4d-9725-03761d300179","buyer_id":"78fa57fc-e5a2-47fb-9e30-f810b482fc72"}'
     headers:
       User-Agent:
       - Faraday v0.9.2
@@ -169,11 +169,11 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 29 May 2016 18:27:05 GMT
+      - Sun, 29 May 2016 18:51:52 GMT
       Etag:
-      - W/"152fc7c428e02064ae5050d9bfb10dcd"
+      - W/"c95fb5a032eae5ec311e2c50e82b54dd"
       Location:
-      - "/items/57b0cea5-2219-4198-ad04-4ad9211cdc54"
+      - "/items/27381e54-95ef-49eb-be9f-d7d5a7780299"
       Server:
       - nginx/1.8.0 + Phusion Passenger 4.0.59
       Set-Cookie:
@@ -187,9 +187,9 @@ http_interactions:
       X-Powered-By:
       - Phusion Passenger 4.0.59
       X-Request-Id:
-      - e73bbbcb-d10a-460b-baa7-e0886bb7b721
+      - 2e651db7-947e-4f8c-a48f-dd7d146cf0d6
       X-Runtime:
-      - '1.521601'
+      - '1.788280'
       X-Xss-Protection:
       - 1; mode=block
       Transfer-Encoding:
@@ -198,12 +198,12 @@ http_interactions:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"items":{"id":"57b0cea5-2219-4198-ad04-4ad9211cdc54","name":"itemName","description":null,"created_at":"2016-05-29T18:27:04.227Z","updated_at":"2016-05-29T18:27:04.227Z","state":"pending","net_amount":500,"refunded_amount":0,"released_amount":0,"buyer_fees":0,"seller_fees":0,"credit_card_fee":0,"paypal_fee":0,"seller_url":"","buyer_url":"","direct_debit_fee":0,"status":22000,"amount":500,"payment_type_id":1,"due_date":null,"pending_release_amount":0,"deposit_reference":"100014014266230","promisepay_fee":8,"total_outstanding":500,"total_amount":500,"currency":"AUD","payment_method":"pending","buyer_name":"myFirstName","buyer_email":"e349efad-9551-4cd9-ba71-fbb3f5f6b449@mail.com","buyer_country":"AUS","seller_name":"myFirstName","seller_email":"dda27c3b-21c5-448a-9eb9-e1cffc10039d@mail.com","seller_country":"AUS","payment_credit_card_enabled":true,"payment_direct_debit_enabled":true,"related":{"buyers":"e349efad-9551-4cd9-ba71-fbb3f5f6b449","sellers":"dda27c3b-21c5-448a-9eb9-e1cffc10039d"},"links":{"self":"/items","buyers":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/buyers","sellers":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/sellers","status":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/status","fees":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/fees","transactions":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/transactions","wire_details":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/wire_details","bpay_details":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/bpay_details"}}}'
+      string: '{"items":{"id":"27381e54-95ef-49eb-be9f-d7d5a7780299","name":"itemName","description":null,"created_at":"2016-05-29T18:51:51.430Z","updated_at":"2016-05-29T18:51:51.430Z","state":"pending","net_amount":500,"refunded_amount":0,"released_amount":0,"buyer_fees":0,"seller_fees":0,"credit_card_fee":0,"paypal_fee":0,"seller_url":"","buyer_url":"","direct_debit_fee":0,"status":22000,"amount":500,"payment_type_id":1,"due_date":null,"pending_release_amount":0,"deposit_reference":"100014014266418","promisepay_fee":8,"total_outstanding":500,"total_amount":500,"currency":"AUD","payment_method":"pending","buyer_name":"myFirstName","buyer_email":"78fa57fc-e5a2-47fb-9e30-f810b482fc72@mail.com","buyer_country":"AUS","seller_name":"myFirstName","seller_email":"dee3c604-07fe-4b4d-9725-03761d300179@mail.com","seller_country":"AUS","payment_credit_card_enabled":true,"payment_direct_debit_enabled":true,"related":{"buyers":"78fa57fc-e5a2-47fb-9e30-f810b482fc72","sellers":"dee3c604-07fe-4b4d-9725-03761d300179"},"links":{"self":"/items","buyers":"/items/27381e54-95ef-49eb-be9f-d7d5a7780299/buyers","sellers":"/items/27381e54-95ef-49eb-be9f-d7d5a7780299/sellers","status":"/items/27381e54-95ef-49eb-be9f-d7d5a7780299/status","fees":"/items/27381e54-95ef-49eb-be9f-d7d5a7780299/fees","transactions":"/items/27381e54-95ef-49eb-be9f-d7d5a7780299/transactions","wire_details":"/items/27381e54-95ef-49eb-be9f-d7d5a7780299/wire_details","bpay_details":"/items/27381e54-95ef-49eb-be9f-d7d5a7780299/bpay_details"}}}'
     http_version: 
-  recorded_at: Sun, 29 May 2016 18:27:05 GMT
+  recorded_at: Sun, 29 May 2016 18:51:52 GMT
 - request:
     method: patch
-    uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/acknowledge_wire
+    uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/items/27381e54-95ef-49eb-be9f-d7d5a7780299/acknowledge_wire
     body:
       encoding: UTF-8
       string: "{}"
@@ -236,11 +236,11 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 29 May 2016 18:27:06 GMT
+      - Sun, 29 May 2016 18:51:54 GMT
       Etag:
-      - W/"c91931dc59192887b0d3ee1e9cf14064"
+      - W/"d09cb3f97c4269974f239b895947c92d"
       Location:
-      - "/items/57b0cea5-2219-4198-ad04-4ad9211cdc54"
+      - "/items/27381e54-95ef-49eb-be9f-d7d5a7780299"
       Server:
       - nginx/1.8.0 + Phusion Passenger 4.0.59
       Set-Cookie:
@@ -254,9 +254,9 @@ http_interactions:
       X-Powered-By:
       - Phusion Passenger 4.0.59
       X-Request-Id:
-      - 6f0c763b-30fb-4183-8c3f-0fb96ae92c5d
+      - 69f2624f-a0b5-4e01-bf83-67d40f52eeed
       X-Runtime:
-      - '0.739344'
+      - '0.838089'
       X-Xss-Protection:
       - 1; mode=block
       Transfer-Encoding:
@@ -265,73 +265,12 @@ http_interactions:
       - keep-alive
     body:
       encoding: ASCII-8BIT
-      string: '{"items":{"id":"57b0cea5-2219-4198-ad04-4ad9211cdc54","name":"itemName","description":null,"created_at":"2016-05-29T18:27:04.227Z","updated_at":"2016-05-29T18:27:06.450Z","state":"wire_pending","net_amount":500,"refunded_amount":0,"released_amount":0,"buyer_fees":0,"seller_fees":0,"credit_card_fee":0,"paypal_fee":0,"seller_url":"","buyer_url":"","direct_debit_fee":0,"status":22110,"amount":500,"payment_type_id":1,"due_date":null,"pending_release_amount":0,"deposit_reference":"100014014266230","promisepay_fee":8,"total_outstanding":500,"total_amount":500,"currency":"AUD","payment_method":"pending","buyer_name":"myFirstName","buyer_email":"e349efad-9551-4cd9-ba71-fbb3f5f6b449@mail.com","buyer_country":"AUS","seller_name":"myFirstName","seller_email":"dda27c3b-21c5-448a-9eb9-e1cffc10039d@mail.com","seller_country":"AUS","payment_credit_card_enabled":true,"payment_direct_debit_enabled":true,"related":{"buyers":"e349efad-9551-4cd9-ba71-fbb3f5f6b449","sellers":"dda27c3b-21c5-448a-9eb9-e1cffc10039d"},"links":{"self":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/acknowledge_wire","buyers":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/buyers","sellers":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/sellers","status":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/status","fees":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/fees","transactions":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/transactions","wire_details":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/wire_details","bpay_details":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/bpay_details"}}}'
+      string: '{"items":{"id":"27381e54-95ef-49eb-be9f-d7d5a7780299","name":"itemName","description":null,"created_at":"2016-05-29T18:51:51.430Z","updated_at":"2016-05-29T18:51:53.797Z","state":"wire_pending","net_amount":500,"refunded_amount":0,"released_amount":0,"buyer_fees":0,"seller_fees":0,"credit_card_fee":0,"paypal_fee":0,"seller_url":"","buyer_url":"","direct_debit_fee":0,"status":22110,"amount":500,"payment_type_id":1,"due_date":null,"pending_release_amount":0,"deposit_reference":"100014014266418","promisepay_fee":8,"total_outstanding":500,"total_amount":500,"currency":"AUD","payment_method":"pending","buyer_name":"myFirstName","buyer_email":"78fa57fc-e5a2-47fb-9e30-f810b482fc72@mail.com","buyer_country":"AUS","seller_name":"myFirstName","seller_email":"dee3c604-07fe-4b4d-9725-03761d300179@mail.com","seller_country":"AUS","payment_credit_card_enabled":true,"payment_direct_debit_enabled":true,"related":{"buyers":"78fa57fc-e5a2-47fb-9e30-f810b482fc72","sellers":"dee3c604-07fe-4b4d-9725-03761d300179"},"links":{"self":"/items/27381e54-95ef-49eb-be9f-d7d5a7780299/acknowledge_wire","buyers":"/items/27381e54-95ef-49eb-be9f-d7d5a7780299/buyers","sellers":"/items/27381e54-95ef-49eb-be9f-d7d5a7780299/sellers","status":"/items/27381e54-95ef-49eb-be9f-d7d5a7780299/status","fees":"/items/27381e54-95ef-49eb-be9f-d7d5a7780299/fees","transactions":"/items/27381e54-95ef-49eb-be9f-d7d5a7780299/transactions","wire_details":"/items/27381e54-95ef-49eb-be9f-d7d5a7780299/wire_details","bpay_details":"/items/27381e54-95ef-49eb-be9f-d7d5a7780299/bpay_details"}}}'
     http_version: 
-  recorded_at: Sun, 29 May 2016 18:27:07 GMT
-- request:
-    method: get
-    uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/items/57b0cea5-2219-4198-ad04-4ad9211cdc54
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.9.2
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Access-Control-Allow-Headers:
-      - Origin, Content-Type, Accept, Authorization, Token
-      Access-Control-Allow-Methods:
-      - POST, GET, PUT, DELETE, OPTIONS
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Max-Age:
-      - '1728000'
-      Access-Control-Request-Method:
-      - "*"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Sun, 29 May 2016 18:27:08 GMT
-      Etag:
-      - W/"9e0bfa1e5366451bdbe1e96356fcd171"
-      Server:
-      - nginx/1.8.0 + Phusion Passenger 4.0.59
-      Status:
-      - 200 OK
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Powered-By:
-      - Phusion Passenger 4.0.59
-      X-Request-Id:
-      - 20ba7061-631d-425e-b556-3dcfa55c177a
-      X-Runtime:
-      - '0.609719'
-      X-Xss-Protection:
-      - 1; mode=block
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-    body:
-      encoding: ASCII-8BIT
-      string: '{"items":{"id":"57b0cea5-2219-4198-ad04-4ad9211cdc54","name":"itemName","description":null,"created_at":"2016-05-29T18:27:04.227Z","updated_at":"2016-05-29T18:27:06.450Z","state":"wire_pending","net_amount":500,"refunded_amount":0,"released_amount":0,"buyer_fees":0,"seller_fees":0,"credit_card_fee":0,"paypal_fee":0,"seller_url":"","buyer_url":"","direct_debit_fee":0,"status":22110,"amount":500,"payment_type_id":1,"due_date":null,"pending_release_amount":0,"deposit_reference":"100014014266230","promisepay_fee":8,"total_outstanding":500,"total_amount":500,"currency":"AUD","payment_method":"pending","buyer_name":"myFirstName","buyer_email":"e349efad-9551-4cd9-ba71-fbb3f5f6b449@mail.com","buyer_country":"AUS","seller_name":"myFirstName","seller_email":"dda27c3b-21c5-448a-9eb9-e1cffc10039d@mail.com","seller_country":"AUS","payment_credit_card_enabled":true,"payment_direct_debit_enabled":true,"related":{"buyers":"e349efad-9551-4cd9-ba71-fbb3f5f6b449","sellers":"dda27c3b-21c5-448a-9eb9-e1cffc10039d"},"links":{"self":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54","buyers":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/buyers","sellers":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/sellers","status":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/status","fees":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/fees","transactions":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/transactions","wire_details":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/wire_details","bpay_details":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/bpay_details"}}}'
-    http_version: 
-  recorded_at: Sun, 29 May 2016 18:27:08 GMT
+  recorded_at: Sun, 29 May 2016 18:51:54 GMT
 - request:
     method: patch
-    uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/revert_wire
+    uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/items/27381e54-95ef-49eb-be9f-d7d5a7780299/revert_wire
     body:
       encoding: UTF-8
       string: "{}"
@@ -364,11 +303,11 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 29 May 2016 18:27:09 GMT
+      - Sun, 29 May 2016 18:51:55 GMT
       Etag:
-      - W/"ded299dfc651a4017f73367a2506e950"
+      - W/"19cd9392948ef55dd4c77da978d4b454"
       Location:
-      - "/items/57b0cea5-2219-4198-ad04-4ad9211cdc54"
+      - "/items/27381e54-95ef-49eb-be9f-d7d5a7780299"
       Server:
       - nginx/1.8.0 + Phusion Passenger 4.0.59
       Set-Cookie:
@@ -382,70 +321,9 @@ http_interactions:
       X-Powered-By:
       - Phusion Passenger 4.0.59
       X-Request-Id:
-      - b39867b1-0546-44a7-a4d8-b8f76ddeeed8
+      - 213fe1bb-9e8c-4a3a-9574-bbe8d91bccb7
       X-Runtime:
-      - '0.548190'
-      X-Xss-Protection:
-      - 1; mode=block
-      Content-Length:
-      - '587'
-      Connection:
-      - keep-alive
-    body:
-      encoding: ASCII-8BIT
-      string: '{"items":{"id":"57b0cea5-2219-4198-ad04-4ad9211cdc54","name":"itemName","description":null,"created_at":"2016-05-29T18:27:04.227Z","updated_at":"2016-05-29T18:27:09.352Z","state":"pending","net_amount":500,"refunded_amount":0,"released_amount":0,"buyer_fees":0,"seller_fees":0,"credit_card_fee":0,"paypal_fee":0,"seller_url":"","buyer_url":"","direct_debit_fee":0,"status":22000,"amount":500,"payment_type_id":1,"due_date":null,"pending_release_amount":0,"deposit_reference":"100014014266230","promisepay_fee":8,"total_outstanding":500,"total_amount":500,"currency":"AUD","payment_method":"pending","buyer_name":"myFirstName","buyer_email":"e349efad-9551-4cd9-ba71-fbb3f5f6b449@mail.com","buyer_country":"AUS","seller_name":"myFirstName","seller_email":"dda27c3b-21c5-448a-9eb9-e1cffc10039d@mail.com","seller_country":"AUS","payment_credit_card_enabled":true,"payment_direct_debit_enabled":true,"related":{"buyers":"e349efad-9551-4cd9-ba71-fbb3f5f6b449","sellers":"dda27c3b-21c5-448a-9eb9-e1cffc10039d"},"links":{"self":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/revert_wire","buyers":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/buyers","sellers":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/sellers","status":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/status","fees":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/fees","transactions":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/transactions","wire_details":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/wire_details","bpay_details":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/bpay_details"}}}'
-    http_version: 
-  recorded_at: Sun, 29 May 2016 18:27:09 GMT
-- request:
-    method: get
-    uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/items/57b0cea5-2219-4198-ad04-4ad9211cdc54
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.9.2
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Access-Control-Allow-Headers:
-      - Origin, Content-Type, Accept, Authorization, Token
-      Access-Control-Allow-Methods:
-      - POST, GET, PUT, DELETE, OPTIONS
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Max-Age:
-      - '1728000'
-      Access-Control-Request-Method:
-      - "*"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Sun, 29 May 2016 18:27:10 GMT
-      Etag:
-      - W/"a959625f96921082eec96b299283b272"
-      Server:
-      - nginx/1.8.0 + Phusion Passenger 4.0.59
-      Status:
-      - 200 OK
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Powered-By:
-      - Phusion Passenger 4.0.59
-      X-Request-Id:
-      - 3ad90f77-b12a-4899-8152-320d1ae6b096
-      X-Runtime:
-      - '0.507841'
+      - '0.797497'
       X-Xss-Protection:
       - 1; mode=block
       Transfer-Encoding:
@@ -454,7 +332,7 @@ http_interactions:
       - keep-alive
     body:
       encoding: ASCII-8BIT
-      string: '{"items":{"id":"57b0cea5-2219-4198-ad04-4ad9211cdc54","name":"itemName","description":null,"created_at":"2016-05-29T18:27:04.227Z","updated_at":"2016-05-29T18:27:09.352Z","state":"pending","net_amount":500,"refunded_amount":0,"released_amount":0,"buyer_fees":0,"seller_fees":0,"credit_card_fee":0,"paypal_fee":0,"seller_url":"","buyer_url":"","direct_debit_fee":0,"status":22000,"amount":500,"payment_type_id":1,"due_date":null,"pending_release_amount":0,"deposit_reference":"100014014266230","promisepay_fee":8,"total_outstanding":500,"total_amount":500,"currency":"AUD","payment_method":"pending","buyer_name":"myFirstName","buyer_email":"e349efad-9551-4cd9-ba71-fbb3f5f6b449@mail.com","buyer_country":"AUS","seller_name":"myFirstName","seller_email":"dda27c3b-21c5-448a-9eb9-e1cffc10039d@mail.com","seller_country":"AUS","payment_credit_card_enabled":true,"payment_direct_debit_enabled":true,"related":{"buyers":"e349efad-9551-4cd9-ba71-fbb3f5f6b449","sellers":"dda27c3b-21c5-448a-9eb9-e1cffc10039d"},"links":{"self":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54","buyers":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/buyers","sellers":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/sellers","status":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/status","fees":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/fees","transactions":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/transactions","wire_details":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/wire_details","bpay_details":"/items/57b0cea5-2219-4198-ad04-4ad9211cdc54/bpay_details"}}}'
+      string: '{"items":{"id":"27381e54-95ef-49eb-be9f-d7d5a7780299","name":"itemName","description":null,"created_at":"2016-05-29T18:51:51.430Z","updated_at":"2016-05-29T18:51:55.403Z","state":"pending","net_amount":500,"refunded_amount":0,"released_amount":0,"buyer_fees":0,"seller_fees":0,"credit_card_fee":0,"paypal_fee":0,"seller_url":"","buyer_url":"","direct_debit_fee":0,"status":22000,"amount":500,"payment_type_id":1,"due_date":null,"pending_release_amount":0,"deposit_reference":"100014014266418","promisepay_fee":8,"total_outstanding":500,"total_amount":500,"currency":"AUD","payment_method":"pending","buyer_name":"myFirstName","buyer_email":"78fa57fc-e5a2-47fb-9e30-f810b482fc72@mail.com","buyer_country":"AUS","seller_name":"myFirstName","seller_email":"dee3c604-07fe-4b4d-9725-03761d300179@mail.com","seller_country":"AUS","payment_credit_card_enabled":true,"payment_direct_debit_enabled":true,"related":{"buyers":"78fa57fc-e5a2-47fb-9e30-f810b482fc72","sellers":"dee3c604-07fe-4b4d-9725-03761d300179"},"links":{"self":"/items/27381e54-95ef-49eb-be9f-d7d5a7780299/revert_wire","buyers":"/items/27381e54-95ef-49eb-be9f-d7d5a7780299/buyers","sellers":"/items/27381e54-95ef-49eb-be9f-d7d5a7780299/sellers","status":"/items/27381e54-95ef-49eb-be9f-d7d5a7780299/status","fees":"/items/27381e54-95ef-49eb-be9f-d7d5a7780299/fees","transactions":"/items/27381e54-95ef-49eb-be9f-d7d5a7780299/transactions","wire_details":"/items/27381e54-95ef-49eb-be9f-d7d5a7780299/wire_details","bpay_details":"/items/27381e54-95ef-49eb-be9f-d7d5a7780299/bpay_details"}}}'
     http_version: 
-  recorded_at: Sun, 29 May 2016 18:27:11 GMT
+  recorded_at: Sun, 29 May 2016 18:51:55 GMT
 recorded_with: VCR 2.9.3

@@ -100,7 +100,8 @@ module Promisepay
     #
     # @return [Boolean]
     def make_payment(options = {})
-      @client.patch("items/#{send(:id)}/make_payment", options).body
+      response = JSON.parse(@client.patch("items/#{send(:id)}/make_payment", options).body)
+      @attributes = response['items']
       true
     end
 
@@ -110,7 +111,8 @@ module Promisepay
     #
     # @return [Boolean]
     def request_payment(options = {})
-      @client.patch("items/#{send(:id)}/request_payment", options).body
+      response = JSON.parse(@client.patch("items/#{send(:id)}/request_payment", options).body)
+      @attributes = response['items']
       true
     end
 
@@ -121,7 +123,8 @@ module Promisepay
     #
     # @return [Boolean]
     def release_payment(options = {})
-      @client.patch("items/#{send(:id)}/release_payment", options).body
+      response = JSON.parse(@client.patch("items/#{send(:id)}/release_payment", options).body)
+      @attributes = response['items']
       true
     end
 
@@ -132,7 +135,8 @@ module Promisepay
     #
     # @return [Boolean]
     def request_release(options = {})
-      @client.patch("items/#{send(:id)}/request_release", options).body
+      response = JSON.parse(@client.patch("items/#{send(:id)}/request_release", options).body)
+      @attributes = response['items']
       true
     end
 
@@ -142,7 +146,8 @@ module Promisepay
     #
     # @return [Boolean]
     def acknowledge_wire(options = {})
-      @client.patch("items/#{send(:id)}/acknowledge_wire", options).body
+      response = JSON.parse(@client.patch("items/#{send(:id)}/acknowledge_wire", options).body)
+      @attributes = response['items']
       true
     end
 
@@ -152,7 +157,8 @@ module Promisepay
     #
     # @return [Boolean]
     def acknowledge_paypal(options = {})
-      @client.patch("items/#{send(:id)}/acknowledge_paypal", options).body
+      response = JSON.parse(@client.patch("items/#{send(:id)}/acknowledge_paypal", options).body)
+      @attributes = response['items']
       true
     end
 
@@ -162,7 +168,8 @@ module Promisepay
     #
     # @return [Boolean]
     def revert_wire(options = {})
-      @client.patch("items/#{send(:id)}/revert_wire", options).body
+      response = JSON.parse(@client.patch("items/#{send(:id)}/revert_wire", options).body)
+      @attributes = response['items']
       true
     end
 
@@ -172,7 +179,8 @@ module Promisepay
     #
     # @return [Boolean]
     def request_refund(options = {})
-      @client.patch("items/#{send(:id)}/request_refund", options).body
+      response = JSON.parse(@client.patch("items/#{send(:id)}/request_refund", options).body)
+      @attributes = response['items']
       true
     end
 
@@ -182,7 +190,8 @@ module Promisepay
     #
     # @return [Boolean]
     def refund(options = {})
-      @client.patch("items/#{send(:id)}/refund", options).body
+      response = JSON.parse(@client.patch("items/#{send(:id)}/refund", options).body)
+      @attributes = response['items']
       true
     end
 
@@ -192,7 +201,8 @@ module Promisepay
     #
     # @return [Boolean]
     def cancel
-      @client.patch("items/#{id}/cancel")
+      response = JSON.parse(@client.patch("items/#{id}/cancel").body)
+      @attributes = response['items']
       true
     end
   end

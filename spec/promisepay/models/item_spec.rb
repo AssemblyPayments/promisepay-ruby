@@ -118,7 +118,7 @@ describe Promisepay::Item do
       it 'requests the payment' do
         expect(item.state).to eq('pending')
         expect(item.request_payment).to be(true)
-        expect(client.items.find(item.id).state).to eq('payment_required')
+        expect(item.state).to eq('payment_required')
       end
     end
 
@@ -137,7 +137,7 @@ describe Promisepay::Item do
       it 'acknowledges the wire', vcr: { cassette_name: 'items_acknowledge_wire' } do
         expect(item.state).to eq('pending')
         expect(item.acknowledge_wire).to be(true)
-        expect(client.items.find(item.id).state).to eq('wire_pending')
+        expect(item.state).to eq('wire_pending')
       end
     end
 
@@ -151,9 +151,9 @@ describe Promisepay::Item do
     describe 'revert_wire' do
       before { item.acknowledge_wire }
       it 'reverts the wire', vcr: { cassette_name: 'items_revert_wire' } do
-        expect(client.items.find(item.id).state).to eq('wire_pending')
+        expect(item.state).to eq('wire_pending')
         expect(item.revert_wire).to be(true)
-        expect(client.items.find(item.id).state).to eq('pending')
+        expect(item.state).to eq('pending')
       end
     end
 
@@ -173,7 +173,7 @@ describe Promisepay::Item do
       it 'cancels the item', vcr: { cassette_name: 'items_cancel' } do
         expect(item.state).to eq('pending')
         expect(item.cancel).to be(true)
-        expect(client.items.find(item.id).state).to eq('cancelled')
+        expect(item.state).to eq('cancelled')
       end
     end
   end
