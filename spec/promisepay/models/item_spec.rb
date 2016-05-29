@@ -101,17 +101,17 @@ describe Promisepay::Item do
 
   describe 'action methods' do
     let(:item) { PromisepayFactory.create_item }
+    let(:buyer) { item.buyer }
+    let(:card_account) { PromisepayFactory.create_card_account({}, buyer) }
 
     describe 'make_payment' do
-      it 'has to be tested'
-      # it 'makes the payment', vcr: { cassette_name: 'items_make_payment' } do
-      #   expect(
-      #     item.make_payment(
-      #       user_id: buyer.id,
-      #       account_id: buyer.card_account.id
-      #     )
-      #   ).to be(true)
-      # end
+      it 'makes the payment', vcr: { cassette_name: 'items_make_payment' } do
+        expect(item.state).to eq('pending')
+        expect(
+          item.make_payment(user_id: buyer.id, account_id: card_account.id)
+        ).to be(true)
+        expect(%w(payment_held payment_processing payment_deposited)).to include(item.state)
+      end
     end
 
     describe 'request_payment', vcr: { cassette_name: 'items_request_payment' } do
@@ -123,14 +123,21 @@ describe Promisepay::Item do
     end
 
     describe 'release_payment', vcr: { cassette_name: 'items_release_payment' } do
-      it 'has to be tested'
+      before { item.make_payment(user_id: buyer.id, account_id: card_account.id) }
+      it 'requests release of funds held in escrow' do
+        expect(item.state).to eq('payment_deposited')
+        expect(item.release_payment).to be(true)
+        expect(item.state).to eq('completed')
+      end
     end
 
     describe 'request_release', vcr: { cassette_name: 'items_request_release' } do
-      it 'has to be tested'
-      # it 'requests a release' do
-      #   expect(item.request_release(release_amount: '1000')).to be(true)
-      # end
+      before { item.make_payment(user_id: buyer.id, account_id: card_account.id) }
+      it 'requests release of funds held in escrow' do
+        expect(item.state).to eq('payment_deposited')
+        expect(item.request_release).to be(true)
+        expect(item.state).to eq('work_completed')
+      end
     end
 
     describe 'acknowledge_wire' do
@@ -142,10 +149,7 @@ describe Promisepay::Item do
     end
 
     describe 'acknowledge_paypal' do
-      it 'has to be tested'
-      # it 'acknowledges paypal', vcr: { cassette_name: 'items_acknowledge_paypal' } do
-      #   expect(item.acknowledge_paypal).to be(true)
-      # end
+      it 'is not documented'
     end
 
     describe 'revert_wire' do
@@ -158,15 +162,21 @@ describe Promisepay::Item do
     end
 
     describe 'request_refund', vcr: { cassette_name: 'items_request_refund' } do
-      # it 'has to be tested'
-      # it 'requests a refund' do
-      #   expect(item.request_refund(refund_amount: '1000', refund_message: 'because')).to be(true)
-      #   expect(client.items.find(item.id).state).to eq('refund_flagged')
-      # end
+      before { item.make_payment(user_id: buyer.id, account_id: card_account.id) }
+      it 'requests a refund' do
+        expect(item.state).to eq('payment_deposited')
+        expect(item.request_refund(refund_amount: 500, refund_message: 'because')).to be(true)
+        expect(item.state).to eq('refund_flagged')
+      end
     end
 
     describe 'refund', vcr: { cassette_name: 'items_refund' } do
-      it 'has to be tested'
+      before { item.make_payment(user_id: buyer.id, account_id: card_account.id) }
+      it 'requests a refund' do
+        expect(item.state).to eq('payment_deposited')
+        expect(item.refund(refund_amount: 500, refund_message: 'because')).to be(true)
+        expect(item.state).to eq('refunded')
+      end
     end
 
     describe 'cancel' do

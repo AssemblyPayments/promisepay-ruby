@@ -26,6 +26,20 @@ module PromisepayFactory
     client.items.create(default_options.merge(options))
   end
 
+  def self.create_card_account options={}, owner=nil
+    owner = create_user if owner.nil?
+
+    default_options = {
+      user_id: owner.id,
+      full_name: 'User Name',
+      number: '4111111111111111',
+      expiry_month: Time.now.month,
+      expiry_year: Time.now.year + 1,
+      cvv: '123'
+    }
+    client.card_accounts.create(default_options.merge(options))
+  end
+
   private
 
   def self.client
