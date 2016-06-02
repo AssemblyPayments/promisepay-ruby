@@ -49,6 +49,18 @@ module Promisepay
       nil
     end
 
+    # Show the User’s Wallet Account.
+    #
+    # @see https://reference.promisepay.com/#show-user-wallet-account
+    #
+    # @return [Promisepay::WalletAccount]
+    def wallet_account
+      response = JSON.parse(@client.get("users/#{send(:id)}/wallet_accounts").body)
+      Promisepay::WalletAccount.new(@client, response['wallet_accounts'])
+    rescue Promisepay::UnprocessableEntity
+      nil
+    end
+
     # Set the disbursement account for a user.
     #
     # @see https://reference.promisepay.com/#set-user-disbursement-account
