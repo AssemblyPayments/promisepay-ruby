@@ -29,9 +29,9 @@ describe Promisepay::WalletAccountResource do
     end
   end
 
-  # describe 'wallet_account methods' do
-  #   it 'can be accessed' do
-  #     expect(client.wallet_accounts.respond_to?(:user)).to be(true)
-  #   end
-  # end
+  describe 'wallet_account methods' do
+    it 'can be accessed' do
+      expect(client.wallet_accounts.respond_to?(:user)).to be(true)
+    end
+  end
 end
