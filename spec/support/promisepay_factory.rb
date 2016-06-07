@@ -50,6 +50,24 @@ module PromisepayFactory
     client.fees.create(default_options.merge(options))
   end
 
+  def self.create_company options={}
+    default_options = {
+      name: "Samuel's Gardening",
+      legal_name: "Samuel's Gardening Pty Ltd",
+      user_id: '',
+      tax_number: '100200300',
+      charge_tax: false,
+      address_line1: '500 Garden St',
+      address_line2: '',
+      city: 'Sydney',
+      state: 'NSW',
+      zip: '2000',
+      country: 'AUS',
+      phone: '+61491570156'
+    }
+    client.companies.create(default_options.merge(options))
+  end
+
   private
 
   def self.client
