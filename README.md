@@ -220,6 +220,10 @@ user.bank_account
 ```ruby
 user.items
 ```
+#####Get a user's address
+```ruby
+user.address
+```
 #####Set a user's disbursement account
 ```ruby
 user.disbursement_account(bank_account.id)
@@ -376,6 +380,11 @@ client.companies.find('compamy_id')
 #####Get a list of companies
 ```ruby
 client.companies.find_all
+```
+
+#####Get a company's address
+```ruby
+company.address
 ```
 
 #####Update a company
