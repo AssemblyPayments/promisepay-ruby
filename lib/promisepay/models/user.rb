@@ -71,5 +71,16 @@ module Promisepay
     rescue Promisepay::NotFound
       nil
     end
+
+    # Gets user address.
+    #
+    # @see https://reference.promisepay.com/#addresses
+    #
+    # @return [Hash]
+    def address
+      return nil unless @attributes.key?('related')
+      response = JSON.parse(@client.get("addresses/#{send(:related)['addresses']}").body)
+      response['addresses']
+    end
   end
 end
