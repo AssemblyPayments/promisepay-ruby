@@ -67,9 +67,9 @@ describe Promisepay::ChargeResource do
     end
   end
 
-  # describe 'charges methods' do
-  #   it 'can be accessed' do
-  #     expect(client.charges.respond_to?(:buyer)).to be(true)
-  #   end
-  # end
+  describe 'charges methods' do
+    it 'can be accessed' do
+      expect(client.charges.respond_to?(:buyer)).to be(true)
+    end
+  end
 end
