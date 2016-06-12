@@ -441,6 +441,40 @@ transaction.users
 transaction.fees
 ```
 
+##Charges
+#####Get a list of charges
+```ruby
+charges = client.charges.find_all
+```
+#####Get a charge
+```ruby
+charge = client.charges.find('1')
+```
+#####Create a charge
+```ruby
+charge = client.charges.create(
+  account_id: '123',
+  user_id: '456',
+  name: 'Charge for Delivery',
+  email: 'anonymous+buyer+1@promisepay.com',
+  amount: 4_500,
+  zip: '3000',
+  curency: 'AUD',
+  country: 'AUS',
+  retain_account: true,
+  device_id: '0900JapG4txqVP4Nf...',
+  ip_address: '172.16.81.100'
+)
+```
+#####Get a charge's buyer
+```ruby
+charge.buyer
+```
+#####Get a charge's status
+```ruby
+charge.status
+```
+
 _Check out the [online documentation](http://promisepay.github.io/promisepay-ruby/) to get a full list of available resources and methods._
 
 #4. Contributing
