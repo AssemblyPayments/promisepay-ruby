@@ -68,6 +68,26 @@ module PromisepayFactory
     client.companies.create(default_options.merge(options))
   end
 
+  def self.create_charge options={}, account=nil, user=nil
+    account = create_card_account if account.nil?
+    user_id = (user.nil?) ? nil : user.id
+
+    default_options = {
+      account_id: account.id,
+      user_id: user_id,
+      name: 'Charge for Delivery',
+      email: 'anonymous+buyer+1@promisepay.com',
+      amount: 4_500,
+      zip: '3000',
+      curency: 'AUD',
+      country: 'AUS',
+      retain_account: true,
+      device_id: '0900JapG4txqVP4Nf94lis1ztmY64bRzRufIskMqKRxYZWFibp4j/+DwRPTztbpmYmDn9n3uDZG7y79QuA+jSTdt2mU8BZeT94rSue+B4M2wkqImINsJ9VlMYGTX23I2zuDzEYngAz99aSN3ySC3tvRP4YCTJbtlNWlumGODXWbkrLSLP/wT3etan16/FINOuYS5LH/sQ/sXqk0yDUQkBm21+3hdrSzenwv2iK7pMCw9zdRN+3jlt//OauTQHjy7H5XhLHCHAGY3J0jpLqVrSVzsI1LB6M5fl2EoMEAoEitEttFUo1DRkUtPGPRhfRZSJgi/2XEcZH+tN3R4VShbY+EVBD6upMsx8e+4a0Yy5JnHYpPz7R1zkAHAFKeaPzHTB6yLaYIZf7bM7FD9I4jOJ33S01NZtVmpaU+ltXRybJL065B3xBfNPgHEB08CRvIVZ/7OW/kWLcmvNeDVSi9QfH7TEmxGFWkS2PTjdOIYgHC/3QaUBo+BORdkpO8mR20/oWqfaTXAiPJhDc7Kf2hhwqstJ+rhabIcxurYS9YOYuyRGpb/IognXxhY6dXh35GdB6Cc0rdKBra3m4ajKT2dl0HzU5BUzQgct4fSViSftA9S4WN+/u06EOo/UEYn9EFMRfvxVguGdCj5lheliCBIlujE9p5bObFITgxo+snP9+SWhwwQjHzFmjZC2x3+Dd6SKNck3/+IBhtGeSxQ+x3bbPGSKlPeImNr/UVPV6i8/tb5alAK/XRNo3H5dCCofHI9aHmKGVsh1GZGb/t+MWh63oYq0hpEwt3pHbVYAH9NfWd7xUnvIFC6f0yZnUxJtZ1tiSkVcDDQDXXUEycmHIUb3cIYInqn0vWZ4E9DERA11M8IkCuPI7c/6cZ+WudVvu4eBdAZLc3MKdVnbnSmjIkq5qftS7QndrGGVnAk80aKvKixGUf6oxNEfoZFV+S24ttMGG6sXUx2ddU5OPCCOX680qzq/uUq87u17lXRMFdx4wimxQE05lyt1veYpHNuv7sghWOEeioIZRnmC0W+ochQziz7ftZJCaKwymxS1wfmZzpno82u3Z2HQd3V4wfJ/zck+QECqJOz7YCWoR/mx2vNwg2Qek4/nm8ErLEbx5REX5I2a/52aev9sHy3VFGNJrl9WRwxtuSe+IVmUVHMK436hmn9pJQL8E0wyEGvoAODQNpCPDLzpW3aa+9Wp5YstdZ3m/rUv5dztqLbo6mZ2MNz4rLVKY4TfJCS0UoHWAVvYG/EH/md2OpxAZVeiYsco/z52WqDHt7uDpkIrv9JRPmShTpHVC2Al7FLtDsZ',
+      ip_address: '172.16.81.100'
+    }
+    client.charges.create(default_options.merge(options))
+  end
+
   private
 
   def self.client

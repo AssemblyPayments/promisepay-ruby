@@ -15,6 +15,7 @@ require_relative 'resources/base_resource'
 require_relative 'resources/account_resource'
 require_relative 'resources/bank_account_resource'
 require_relative 'resources/card_account_resource'
+require_relative 'resources/charge_resource'
 require_relative 'resources/company_resource'
 require_relative 'resources/fee_resource'
 require_relative 'resources/item_resource'
@@ -114,6 +115,7 @@ module Promisepay
       {
         bank_accounts: BankAccountResource,
         card_accounts: CardAccountResource,
+        charges: ChargeResource,
         companies: CompanyResource,
         fees: FeeResource,
         items: ItemResource,
