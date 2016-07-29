@@ -87,4 +87,14 @@ describe Promisepay::User do
       expect(user.disbursement_account(bank_account.id)).to be(true)
     end
   end
+
+  describe 'address', vcr: { cassette_name: 'users_address'} do
+    let(:user) { PromisepayFactory.create_user }
+    it 'returns a Hash' do
+      address = user.address
+      expect(address).to be_a(Hash)
+      expect(address).to have_key('addressline1')
+      expect(address).to have_key('country')
+    end
+  end
 end

@@ -1,0 +1,131 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/users
+    body:
+      encoding: UTF-8
+      string: '{"id":"7b3b8597-1c12-4124-8bc8-d7f2ff73b158","first_name":"myFirstName","email":"7b3b8597-1c12-4124-8bc8-d7f2ff73b158@mail.com","country":"AUS"}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Access-Control-Allow-Headers:
+      - Origin, Content-Type, Accept, Authorization, Token
+      Access-Control-Allow-Methods:
+      - POST, GET, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Request-Method:
+      - "*"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 07 Jun 2016 20:11:13 GMT
+      Etag:
+      - W/"7e93f642949a7f7085cfef1087c8e780"
+      Location:
+      - "/users/7b3b8597-1c12-4124-8bc8-d7f2ff73b158"
+      Server:
+      - nginx/1.8.0 + Phusion Passenger 4.0.59
+      Set-Cookie:
+      - request_method=POST; path=/
+      Status:
+      - 201 Created
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Powered-By:
+      - Phusion Passenger 4.0.59
+      X-Request-Id:
+      - a9661204-8bfe-4ff5-b589-ce1b9dffaa71
+      X-Runtime:
+      - '1.289299'
+      X-Xss-Protection:
+      - 1; mode=block
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"users":{"created_at":"2016-06-07T20:11:12.690Z","updated_at":"2016-06-07T20:11:12.690Z","full_name":"myFirstName","email":"7b3b8597-1c12-4124-8bc8-d7f2ff73b158@mail.com","mobile":null,"phone":null,"logo_url":null,"color_1":null,"color_2":null,"first_name":"myFirstName","last_name":null,"id":"7b3b8597-1c12-4124-8bc8-d7f2ff73b158","location":"AUS","verification_state":"pending","held_state":false,"dob":null,"government_number":null,"drivers_license":null,"flags":{},"related":{"addresses":"fd0053a3-538f-4770-8827-3de9aa761903"},"links":{"self":"/users","items":"/users/7b3b8597-1c12-4124-8bc8-d7f2ff73b158/items","card_accounts":"/users/7b3b8597-1c12-4124-8bc8-d7f2ff73b158/card_accounts","paypal_accounts":"/users/7b3b8597-1c12-4124-8bc8-d7f2ff73b158/paypal_accounts","bank_accounts":"/users/7b3b8597-1c12-4124-8bc8-d7f2ff73b158/bank_accounts","wallet_accounts":"/users/7b3b8597-1c12-4124-8bc8-d7f2ff73b158/wallet_accounts"}}}'
+    http_version: 
+  recorded_at: Tue, 07 Jun 2016 20:11:13 GMT
+- request:
+    method: get
+    uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/addresses/fd0053a3-538f-4770-8827-3de9aa761903
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - Origin, Content-Type, Accept, Authorization, Token
+      Access-Control-Allow-Methods:
+      - POST, GET, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Request-Method:
+      - "*"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 07 Jun 2016 20:11:14 GMT
+      Etag:
+      - W/"bba74069164d467a3d153d0a4141fe3a"
+      Server:
+      - nginx/1.8.0 + Phusion Passenger 4.0.59
+      Status:
+      - 200 OK
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Powered-By:
+      - Phusion Passenger 4.0.59
+      X-Request-Id:
+      - 35afac79-a4c1-411f-8807-f5af9782fba0
+      X-Runtime:
+      - '0.319951'
+      X-Xss-Protection:
+      - 1; mode=block
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"addresses":{"addressline1":null,"addressline2":null,"postcode":null,"city":null,"state":null,"id":"fd0053a3-538f-4770-8827-3de9aa761903","country":"Australia","links":{"self":"/addresses/fd0053a3-538f-4770-8827-3de9aa761903"}}}'
+    http_version: 
+  recorded_at: Tue, 07 Jun 2016 20:11:15 GMT
+recorded_with: VCR 2.9.3
