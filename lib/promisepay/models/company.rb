@@ -1,6 +1,18 @@
 module Promisepay
   # Manage Companies
   class Company < BaseModel
+    # Update the attributes of an item.
+    #
+    # @see https://reference.promisepay.com/#update-item
+    #
+    # @param attributes [Hash] Item's attributes to be updated.
+    #
+    # @return [self]
+    def update(attributes)
+      response = JSON.parse(@client.patch("companies/#{send(:id)}", attributes).body)
+      @attributes = response['companies']
+      self
+    end
 
   	# Get the user the company belongs to.
     #
