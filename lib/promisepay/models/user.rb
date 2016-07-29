@@ -2,6 +2,19 @@
 module Promisepay
   # Manage Users
   class User < BaseModel
+    # Update the attributes of an item.
+    #
+    # @see https://reference.promisepay.com/#update-item
+    #
+    # @param attributes [Hash] Item's attributes to be updated.
+    #
+    # @return [self]
+    def update(attributes)
+      response = JSON.parse(@client.patch("users/#{send(:id)}", attributes).body)
+      @attributes = response['users']
+      self
+    end
+
     # Lists items for a user on a marketplace.
     #
     # @see https://reference.promisepay.com/#list-user-items
