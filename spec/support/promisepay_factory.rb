@@ -40,6 +40,23 @@ module PromisepayFactory
     client.card_accounts.create(default_options.merge(options))
   end
 
+  def self.create_bank_account options={}, owner=nil
+    owner = create_user if owner.nil?
+
+    default_options = {
+      user_id: owner.id,
+      bank_name: 'myBank',
+      account_name: 'myAccount',
+      routing_number: '123123',
+      account_number: '12341234',
+      account_type: 'savings',
+      holder_type: 'personal',
+      country: 'AUS',
+      mobile_pin: '123456'
+    }
+    client.bank_accounts.create(default_options.merge(options))
+  end
+
   def self.create_fee options={}
     default_options = {
       fee_type_id: '1', # Fixed

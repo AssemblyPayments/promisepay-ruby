@@ -11,6 +11,7 @@ require_relative 'models/item'
 require_relative 'models/paypal_account'
 require_relative 'models/transaction'
 require_relative 'models/user'
+require_relative 'models/wallet_account'
 require_relative 'resources/base_resource'
 require_relative 'resources/account_resource'
 require_relative 'resources/bank_account_resource'
@@ -23,6 +24,7 @@ require_relative 'resources/paypal_account_resource'
 require_relative 'resources/token_resource'
 require_relative 'resources/transaction_resource'
 require_relative 'resources/user_resource'
+require_relative 'resources/wallet_account_resource'
 require 'json'
 require 'faraday'
 
@@ -122,7 +124,8 @@ module Promisepay
         paypal_accounts: PaypalAccountResource,
         transactions: TransactionResource,
         users: UserResource,
-        tokens: TokenResource
+        tokens: TokenResource,
+        wallet_accounts: WalletAccountResource
       }
     end
 

@@ -216,6 +216,10 @@ user.paypal_account
 ```ruby
 user.bank_account
 ```
+#####Get a user's wallet account
+```ruby
+user.wallet_account
+```
 #####Get a user's items
 ```ruby
 user.items
@@ -337,8 +341,8 @@ client.bank_accounts.validate('122235821')
 #####Create a PayPal account
 ```ruby
 paypal_account = client.paypal_accounts.create(
-	user_id: seller.id,
-	paypal_email: 'seller@promisepay.com'
+  user_id: seller.id,
+  paypal_email: 'seller@promisepay.com'
 )
 ```
 #####Get a PayPal account
@@ -353,22 +357,47 @@ paypal_account.deactivate
 ```ruby
 paypal_account.user
 ```
+
+##Wallet Accounts
+#####Get a Wallet account
+```ruby
+wallet_account = client.wallet_accounts.find('1')
+```
+#####Deposit funds
+```ruby
+wallet_account.deposit(
+  account_id: '123',
+  amount: 500
+)
+```
+#####Withdraw funds
+```ruby
+wallet_account.withdraw(
+  account_id: '123',
+  amount: 200
+)
+```
+#####Get a Wallet account's users
+```ruby
+wallet_account.user
+```
+
 ##Companies
 
 #####Create a company
 ```ruby
 client.companies.create(
-	user_id: "1",
-	name: "Acme Co",
-	legal_name: "Acme Co Pty Ltd",
-	tax_number: "1231231",
-	charge_tax: true,
-	address_line1: "123 Test St",
-	address_line2: "",
-	city: "Melbourne",
-	state: "VIC",
-	zip: "3000",
-	country: "AUS"
+  user_id: "1",
+  name: "Acme Co",
+  legal_name: "Acme Co Pty Ltd",
+  tax_number: "1231231",
+  charge_tax: true,
+  address_line1: "123 Test St",
+  address_line2: "",
+  city: "Melbourne",
+  state: "VIC",
+  zip: "3000",
+  country: "AUS"
 )
 ```
 
@@ -390,17 +419,17 @@ company.address
 #####Update a company
 ```ruby
 client.companies.update(
-	id: "8d578b9c-5b79-11e5-885d-feff819cdc9f",
-	name: "Acme Co",
-	legal_name: "Acme Co Pty Ltd",
-	tax_number: "1231231",
-	charge_tax: true,
-	address_line1: "123 Test St",
-	address_line2: "",
-	city: "Melbourne",
-	state: "VIC",
-	zip: "3000",
-	country: "AUS"
+  id: "8d578b9c-5b79-11e5-885d-feff819cdc9f",
+  name: "Acme Co",
+  legal_name: "Acme Co Pty Ltd",
+  tax_number: "1231231",
+  charge_tax: true,
+  address_line1: "123 Test St",
+  address_line2: "",
+  city: "Melbourne",
+  state: "VIC",
+  zip: "3000",
+  country: "AUS"
 )
 ```
 
@@ -479,8 +508,8 @@ _Check out the [online documentation](http://promisepay.github.io/promisepay-rub
 
 #4. Contributing
 
-	1. Fork it ( https://github.com/PromisePay/promisepay-ruby/fork )
-	2. Create your feature branch (`git checkout -b my-new-feature`)
-	3. Commit your changes (`git commit -am 'Add some feature'`)
-	4. Push to the branch (`git push origin my-new-feature`)
-	5. Create a new Pull Request
+  1. Fork it ( https://github.com/PromisePay/promisepay-ruby/fork )
+  2. Create your feature branch (`git checkout -b my-new-feature`)
+  3. Commit your changes (`git commit -am 'Add some feature'`)
+  4. Push to the branch (`git push origin my-new-feature`)
+  5. Create a new Pull Request

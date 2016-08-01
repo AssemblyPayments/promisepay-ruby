@@ -76,6 +76,15 @@ describe Promisepay::User do
     end
   end
 
+  describe 'wallet account' do
+    let(:user) { PromisepayFactory.create_user }
+    context 'account available', vcr: { cassette_name: 'users_wallet_account' } do
+      it 'gives back a Wallet account' do
+        expect(user.wallet_account).to be_a(Promisepay::WalletAccount)
+      end
+    end
+  end
+
   describe 'disbursement_account', vcr: { cassette_name: 'users_disbursement_account' } do
     let(:bank_account) do
       VCR.use_cassette('bank_account_single') do
