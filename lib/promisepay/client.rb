@@ -20,6 +20,7 @@ require_relative 'resources/card_account_resource'
 require_relative 'resources/charge_resource'
 require_relative 'resources/company_resource'
 require_relative 'resources/fee_resource'
+require_relative 'resources/direct_debit_authority_resource'
 require_relative 'resources/item_resource'
 require_relative 'resources/paypal_account_resource'
 require_relative 'resources/token_resource'
@@ -120,6 +121,7 @@ module Promisepay
         card_accounts: CardAccountResource,
         charges: ChargeResource,
         companies: CompanyResource,
+        direct_debit_authorities: DirectDebitAuthorityResource,
         fees: FeeResource,
         items: ItemResource,
         paypal_accounts: PaypalAccountResource,

@@ -105,6 +105,16 @@ module PromisepayFactory
     client.charges.create(default_options.merge(options))
   end
 
+  def self.create_direct_debit_authority options={}, account=nil
+    account = create_bank_account if account.nil?
+
+    default_options = {
+      account_id: account.id,
+      amount: '100000'
+    }
+    client.direct_debit_authorities.create(default_options.merge(options))
+  end
+
   private
 
   def self.client
