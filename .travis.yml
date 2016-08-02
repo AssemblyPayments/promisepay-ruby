@@ -4,7 +4,7 @@ rvm:
   - 2.0.0
   - 2.1
   - 2.2
-  - 2.3
+  - 2.3.1
 env:
   - PROMISEPAY_USERNAME=name@mail.com PROMISEPAY_TOKEN=token
 script: "bundle exec rspec spec/"
