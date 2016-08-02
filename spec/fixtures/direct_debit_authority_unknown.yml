@@ -12,7 +12,7 @@ http_interactions:
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - ! '*/*'
+      - "*/*"
   response:
     status:
       code: 422
@@ -22,13 +22,13 @@ http_interactions:
       - Origin, Content-Type, Accept, Authorization, Token, APPROVE_TOKEN, MGMT_TOKEN,
         SIGNUP_TOKEN
       Access-Control-Allow-Origin:
-      - ! '*'
+      - "*"
       Cache-Control:
       - no-cache
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 02 Aug 2016 12:37:36 GMT
+      - Tue, 02 Aug 2016 12:54:22 GMT
       Server:
       - nginx/1.8.0 + Phusion Passenger 4.0.59
       Status:
@@ -40,18 +40,18 @@ http_interactions:
       X-Powered-By:
       - Phusion Passenger 4.0.59
       X-Request-Id:
-      - 783291d5-ce91-4707-887c-1c9a6ad90b4f
+      - ce8f13af-6b03-44d7-944e-3e5552d451d7
       X-Runtime:
-      - '0.321776'
+      - '0.370747'
       X-Xss-Protection:
       - 1; mode=block
-      Content-Length:
-      - '36'
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
     body:
-      encoding: US-ASCII
-      string: ! '{"errors":{"id":["invalid format"]}}'
+      encoding: UTF-8
+      string: '{"errors":{"id":["invalid format"]}}'
     http_version: 
-  recorded_at: Tue, 02 Aug 2016 12:37:36 GMT
+  recorded_at: Tue, 02 Aug 2016 12:54:22 GMT
 recorded_with: VCR 3.0.3
