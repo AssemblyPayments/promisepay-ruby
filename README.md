@@ -504,6 +504,29 @@ charge.buyer
 charge.status
 ```
 
+##Direct Debit Authority
+#####Get a list of direct debit authorities for a given account
+```ruby
+bank_account = client.bank_accounts.find('9fda18e7-b1d3-4a83-830d-0cef0f62cd25')
+ddas = client.charges.find_all(bank_account.id)
+```
+#####Get a direct debit authority
+```ruby
+dda = client.direct_debit_authorities.find('8f233e04-ffaa-4c9d-adf9-244853848e21')
+```
+#####Create a direct debit authority
+```ruby
+charge = client.direct_debit_authorities.create(
+  account_id: '9fda18e7-b1d3-4a83-830d-0cef0f62cd25',
+  amount: '10000'
+)
+```
+#####Delete a direct debit authority
+```ruby
+dda = client.direct_debit_authorities.find('8f233e04-ffaa-4c9d-adf9-244853848e21')
+dda.delete
+```
+
 _Check out the [online documentation](http://promisepay.github.io/promisepay-ruby/) to get a full list of available resources and methods._
 
 #4. Contributing
