@@ -28,4 +28,41 @@ describe Promisepay::Transaction do
       # end
     end
   end
+
+  describe 'accounts' do
+    let(:buyer) { PromisepayFactory.create_user }
+    let(:seller) { PromisepayFactory.create_user }
+    let(:item) { PromisepayFactory.create_item({}, seller, buyer) }
+    let(:transaction) { item.transactions.last }
+    before { item.make_payment(account_id: account.id) }
+
+
+    # describe 'bank_account', vcr: { cassette_name: 'transactions_bank_account' } do
+    #   let(:account) { PromisepayFactory.create_bank_account({}, buyer) }
+    #   subject { transaction.bank_account }
+
+    #   it { is_expected.to be_a(Promisepay::BankAccount) }
+    # end
+
+    # describe 'card_account', vcr: { cassette_name: 'transactions_card_account' } do
+    #   let(:account) { PromisepayFactory.create_card_account({}, buyer) }
+    #   subject { transaction.card_account }
+
+    #   it { is_expected.to be_a(Promisepay::CardAccount) }
+    # end
+
+    # describe 'wallet_account', vcr: { cassette_name: 'transactions_wallet_account' } do
+    #   let(:account) { PromisepayFactory.create_wallet_account({}, buyer) }
+    #   subject { transaction.wallet_account }
+
+    #   it { is_expected.to be_a(Promisepay::WalletAccount) }
+    # end
+
+    # describe 'paypal_account', vcr: { cassette_name: 'transactions_paypal_account' } do
+    #   let(:account) { PromisepayFactory.create_paypal_account({}, buyer) }
+    #   subject { transaction.paypal_account }
+
+    #   it { is_expected.to be_a(Promisepay::PaypalAccount) }
+    # end
+  end
 end

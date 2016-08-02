@@ -57,6 +57,16 @@ module PromisepayFactory
     client.bank_accounts.create(default_options.merge(options))
   end
 
+  def self.create_paypal_account options={}, owner=nil
+    owner = create_user if owner.nil?
+
+    default_options = {
+      user_id: owner.id,
+      paypal_email: owner.email
+    }
+    client.paypal_accounts.create(default_options.merge(options))
+  end
+
   def self.create_fee options={}
     default_options = {
       fee_type_id: '1', # Fixed
