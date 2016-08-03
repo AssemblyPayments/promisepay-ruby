@@ -32,10 +32,10 @@ describe Promisepay::CompanyResource do
       end
 
       it 'gives back a company' do
-        user = client.companies.create(valid_attributes)
-        expect(user).to be_a(Promisepay::Company)
-        expect(user.name).to eql('Company Name')
-        expect(user.legal_name).to eql('Legal Name')
+        company = client.companies.create(valid_attributes)
+        expect(company).to be_a(Promisepay::Company)
+        expect(company.name).to eql('Company Name')
+        expect(company.legal_name).to eql('Legal Name')
       end
     end
 
@@ -49,4 +49,17 @@ describe Promisepay::CompanyResource do
       end
     end
   end
+
+  # describe 'update' do
+  #   let!(:company) { PromisepayFactory.create_company }
+  #   context 'with valid attributes', vcr: { cassette_name: 'companies_updated' } do
+  #     let(:attributes) { { id: company.id, name: 'new company name' } }
+
+  #     it 'updates the company' do
+  #       company = client.companies.update(attributes)
+  #       expect(company).to be_a(Promisepay::Company)
+  #       expect(company.name).to eql('new company name')
+  #     end
+  #   end
+  # end
 end

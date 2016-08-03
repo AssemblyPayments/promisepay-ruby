@@ -52,7 +52,7 @@ module Promisepay
     #
     # @return [Promisepay::Company]
     def update(attributes)
-      response = JSON.parse(@client.patch('companies', attributes).body)
+      response = JSON.parse(@client.patch("companies/#{attributes[:id]}", attributes).body)
       Promisepay::Company.new(@client, response['companies'])
     end
   end

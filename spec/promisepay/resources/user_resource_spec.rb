@@ -68,6 +68,19 @@ describe Promisepay::UserResource do
     end
   end
 
+  describe 'update' do
+    let!(:user) { PromisepayFactory.create_user }
+    context 'with valid attributes', vcr: { cassette_name: 'users_updated' } do
+      let(:attributes) { { id: user.id, first_name: 'new user name' } }
+
+      it 'updates the user' do
+        user = client.users.update(attributes)
+        expect(user).to be_a(Promisepay::User)
+        expect(user.first_name).to eql('new user name')
+      end
+    end
+  end
+
   describe 'User methods' do
     it 'can be accessed' do
       expect(client.users.respond_to?(:items)).to be(true)
