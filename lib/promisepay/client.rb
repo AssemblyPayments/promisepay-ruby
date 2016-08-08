@@ -113,6 +113,15 @@ module Promisepay
       response
     end
 
+    # Show details of your Platform.
+    #
+    # @see https://reference.promisepay.com/#show-marketplace
+    #
+    # @return [Hash]
+    def marketplace
+      JSON.parse(get('marketplace').body)['marketplaces']
+    end
+
     # Available resources for {Client}
     #
     # @return [Hash]
