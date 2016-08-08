@@ -527,6 +527,12 @@ dda = client.direct_debit_authorities.find('8f233e04-ffaa-4c9d-adf9-244853848e21
 dda.delete
 ```
 
+##Tools
+#####Health check
+```ruby
+client.tools.health_check
+```
+
 _Check out the [online documentation](http://promisepay.github.io/promisepay-ruby/) to get a full list of available resources and methods._
 
 #4. Contributing
