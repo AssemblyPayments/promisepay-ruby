@@ -5,7 +5,7 @@ module Promisepay
     #
     # @param [Faraday::Response] response Faraday HTTP response
     # @return [Promisepay::Error]
-    def self.from_response(response)
+    def self.from_response(response, errors_format = nil)
       klass = case response.status
               when 400      then Promisepay::BadRequest
               when 401      then Promisepay::Unauthorized
@@ -22,11 +22,12 @@ module Promisepay
               when 503      then Promisepay::ServiceUnavailable
               when 500..599 then Promisepay::ServerError
               end
-      (klass) ? klass.new(response) : new(response)
+      (klass) ? klass.new(response, errors_format) : new(response, errors_format)
     end
 
-    def initialize(response = nil)
+    def initialize(response = nil, errors_format = nil)
       @response = response
+      @errors_format =  errors_format
       super(build_error_message)
     end
 
@@ -35,14 +36,18 @@ module Promisepay
     def build_error_message
       return nil if @response.nil? || @response.body.nil?
 
-      json_response = JSON.parse(@response.body)
-      message = ''
-      message << json_response['message'] if json_response.key?('message')
-      if json_response.key?('errors')
-        message << json_response['errors'].map{|attribute, content| "#{attribute}: #{content}"}.join(", ")
+      case @errors_format
+      when 'raw'
+        @response.body
+      else
+        json_response = JSON.parse(@response.body)
+        message = ''
+        message << json_response['message'] if json_response.key?('message')
+        if json_response.key?('errors')
+          message << json_response['errors'].map{|attribute, content| "#{attribute}: #{content}"}.join(", ")
+        end
+        message
       end
-
-      message
     end
   end
 

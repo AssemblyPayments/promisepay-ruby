@@ -153,7 +153,7 @@ module Promisepay
     private
 
     def on_complete(response)
-      fail Promisepay::Error.from_response(response) unless response.success?
+      fail Promisepay::Error.from_response(response, @errors_format) unless response.success?
     end
   end
 end

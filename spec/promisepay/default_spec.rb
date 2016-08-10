@@ -36,6 +36,16 @@ describe Promisepay::Default do
     end
   end
 
+  describe 'errors_format' do
+    it 'has a default value' do
+      expect(Promisepay::Default.errors_format).to eql('processed')
+    end
+    it 'can be overwritten with an environment variable' do
+      ENV['PROMISEPAY_ERRORS_FORMAT'] = 'raw'
+      expect(Promisepay::Default.errors_format).to eql('raw')
+    end
+  end
+
   describe 'username' do
     it 'has no default value' do
       expect(Promisepay::Default.username).to be_nil

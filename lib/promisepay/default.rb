@@ -42,6 +42,13 @@ module Promisepay
       def username
         ENV['PROMISEPAY_USERNAME']
       end
+
+      # Default username from ENV.
+      #
+      # @return [String]
+      def errors_format
+        ENV['PROMISEPAY_ERRORS_FORMAT'] || 'processed'
+      end
     end
   end
 end
