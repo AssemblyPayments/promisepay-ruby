@@ -12,8 +12,10 @@ module Promisepay
     # @!attribute username
     #   @see http://docs.promisepay.com/v2.2/docs/overview-2
     #   @return [String] Promisepay username for Basic Authentication.
+    # @!attribute errors_format
+    #   @return [String] {'processed', 'raw'} format to be used for exception messages.
 
-    attr_accessor :api_domain, :environment, :token, :username
+    attr_accessor :api_domain, :environment, :token, :username, :errors_format
 
     class << self
       # List of configurable keys for {Promisepay::Client}.
@@ -24,7 +26,8 @@ module Promisepay
           :environment,
           :api_domain,
           :token,
-          :username
+          :username,
+          :errors_format
         ]
       end
     end
