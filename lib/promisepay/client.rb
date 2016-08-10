@@ -6,6 +6,7 @@ require_relative 'models/bank_account'
 require_relative 'models/card_account'
 require_relative 'models/charge'
 require_relative 'models/company'
+require_relative 'models/direct_debit_authority'
 require_relative 'models/fee'
 require_relative 'models/item'
 require_relative 'models/paypal_account'
@@ -19,6 +20,7 @@ require_relative 'resources/card_account_resource'
 require_relative 'resources/charge_resource'
 require_relative 'resources/company_resource'
 require_relative 'resources/fee_resource'
+require_relative 'resources/direct_debit_authority_resource'
 require_relative 'resources/item_resource'
 require_relative 'resources/paypal_account_resource'
 require_relative 'resources/token_resource'
@@ -119,6 +121,7 @@ module Promisepay
         card_accounts: CardAccountResource,
         charges: ChargeResource,
         companies: CompanyResource,
+        direct_debit_authorities: DirectDebitAuthorityResource,
         fees: FeeResource,
         items: ItemResource,
         paypal_accounts: PaypalAccountResource,
