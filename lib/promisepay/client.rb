@@ -27,6 +27,7 @@ require_relative 'resources/token_resource'
 require_relative 'resources/transaction_resource'
 require_relative 'resources/user_resource'
 require_relative 'resources/wallet_account_resource'
+require_relative 'tool'
 require 'json'
 require 'faraday'
 
@@ -128,6 +129,7 @@ module Promisepay
         transactions: TransactionResource,
         users: UserResource,
         tokens: TokenResource,
+        tools: Tool,
         wallet_accounts: WalletAccountResource
       }
     end
