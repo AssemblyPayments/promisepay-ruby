@@ -274,12 +274,40 @@ item.request_refund(
   refund_message: 'because'
 )
 ```
+#####Decline refund
+```ruby
+item.decline_refund
+```
 #####Refund
 ```ruby
 item.refund(
   refund_amount: '1000',
   refund_message: 'because'
 )
+```
+#####Raise dispute
+```ruby
+item.raise_dispute(user_id: '5830def0-ffe8-11e5-86aa-5e5517507c66')
+```
+#####Request resolve dispute
+```ruby
+item.request_resolve_dispute
+```
+#####Resolve dispute
+```ruby
+item.resolve_dispute
+```
+#####Escalate dispute
+```ruby
+item.escalate_dispute
+```
+#####Send tax invoice
+```ruby
+item.send_tax_invoice
+```
+#####Request tax invoice
+```ruby
+item.request_tax_invoice
 ```
 ##Card Accounts
 #####Create a card account
