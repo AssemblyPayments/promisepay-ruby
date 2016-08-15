@@ -152,6 +152,19 @@ module Promisepay
       @resources ||= {}
     end
 
+    # Create a card token that can be used with the PromisePay.js package
+    # to securely send PromisePay credit card details.
+    #
+    # @param options [Hash] Optional options.
+    # @option options [String] :token_type token type ID.
+    # @option user_id [String] :user_id Buyer or Seller ID (already created).
+    #
+    # @return [Hash]
+    def generate_token(options)
+      response = JSON.parse(post("token_auths", options).body)
+      response['token_auth']
+    end
+
     private
 
     def on_complete(response)
