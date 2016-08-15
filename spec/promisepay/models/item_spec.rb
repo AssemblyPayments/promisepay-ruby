@@ -169,6 +169,64 @@ describe Promisepay::Item do
       end
     end
 
+    describe 'decline_refund', vcr: { cassette_name: 'items_decline_refund' } do
+      before do
+        item.make_payment(user_id: buyer.id, account_id: card_account.id)
+        item.request_refund(refund_amount: 500, refund_message: 'because')
+      end
+      it 'declines a refund' do
+        expect(item.state).to eq('refund_flagged')
+        expect(item.decline_refund).to be(true)
+        expect(item.state).to eq('payment_deposited')
+      end
+    end
+
+    describe 'raise_dispute', vcr: { cassette_name: 'items_raise_dispute' } do
+      before { item.make_payment(user_id: buyer.id, account_id: card_account.id) }
+      it 'raises a dispute' do
+        expect(item.state).to eq('payment_deposited')
+        expect(item.raise_dispute(user_id: buyer.id)).to be(true)
+        expect(item.state).to eq('problem_flagged')
+      end
+    end
+
+    describe 'request_resolve_dispute', vcr: { cassette_name: 'items_request_resolve_dispute' } do
+      before do
+        item.make_payment(user_id: buyer.id, account_id: card_account.id)
+        item.raise_dispute(user_id: buyer.id)
+      end
+      it 'requests a resolution for the dispute' do
+        expect(item.state).to eq('problem_flagged')
+        expect(item.request_resolve_dispute).to be(true)
+        expect(item.state).to eq('problem_resolve_requested')
+      end
+    end
+
+    describe 'resolve_dispute', vcr: { cassette_name: 'items_resolve_dispute' } do
+      before do
+        item.make_payment(user_id: buyer.id, account_id: card_account.id)
+        item.raise_dispute(user_id: buyer.id)
+        item.request_resolve_dispute
+      end
+      it 'requests a resolution for the dispute' do
+        expect(item.state).to eq('problem_resolve_requested')
+        expect(item.resolve_dispute).to be(true)
+        expect(item.state).to eq('payment_deposited')
+      end
+    end
+
+    describe 'escalate_dispute', vcr: { cassette_name: 'items_escalate_dispute' } do
+      before do
+        item.make_payment(user_id: buyer.id, account_id: card_account.id)
+        item.raise_dispute(user_id: buyer.id)
+      end
+      it 'escaltates a dispute' do
+        expect(item.state).to eq('problem_flagged')
+        expect(item.escalate_dispute).to be(true)
+        expect(item.state).to eq('problem_escalated')
+      end
+    end
+
     describe 'refund', vcr: { cassette_name: 'items_refund' } do
       before { item.make_payment(user_id: buyer.id, account_id: card_account.id) }
       it 'requests a refund' do
@@ -183,6 +241,20 @@ describe Promisepay::Item do
         expect(item.state).to eq('pending')
         expect(item.cancel).to be(true)
         expect(item.state).to eq('cancelled')
+      end
+    end
+
+    describe 'send_tax_invoice', vcr: { cassette_name: 'items_send_tax_invoice' } do
+      before { item.make_payment(user_id: buyer.id, account_id: card_account.id) }
+      it 'returns true' do
+        expect(item.send_tax_invoice).to be(true)
+      end
+    end
+
+    describe 'request_tax_invoice', vcr: { cassette_name: 'items_request_tax_invoice' } do
+      before { item.make_payment(user_id: buyer.id, account_id: card_account.id) }
+      it 'returns true' do
+        expect(item.request_tax_invoice).to be(true)
       end
     end
   end

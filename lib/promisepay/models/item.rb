@@ -184,6 +184,17 @@ module Promisepay
       true
     end
 
+    # Decline a refund request for an Item.
+    #
+    # @see https://reference.promisepay.com/#decline-refund
+    #
+    # @return [Boolean]
+    def decline_refund
+      response = JSON.parse(@client.patch("items/#{send(:id)}/decline_refund").body)
+      @attributes = response['items']
+      true
+    end
+
     # Refund an Item’s funds held in escrow.
     #
     # @see https://reference.promisepay.com/#refund
@@ -195,6 +206,50 @@ module Promisepay
       true
     end
 
+    # Raise a dispute for the Item.
+    #
+    # @see https://reference.promisepay.com/#raise-dispute
+    #
+    # @return [Boolean]
+    def raise_dispute(options = {})
+      response = JSON.parse(@client.patch("items/#{send(:id)}/raise_dispute", options).body)
+      @attributes = response['items']
+      true
+    end
+
+    # Request that the dispute be resolved.
+    #
+    # @see https://reference.promisepay.com/#request-dispute-resolution
+    #
+    # @return [Boolean]
+    def request_resolve_dispute
+      response = JSON.parse(@client.patch("items/#{send(:id)}/request_resolve_dispute").body)
+      @attributes = response['items']
+      true
+    end
+
+    # Resolve a dispute.
+    #
+    # @see https://reference.promisepay.com/#resolve-dispute
+    #
+    # @return [Boolean]
+    def resolve_dispute
+      response = JSON.parse(@client.patch("items/#{send(:id)}/resolve_dispute").body)
+      @attributes = response['items']
+      true
+    end
+
+    # Escalate a dispute raised against an Item.
+    #
+    # @see https://reference.promisepay.com/#escalate-dispute
+    #
+    # @return [Boolean]
+    def escalate_dispute
+      response = JSON.parse(@client.patch("items/#{send(:id)}/escalate_dispute").body)
+      @attributes = response['items']
+      true
+    end
+
     # Cancel an Item.
     #
     # @see https://reference.promisepay.com/#cancel
@@ -202,6 +257,28 @@ module Promisepay
     # @return [Boolean]
     def cancel
       response = JSON.parse(@client.patch("items/#{id}/cancel").body)
+      @attributes = response['items']
+      true
+    end
+
+    # Email a Tax Invoice to the Users associated with the Item.
+    #
+    # @see https://reference.promisepay.com/#send-tax-invoice
+    #
+    # @return [Boolean]
+    def send_tax_invoice
+      response = JSON.parse(@client.patch("items/#{send(:id)}/send_tax_invoice").body)
+      @attributes = response['items']
+      true
+    end
+
+    # Request a Tax Invoice be sent to the Users associated with an Item.
+    #
+    # @see https://reference.promisepay.com/#request-tax-invoice
+    #
+    # @return [Boolean]
+    def request_tax_invoice
+      response = JSON.parse(@client.patch("items/#{send(:id)}/request_tax_invoice").body)
       @attributes = response['items']
       true
     end
