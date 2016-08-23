@@ -102,4 +102,14 @@ describe Promisepay::Client do
       end
     end
   end
+
+  describe 'generate_token', vcr: { cassette_name: 'client_generate_token' }do
+    let(:user) { PromisepayFactory.create_user }
+    it 'can be used to generate a card token' do
+      token_info = client.generate_token(token_type: 'card', user_id: user.id)
+      expect(token_info).to be_a(Hash)
+      expect(token_info['token_type']).to eq('card')
+      expect(token_info).to have_key('user_id')
+    end
+  end
 end

@@ -537,6 +537,12 @@ client.tools.health_check
 client.marketplace
 ```
 
+##Token
+#####Generate
+```ruby
+client.generate_token(token_type: 'card', user_id: '5830def0-ffe8-11e5-86aa-5e5517507c66')
+```
+
 _Check out the [online documentation](http://promisepay.github.io/promisepay-ruby/) to get a full list of available resources and methods._
 
 #4. Contributing
