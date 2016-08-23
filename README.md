@@ -532,6 +532,10 @@ dda.delete
 ```ruby
 client.tools.health_check
 ```
+##Marketplace
+```ruby
+client.marketplace
+```
 
 _Check out the [online documentation](http://promisepay.github.io/promisepay-ruby/) to get a full list of available resources and methods._
 

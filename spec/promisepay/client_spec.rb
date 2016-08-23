@@ -67,6 +67,15 @@ describe Promisepay::Client do
     end
   end
 
+  describe 'marketplace' do
+    it 'returns a Hash', vcr: { cassette_name: 'marketplace' } do
+      marketplace = client.marketplace
+      expect(marketplace).to be_a(Hash)
+      expect(marketplace).to have_key('id')
+      expect(marketplace).to have_key('related')
+    end
+  end
+
   describe 'self.resources' do
     it 'contains all available resources' do
       expect(Promisepay::Client.resources).to be_a(Hash)
