@@ -1,6 +1,20 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [1.1.0] - 2016-08-23
+
+- Add `Tool#health_check`
+- Add `:errors_format` option to the gem
+- Add `Client#marketplace`
+- Add `Client#generate_token`
+- Add `Item#decline_refund`
+- Add `Item#raise_dispute`
+- Add `Item#request_resolve_dispute`
+- Add `Item#resolve_dispute`
+- Add `Item#escalate_dispute`
+- Add `Item#send_tax_invoice`
+- Add `Item#request_tax_invoice`
+
 ## [1.0.2] - 2016-08-10
 
 - Add `DirectDebitAuthority` resource
