@@ -1,0 +1,469 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/users
+    body:
+      encoding: UTF-8
+      string: '{"id":"e48b52cd-1462-4789-a112-ab97a2a48a4c","first_name":"myFirstName","email":"e48b52cd-1462-4789-a112-ab97a2a48a4c@mail.com","country":"AUS"}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Access-Control-Allow-Headers:
+      - Origin, Content-Type, Accept, Authorization, Token
+      Access-Control-Allow-Methods:
+      - POST, GET, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Request-Method:
+      - "*"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 15 Aug 2016 19:44:36 GMT
+      Etag:
+      - W/"85b3722336a58f2ed9a77f899d35a234"
+      Location:
+      - "/users/e48b52cd-1462-4789-a112-ab97a2a48a4c"
+      Server:
+      - nginx/1.8.0 + Phusion Passenger 4.0.59
+      Set-Cookie:
+      - request_method=POST; path=/
+      Status:
+      - 201 Created
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Powered-By:
+      - Phusion Passenger 4.0.59
+      X-Request-Id:
+      - 6ba3be19-35dd-46e7-8370-441e0bbebae3
+      X-Runtime:
+      - '0.972263'
+      X-Xss-Protection:
+      - 1; mode=block
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"users":{"created_at":"2016-08-15T19:44:36.225Z","updated_at":"2016-08-15T19:44:36.225Z","full_name":"myFirstName","email":"e48b52cd-1462-4789-a112-ab97a2a48a4c@mail.com","mobile":null,"phone":null,"logo_url":null,"color_1":null,"color_2":null,"first_name":"myFirstName","last_name":null,"id":"e48b52cd-1462-4789-a112-ab97a2a48a4c","location":"AUS","verification_state":"pending","held_state":false,"dob":null,"government_number":null,"drivers_license":null,"flags":{},"related":{"addresses":"63a102f0-d39f-4cc0-989e-b9360c264aa9"},"links":{"self":"/users","items":"/users/e48b52cd-1462-4789-a112-ab97a2a48a4c/items","card_accounts":"/users/e48b52cd-1462-4789-a112-ab97a2a48a4c/card_accounts","paypal_accounts":"/users/e48b52cd-1462-4789-a112-ab97a2a48a4c/paypal_accounts","bank_accounts":"/users/e48b52cd-1462-4789-a112-ab97a2a48a4c/bank_accounts","wallet_accounts":"/users/e48b52cd-1462-4789-a112-ab97a2a48a4c/wallet_accounts"}}}'
+    http_version: 
+  recorded_at: Mon, 15 Aug 2016 19:44:36 GMT
+- request:
+    method: post
+    uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/users
+    body:
+      encoding: UTF-8
+      string: '{"id":"48ed6805-8ac1-4e8a-9e1b-80a6982fd8fb","first_name":"myFirstName","email":"48ed6805-8ac1-4e8a-9e1b-80a6982fd8fb@mail.com","country":"AUS"}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Access-Control-Allow-Headers:
+      - Origin, Content-Type, Accept, Authorization, Token
+      Access-Control-Allow-Methods:
+      - POST, GET, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Request-Method:
+      - "*"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 15 Aug 2016 19:44:38 GMT
+      Etag:
+      - W/"2209b9a25c9f1f40a600c298fa1026fc"
+      Location:
+      - "/users/48ed6805-8ac1-4e8a-9e1b-80a6982fd8fb"
+      Server:
+      - nginx/1.8.0 + Phusion Passenger 4.0.59
+      Set-Cookie:
+      - request_method=POST; path=/
+      Status:
+      - 201 Created
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Powered-By:
+      - Phusion Passenger 4.0.59
+      X-Request-Id:
+      - f1a2bf9b-59f6-43a6-8c8e-d908aa978ef5
+      X-Runtime:
+      - '1.371202'
+      X-Xss-Protection:
+      - 1; mode=block
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"users":{"created_at":"2016-08-15T19:44:38.079Z","updated_at":"2016-08-15T19:44:38.079Z","full_name":"myFirstName","email":"48ed6805-8ac1-4e8a-9e1b-80a6982fd8fb@mail.com","mobile":null,"phone":null,"logo_url":null,"color_1":null,"color_2":null,"first_name":"myFirstName","last_name":null,"id":"48ed6805-8ac1-4e8a-9e1b-80a6982fd8fb","location":"AUS","verification_state":"pending","held_state":false,"dob":null,"government_number":null,"drivers_license":null,"flags":{},"related":{"addresses":"e3068259-a19c-4354-9e2a-30c633036810"},"links":{"self":"/users","items":"/users/48ed6805-8ac1-4e8a-9e1b-80a6982fd8fb/items","card_accounts":"/users/48ed6805-8ac1-4e8a-9e1b-80a6982fd8fb/card_accounts","paypal_accounts":"/users/48ed6805-8ac1-4e8a-9e1b-80a6982fd8fb/paypal_accounts","bank_accounts":"/users/48ed6805-8ac1-4e8a-9e1b-80a6982fd8fb/bank_accounts","wallet_accounts":"/users/48ed6805-8ac1-4e8a-9e1b-80a6982fd8fb/wallet_accounts"}}}'
+    http_version: 
+  recorded_at: Mon, 15 Aug 2016 19:44:39 GMT
+- request:
+    method: post
+    uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/items
+    body:
+      encoding: UTF-8
+      string: '{"id":"6b689844-7ad1-438b-aac0-015ddde9cd60","name":"itemName","amount":500,"payment_type":1,"seller_id":"e48b52cd-1462-4789-a112-ab97a2a48a4c","buyer_id":"48ed6805-8ac1-4e8a-9e1b-80a6982fd8fb"}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Access-Control-Allow-Headers:
+      - Origin, Content-Type, Accept, Authorization, Token
+      Access-Control-Allow-Methods:
+      - POST, GET, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Request-Method:
+      - "*"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 15 Aug 2016 19:44:41 GMT
+      Etag:
+      - W/"07801c07f4a1d9c8f8849732d8804830"
+      Location:
+      - "/items/6b689844-7ad1-438b-aac0-015ddde9cd60"
+      Server:
+      - nginx/1.8.0 + Phusion Passenger 4.0.59
+      Set-Cookie:
+      - request_method=POST; path=/
+      Status:
+      - 201 Created
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Powered-By:
+      - Phusion Passenger 4.0.59
+      X-Request-Id:
+      - 98a23e38-634b-43d2-9729-5e6534d7cc5b
+      X-Runtime:
+      - '1.410195'
+      X-Xss-Protection:
+      - 1; mode=block
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"items":{"id":"6b689844-7ad1-438b-aac0-015ddde9cd60","name":"itemName","description":null,"created_at":"2016-08-15T19:44:40.399Z","updated_at":"2016-08-15T19:44:40.399Z","state":"pending","net_amount":500,"refunded_amount":0,"released_amount":0,"buyer_fees":0,"seller_fees":0,"credit_card_fee":0,"paypal_fee":0,"seller_url":"","buyer_url":"","direct_debit_fee":0,"status":22000,"amount":500,"payment_type_id":1,"due_date":null,"pending_release_amount":0,"deposit_reference":"100014015438721","promisepay_fee":8,"total_outstanding":500,"total_amount":500,"currency":"AUD","payment_method":"pending","buyer_name":"myFirstName","buyer_email":"48ed6805-8ac1-4e8a-9e1b-80a6982fd8fb@mail.com","buyer_country":"AUS","seller_name":"myFirstName","seller_email":"e48b52cd-1462-4789-a112-ab97a2a48a4c@mail.com","seller_country":"AUS","payment_credit_card_enabled":true,"payment_direct_debit_enabled":true,"related":{"buyers":"48ed6805-8ac1-4e8a-9e1b-80a6982fd8fb","sellers":"e48b52cd-1462-4789-a112-ab97a2a48a4c"},"links":{"self":"/items","buyers":"/items/6b689844-7ad1-438b-aac0-015ddde9cd60/buyers","sellers":"/items/6b689844-7ad1-438b-aac0-015ddde9cd60/sellers","status":"/items/6b689844-7ad1-438b-aac0-015ddde9cd60/status","fees":"/items/6b689844-7ad1-438b-aac0-015ddde9cd60/fees","transactions":"/items/6b689844-7ad1-438b-aac0-015ddde9cd60/transactions","wire_details":"/items/6b689844-7ad1-438b-aac0-015ddde9cd60/wire_details","bpay_details":"/items/6b689844-7ad1-438b-aac0-015ddde9cd60/bpay_details"}}}'
+    http_version: 
+  recorded_at: Mon, 15 Aug 2016 19:44:41 GMT
+- request:
+    method: get
+    uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/items/6b689844-7ad1-438b-aac0-015ddde9cd60/buyers
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - Origin, Content-Type, Accept, Authorization, Token
+      Access-Control-Allow-Methods:
+      - POST, GET, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Request-Method:
+      - "*"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 15 Aug 2016 19:44:43 GMT
+      Etag:
+      - W/"e3f30a6fb14611fde5580b66fb87a218"
+      Server:
+      - nginx/1.8.0 + Phusion Passenger 4.0.59
+      Status:
+      - 200 OK
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Powered-By:
+      - Phusion Passenger 4.0.59
+      X-Request-Id:
+      - 4db932a4-cc12-48e0-a824-bbcfbf39e119
+      X-Runtime:
+      - '1.013162'
+      X-Xss-Protection:
+      - 1; mode=block
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"users":{"created_at":"2016-08-15T19:44:38.079Z","updated_at":"2016-08-15T19:44:38.079Z","full_name":"myFirstName","email":"48ed6805-8ac1-4e8a-9e1b-80a6982fd8fb@mail.com","mobile":null,"phone":null,"logo_url":null,"color_1":null,"color_2":null,"first_name":"myFirstName","last_name":null,"id":"48ed6805-8ac1-4e8a-9e1b-80a6982fd8fb","location":"AUS","verification_state":"pending","held_state":false,"dob":null,"government_number":null,"drivers_license":null,"flags":{},"related":{"addresses":"e3068259-a19c-4354-9e2a-30c633036810"},"links":{"self":"/items/6b689844-7ad1-438b-aac0-015ddde9cd60/buyers","items":"/users/48ed6805-8ac1-4e8a-9e1b-80a6982fd8fb/items","card_accounts":"/users/48ed6805-8ac1-4e8a-9e1b-80a6982fd8fb/card_accounts","paypal_accounts":"/users/48ed6805-8ac1-4e8a-9e1b-80a6982fd8fb/paypal_accounts","bank_accounts":"/users/48ed6805-8ac1-4e8a-9e1b-80a6982fd8fb/bank_accounts","wallet_accounts":"/users/48ed6805-8ac1-4e8a-9e1b-80a6982fd8fb/wallet_accounts"}}}'
+    http_version: 
+  recorded_at: Mon, 15 Aug 2016 19:44:43 GMT
+- request:
+    method: post
+    uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/card_accounts
+    body:
+      encoding: UTF-8
+      string: '{"user_id":"48ed6805-8ac1-4e8a-9e1b-80a6982fd8fb","full_name":"User
+        Name","number":"4111111111111111","expiry_month":8,"expiry_year":2017,"cvv":"123"}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Access-Control-Allow-Headers:
+      - Origin, Content-Type, Accept, Authorization, Token
+      Access-Control-Allow-Methods:
+      - POST, GET, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Request-Method:
+      - "*"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 15 Aug 2016 19:44:45 GMT
+      Etag:
+      - W/"1175d4d6a7c31b0ffc1a8fd9995488d7"
+      Location:
+      - "/card_accounts/dd6d5739-d937-46cd-b3cb-e650cfec0ac7"
+      Server:
+      - nginx/1.8.0 + Phusion Passenger 4.0.59
+      Set-Cookie:
+      - request_method=POST; path=/
+      Status:
+      - 201 Created
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Powered-By:
+      - Phusion Passenger 4.0.59
+      X-Request-Id:
+      - 9c4f66f6-4728-4ca7-a77b-97a099511319
+      X-Runtime:
+      - '1.594710'
+      X-Xss-Protection:
+      - 1; mode=block
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"card_accounts":{"active":true,"created_at":"2016-08-15T19:44:45.572Z","updated_at":"2016-08-15T19:44:45.572Z","id":"dd6d5739-d937-46cd-b3cb-e650cfec0ac7","currency":"AUD","links":{"self":"/card_accounts/dd6d5739-d937-46cd-b3cb-e650cfec0ac7","users":"/card_accounts/dd6d5739-d937-46cd-b3cb-e650cfec0ac7/users"}}}'
+    http_version: 
+  recorded_at: Mon, 15 Aug 2016 19:44:46 GMT
+- request:
+    method: patch
+    uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/items/6b689844-7ad1-438b-aac0-015ddde9cd60/make_payment
+    body:
+      encoding: UTF-8
+      string: '{"user_id":"48ed6805-8ac1-4e8a-9e1b-80a6982fd8fb","account_id":"dd6d5739-d937-46cd-b3cb-e650cfec0ac7"}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - Origin, Content-Type, Accept, Authorization, Token
+      Access-Control-Allow-Methods:
+      - POST, GET, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Request-Method:
+      - "*"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 15 Aug 2016 19:44:53 GMT
+      Etag:
+      - W/"fbdb2559a491a721288f9ac8d053b17b"
+      Location:
+      - "/items/6b689844-7ad1-438b-aac0-015ddde9cd60"
+      Server:
+      - nginx/1.8.0 + Phusion Passenger 4.0.59
+      Set-Cookie:
+      - request_method=PATCH; path=/
+      Status:
+      - 200 OK
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Powered-By:
+      - Phusion Passenger 4.0.59
+      X-Request-Id:
+      - f93766e5-4e68-45bc-aad4-5c41ffee439e
+      X-Runtime:
+      - '6.698684'
+      X-Xss-Protection:
+      - 1; mode=block
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"items":{"id":"6b689844-7ad1-438b-aac0-015ddde9cd60","name":"itemName","description":null,"created_at":"2016-08-15T19:44:40.399Z","updated_at":"2016-08-15T19:44:52.781Z","state":"payment_deposited","net_amount":500,"refunded_amount":0,"released_amount":0,"buyer_fees":0,"seller_fees":0,"credit_card_fee":0,"paypal_fee":0,"seller_url":"","buyer_url":"","direct_debit_fee":0,"status":22200,"amount":500,"payment_type_id":1,"due_date":null,"pending_release_amount":0,"deposit_reference":"100014015438721","promisepay_fee":47,"total_outstanding":500,"total_amount":500,"currency":"AUD","payment_method":"credit
+        card","buyer_name":"myFirstName","buyer_email":"48ed6805-8ac1-4e8a-9e1b-80a6982fd8fb@mail.com","buyer_country":"AUS","seller_name":"myFirstName","seller_email":"e48b52cd-1462-4789-a112-ab97a2a48a4c@mail.com","seller_country":"AUS","payment_credit_card_enabled":true,"payment_direct_debit_enabled":true,"related":{"buyers":"48ed6805-8ac1-4e8a-9e1b-80a6982fd8fb","sellers":"e48b52cd-1462-4789-a112-ab97a2a48a4c"},"links":{"self":"/items/6b689844-7ad1-438b-aac0-015ddde9cd60/make_payment","buyers":"/items/6b689844-7ad1-438b-aac0-015ddde9cd60/buyers","sellers":"/items/6b689844-7ad1-438b-aac0-015ddde9cd60/sellers","status":"/items/6b689844-7ad1-438b-aac0-015ddde9cd60/status","fees":"/items/6b689844-7ad1-438b-aac0-015ddde9cd60/fees","transactions":"/items/6b689844-7ad1-438b-aac0-015ddde9cd60/transactions","wire_details":"/items/6b689844-7ad1-438b-aac0-015ddde9cd60/wire_details","bpay_details":"/items/6b689844-7ad1-438b-aac0-015ddde9cd60/bpay_details"}}}'
+    http_version: 
+  recorded_at: Mon, 15 Aug 2016 19:44:53 GMT
+- request:
+    method: patch
+    uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/items/6b689844-7ad1-438b-aac0-015ddde9cd60/request_tax_invoice
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - Origin, Content-Type, Accept, Authorization, Token
+      Access-Control-Allow-Methods:
+      - POST, GET, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Request-Method:
+      - "*"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 15 Aug 2016 19:44:55 GMT
+      Etag:
+      - W/"fff821ae6582fd25b232606ec4f988ed"
+      Location:
+      - "/items/6b689844-7ad1-438b-aac0-015ddde9cd60"
+      Server:
+      - nginx/1.8.0 + Phusion Passenger 4.0.59
+      Set-Cookie:
+      - request_method=PATCH; path=/
+      Status:
+      - 200 OK
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Powered-By:
+      - Phusion Passenger 4.0.59
+      X-Request-Id:
+      - c6c8d381-7527-4395-b918-555e67ce4331
+      X-Runtime:
+      - '0.689205'
+      X-Xss-Protection:
+      - 1; mode=block
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"items":{"id":"6b689844-7ad1-438b-aac0-015ddde9cd60","name":"itemName","description":null,"created_at":"2016-08-15T19:44:40.399Z","updated_at":"2016-08-15T19:44:52.781Z","state":"payment_deposited","net_amount":500,"refunded_amount":0,"released_amount":0,"buyer_fees":0,"seller_fees":0,"credit_card_fee":0,"paypal_fee":0,"seller_url":"","buyer_url":"","direct_debit_fee":0,"status":22200,"amount":500,"payment_type_id":1,"due_date":null,"pending_release_amount":0,"deposit_reference":"100014015438721","promisepay_fee":47,"total_outstanding":500,"total_amount":500,"currency":"AUD","payment_method":"credit
+        card","buyer_name":"myFirstName","buyer_email":"48ed6805-8ac1-4e8a-9e1b-80a6982fd8fb@mail.com","buyer_country":"AUS","seller_name":"myFirstName","seller_email":"e48b52cd-1462-4789-a112-ab97a2a48a4c@mail.com","seller_country":"AUS","payment_credit_card_enabled":true,"payment_direct_debit_enabled":true,"related":{"buyers":"48ed6805-8ac1-4e8a-9e1b-80a6982fd8fb","sellers":"e48b52cd-1462-4789-a112-ab97a2a48a4c"},"links":{"self":"/items/6b689844-7ad1-438b-aac0-015ddde9cd60/request_tax_invoice","buyers":"/items/6b689844-7ad1-438b-aac0-015ddde9cd60/buyers","sellers":"/items/6b689844-7ad1-438b-aac0-015ddde9cd60/sellers","status":"/items/6b689844-7ad1-438b-aac0-015ddde9cd60/status","fees":"/items/6b689844-7ad1-438b-aac0-015ddde9cd60/fees","transactions":"/items/6b689844-7ad1-438b-aac0-015ddde9cd60/transactions","wire_details":"/items/6b689844-7ad1-438b-aac0-015ddde9cd60/wire_details","bpay_details":"/items/6b689844-7ad1-438b-aac0-015ddde9cd60/bpay_details"}}}'
+    http_version: 
+  recorded_at: Mon, 15 Aug 2016 19:44:55 GMT
+recorded_with: VCR 3.0.3
