@@ -153,7 +153,11 @@ item.fees
 ```
 #####Get an item's transactions
 ```ruby
-item.transaction
+item.transactions
+```
+#####Get an item's batch transactions
+```ruby
+item.batch_transactions
 ```
 #####Get an item's wire details
 ```ruby
@@ -496,6 +500,16 @@ transaction.users
 #####Get a transaction's fees
 ```ruby
 transaction.fees
+```
+
+##Batch Transactions
+#####Get a list of batch transactions
+```ruby
+batch_transactions = client.batch_transactions.find_all
+```
+#####Get a transaction
+```ruby
+batch_transaction = client.batch_transactions.find('1')
 ```
 
 ##Charges
