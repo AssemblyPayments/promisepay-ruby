@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'byebug'
 describe Promisepay::BatchTransactionResource do
   let(:client) { Promisepay::Client.new }
   let(:seller) { PromisepayFactory.create_user}
@@ -22,7 +21,6 @@ describe Promisepay::BatchTransactionResource do
     #     item.make_payment(account_id: account.id)
     #   end
     #   it 'gives back an array of batch_transactions' do
-    #     byebug
     #     expect(subject).to_not be_empty
     #     expect(subject.first).to be_kind_of(Promisepay::BatchTransaction)
     #   end
