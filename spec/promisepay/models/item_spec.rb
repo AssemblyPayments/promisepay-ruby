@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe Promisepay::Item do
+  let(:client) { Promisepay::Client.new }
   let(:item) { PromisepayFactory.create_item }
 
   describe 'update' do
@@ -80,6 +81,32 @@ describe Promisepay::Item do
       #   expect(transactions).to_not be_empty
       #   expect(transactions.first).to be_a(Promisepay::Transaction)
       # end
+    end
+  end
+
+  describe 'batch_transactions' do
+    context 'when no batch_transactions are available', vcr: { cassette_name: 'items_batch_transactions_empty' } do
+      it 'gives back en empty array' do
+        batch_transactions = item.batch_transactions
+        expect(batch_transactions).to be_empty
+      end
+    end
+
+    context 'when batch_transactions are available', vcr: { cassette_name: 'items_batch_transactions' } do
+      let(:seller) { PromisepayFactory.create_user}
+      let(:buyer) { PromisepayFactory.create_user}
+      let(:item) { PromisepayFactory.create_item({}, seller, buyer)}
+      let(:account) { PromisepayFactory.create_bank_account({}, buyer)}
+      before do
+        client.direct_debit_authorities.create(account_id: account.id, amount: 100_000)
+        item.request_payment
+        item.make_payment(account_id: account.id)
+      end
+      it 'gives back an array of batch_transactions' do
+        batch_transactions = item.batch_transactions
+        expect(batch_transactions).to_not be_empty
+        expect(batch_transactions.first).to be_a(Promisepay::BatchTransaction)
+      end
     end
   end
 
