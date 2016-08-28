@@ -10,7 +10,7 @@ module Promisepay
     # @see https://reference.promisepay.com/#list-batch-transactions
     #
     # @param options [Hash] Optional options.
-    # @option options [Integer] :limit Can ask for up to 200 items. default: 10
+    # @option options [Integer] :limit Can ask for up to 200 batch transactions. default: 10
     # @option options [Integer] :offset Pagination help. default: 0
     # @option options [Integer] :account_id Bank, Card, PayPal or Wallet Account ID.
     # @option options [Integer] :batch_id Batch ID. This appears on a bank reference.
