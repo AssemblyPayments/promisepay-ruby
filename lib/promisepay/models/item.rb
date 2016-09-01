@@ -59,7 +59,7 @@ module Promisepay
       fees.map { |attributes| Promisepay::Fee.new(@client, attributes) }
     end
 
-    # Get historical transaction for the item.
+    # Get historical transactions for the item.
     #
     # @see https://reference.promisepay.com/#list-item-transactions
     #
@@ -72,6 +72,21 @@ module Promisepay
       response = JSON.parse(@client.get("items/#{send(:id)}/transactions", options).body)
       transactions = response.key?('transactions') ? response['transactions'] : []
       transactions.map { |attributes| Promisepay::Transaction.new(@client, attributes) }
+    end
+
+    # Get historical batch_transactions for the item.
+    #
+    # @see https://reference.promisepay.com/#list-item-batch-transactions
+    #
+    # @param options [Hash] Optional options.
+    # @option options [Integer] :limit Can ask for up to 200 transactions. default: 10
+    # @option options [Integer] :offset Pagination help. default: 0
+    #
+    # @return [Array<Promisepay::BatchTransaction>]
+    def batch_transactions(options = {})
+      response = JSON.parse(@client.get("items/#{send(:id)}/batch_transactions", options).body)
+      batch_transactions = response.key?('batch_transactions') ? response['batch_transactions'] : []
+      batch_transactions.map { |attributes| Promisepay::BatchTransaction.new(@client, attributes) }
     end
 
     # Show the wire details for payment.
