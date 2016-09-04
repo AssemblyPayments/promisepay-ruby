@@ -1,0 +1,133 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/configurations
+    body:
+      encoding: UTF-8
+      string: '{"name":"partial_refunds","enabled":false}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Access-Control-Allow-Headers:
+      - Origin, Content-Type, Accept, Authorization, Token
+      Access-Control-Allow-Methods:
+      - POST, GET, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Request-Method:
+      - "*"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 04 Sep 2016 10:28:54 GMT
+      Etag:
+      - W/"051269cea52127d3e7a6d2deea73652a"
+      Location:
+      - "/configurations/437ea8e3-a5f6-450e-a554-6b3b473736b6"
+      Server:
+      - nginx/1.8.0 + Phusion Passenger 4.0.59
+      Set-Cookie:
+      - request_method=POST; path=/
+      Status:
+      - 201 Created
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Powered-By:
+      - Phusion Passenger 4.0.59
+      X-Request-Id:
+      - 7b0b9fc7-ae79-419b-bf37-61d7b984547f
+      X-Runtime:
+      - '0.351104'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '267'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"feature_configurations":{"name":"partial_refunds","enabled":false,"min":null,"max":null,"id":"437ea8e3-a5f6-450e-a554-6b3b473736b6","user_id":null,"country":null,"item_id":null,"options":null,"links":{"self":"/configurations/437ea8e3-a5f6-450e-a554-6b3b473736b6"}}}'
+    http_version: 
+  recorded_at: Sun, 04 Sep 2016 10:28:56 GMT
+- request:
+    method: get
+    uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/configurations/437ea8e3-a5f6-450e-a554-6b3b473736b6
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - Origin, Content-Type, Accept, Authorization, Token
+      Access-Control-Allow-Methods:
+      - POST, GET, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Request-Method:
+      - "*"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 04 Sep 2016 10:28:56 GMT
+      Etag:
+      - W/"051269cea52127d3e7a6d2deea73652a"
+      Location:
+      - "/configurations/437ea8e3-a5f6-450e-a554-6b3b473736b6"
+      Server:
+      - nginx/1.8.0 + Phusion Passenger 4.0.59
+      Status:
+      - 200 OK
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Powered-By:
+      - Phusion Passenger 4.0.59
+      X-Request-Id:
+      - 659b1499-5248-4789-9691-1111954b999d
+      X-Runtime:
+      - '0.335239'
+      X-Xss-Protection:
+      - 1; mode=block
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"feature_configurations":{"name":"partial_refunds","enabled":false,"min":null,"max":null,"id":"437ea8e3-a5f6-450e-a554-6b3b473736b6","user_id":null,"country":null,"item_id":null,"options":null,"links":{"self":"/configurations/437ea8e3-a5f6-450e-a554-6b3b473736b6"}}}'
+    http_version: 
+  recorded_at: Sun, 04 Sep 2016 10:28:57 GMT
+recorded_with: VCR 3.0.3

@@ -35,11 +35,11 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 28 Aug 2016 13:12:53 GMT
+      - Sun, 04 Sep 2016 10:24:08 GMT
       Etag:
-      - W/"e4a62fc0e4e5e820ff6d73ea1a01d403"
+      - W/"6beeb5de2c0b743261347ad7e92a1bf3"
       Location:
-      - "/configurations/"
+      - "/configurations/18d19c77-4546-4b96-b0f0-682e2ee1a24e"
       Server:
       - nginx/1.8.0 + Phusion Passenger 4.0.59
       Set-Cookie:
@@ -53,9 +53,9 @@ http_interactions:
       X-Powered-By:
       - Phusion Passenger 4.0.59
       X-Request-Id:
-      - f6f2c962-0333-4343-b386-5825fd8b5e80
+      - ca2274ec-1819-446c-b25e-94256e5fdf66
       X-Runtime:
-      - '0.334660'
+      - '0.333407'
       X-Xss-Protection:
       - 1; mode=block
       Transfer-Encoding:
@@ -64,7 +64,7 @@ http_interactions:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"feature_configurations":{"name":"partial_refunds","enabled":false,"min":null,"max":null,"id":null,"user_id":null,"country":null,"item_id":null,"options":null,"links":{"self":"/configurations/"}}}'
+      string: '{"feature_configurations":{"name":"partial_refunds","enabled":false,"min":null,"max":null,"id":"18d19c77-4546-4b96-b0f0-682e2ee1a24e","user_id":null,"country":null,"item_id":null,"options":null,"links":{"self":"/configurations/18d19c77-4546-4b96-b0f0-682e2ee1a24e"}}}'
     http_version: 
-  recorded_at: Sun, 28 Aug 2016 13:12:53 GMT
+  recorded_at: Sun, 04 Sep 2016 10:24:10 GMT
 recorded_with: VCR 3.0.3

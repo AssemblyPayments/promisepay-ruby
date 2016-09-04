@@ -117,7 +117,7 @@ module PromisepayFactory
 
   def self.create_configuration options={}
     default_options = {
-      name: 'email_by_promisepay',
+      name: 'partial_refunds',
       enabled: false
     }
     client.configurations.create(default_options.merge(options))

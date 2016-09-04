@@ -18,23 +18,21 @@ describe Promisepay::ItemResource do
     end
   end
 
-  # describe 'find' do
-  #   let(:configuration) { PromisepayFactory.create_configuration }
+  describe 'find' do
+    context 'an existing configuration', vcr: { cassette_name: 'configurations_single' } do
+      let!(:configuration) { PromisepayFactory.create_configuration }
+      it 'gives back a single configuration' do
+        config = client.configurations.find(configuration.id)
+        expect(config).to be_a(Promisepay::Configuration)
+      end
+    end
 
-  #   context 'an existing configuration', vcr: { cassette_name: 'configurations_single' } do
-  #     it 'gives back a single configuration' do
-  #       byebug
-  #       configuration = client.configurations.find(configuration.id)
-  #       expect(configuration).to be_a(Promisepay::Configuration)
-  #     end
-  #   end
-
-  #   context 'an unknown configuration', vcr: { cassette_name: 'configurations_unknown' } do
-  #     it 'raises an error' do
-  #       expect { client.configurations.find('unkown_id') }.to raise_error(Promisepay::Unauthorized)
-  #     end
-  #   end
-  # end
+    context 'an unknown configuration', vcr: { cassette_name: 'configurations_unknown' } do
+      it 'raises an error' do
+        expect(client.configurations.find('unkown_id')).to be_nil
+      end
+    end
+  end
 
   describe 'create' do
     context 'with valid attributes', vcr: { cassette_name: 'configurations_created' } do
@@ -48,7 +46,7 @@ describe Promisepay::ItemResource do
       it 'gives back a configuraton' do
         configuration = client.configurations.create(valid_attributes)
         expect(configuration).to be_a(Promisepay::Configuration)
-        # expect(configuration.id).to be_a(String)
+        expect(configuration.id).to be_a(String)
         expect(configuration.name).to eql('partial_refunds')
         expect(configuration.enabled).to be(false)
       end

@@ -33,7 +33,11 @@ module Promisepay
     # @return [Promisepay::Configuration]
     def find(id)
       response = JSON.parse(@client.get("configurations/#{id}").body)
-      Promisepay::Configuration.new(@client, response['feature_configurations'])
+      if response['feature_configurations'].nil? || response['feature_configurations'].empty?
+        nil
+      else
+        Promisepay::Configuration.new(@client, response['feature_configurations'])
+      end
     end
 
     # Create an configuration for a marketplace
