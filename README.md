@@ -571,6 +571,16 @@ client.marketplace
 client.generate_token(token_type: 'card', user_id: '5830def0-ffe8-11e5-86aa-5e5517507c66')
 ```
 
+##Payment restriction
+#####Get a list of payment restrictions
+```ruby
+client.payment_restrictions.find_all
+```
+#####Get a payment restriction
+```ruby
+client.payment_restrictions.find("12a7732c-87a8-432d-a814-b53c1586ec3c")
+```
+
 _Check out the [online documentation](http://promisepay.github.io/promisepay-ruby/) to get a full list of available resources and methods._
 
 #4. Contributing
