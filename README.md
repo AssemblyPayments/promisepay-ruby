@@ -571,6 +571,32 @@ client.marketplace
 client.generate_token(token_type: 'card', user_id: '5830def0-ffe8-11e5-86aa-5e5517507c66')
 ```
 
+##Configurations
+
+#####Create a configuration
+```ruby
+configuration = client.configurations.create(
+  name: 'partial_refunds',
+  enabled: false
+)
+```
+#####Update a configuration
+```ruby
+configuration.update(enabled: true)
+```
+#####Get a configuration
+```ruby
+configuration = client.configurations.find("07f6d1f9-f07a-4c6c-844f-f0cb27fcca76")
+```
+#####Get a list of configurations
+```ruby
+configurations = client.configurations.find_all
+```
+#####Delete a configuration
+```ruby
+config.delete
+```
+
 _Check out the [online documentation](http://promisepay.github.io/promisepay-ruby/) to get a full list of available resources and methods._
 
 #4. Contributing
