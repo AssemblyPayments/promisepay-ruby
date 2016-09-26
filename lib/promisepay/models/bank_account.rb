@@ -24,5 +24,30 @@ module Promisepay
       @attributes['active'] = false
       true
     end
+
+    # When penny verification is enabled, this API call sends two penny transactions
+    # to the specified bank account for verification.
+    #
+    # @see https://reference.promisepay.com/#send-penny-amount
+    #
+    # @return [BankAccount]
+    def send_penny
+      @client.patch("bank_accounts/#{send(:id)}/penny_send")
+      Promisepay::BankAccount.new(@client, response['bank_accounts'])
+    end
+
+    # When penny verification is enabled, this API call verifies the two penny transactions
+    # that were sent to a specified bank account using Send Penny Amount
+    #
+    # @see https://reference.promisepay.com/#verify-penny-amount
+    #
+    # @param amount_1 [Integer] first penny amount in cents; can range from 1 to 30 cents.
+    # @param amount_2 [Integer] second penny amount in cents; can range from 1 to 30 cents.
+
+    # @return [Booelan]
+    def verify_penny(amount_1, amount_2)
+      @client.patch("bank_accounts/#{send(:id)}/penny_send")
+      true
+    end
   end
 end
