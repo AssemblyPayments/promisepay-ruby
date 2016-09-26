@@ -368,6 +368,14 @@ bank_account.user
 ```ruby
 client.bank_accounts.validate('122235821')
 ```
+#####Send penny verification
+```ruby
+bank_account.send_penny
+```
+#####Verify penny
+```ruby
+bank_account.verify_penny(12, 25)
+```
 
 ##PayPal Accounts
 #####Create a PayPal account
