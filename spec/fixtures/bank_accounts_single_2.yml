@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/bank_accounts/a4355e4c-25e4-49e3-88bf-63de71bbbea9
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 19 Jan 2017 04:44:20 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Headers:
+      - Origin, Content-Type, Accept, Authorization, Token
+      Access-Control-Allow-Methods:
+      - POST, GET, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Request-Method:
+      - "*"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"09c612afc7b10f01b4b41275ff7bf85d"
+      Server:
+      - nginx/1.8.0 + Phusion Passenger 4.0.59
+      Status:
+      - 200 OK
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Powered-By:
+      - Phusion Passenger 4.0.59
+      X-Request-Id:
+      - fea6add5-977c-4af2-9bca-02bfe89ed25b
+      X-Runtime:
+      - '0.268324'
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: ASCII-8BIT
+      string: '{"bank_accounts":{"id":"a4355e4c-25e4-49e3-88bf-63de71bbbea9","active":true,"created_at":"2017-01-19T04:41:01.747Z","updated_at":"2017-01-19T04:41:01.747Z","verification_status":"not_verified","currency":"AUD","bank":{"bank_name":"Bank
+        test","country":"AUS","account_name":"Mr x","routing_number":"XXXXX3","account_number":"XXX345","holder_type":"personal","account_type":"savings","direct_debit_authority_status":null},"links":{"self":"/bank_accounts/a4355e4c-25e4-49e3-88bf-63de71bbbea9","users":"/bank_accounts/a4355e4c-25e4-49e3-88bf-63de71bbbea9/users","direct_debit_authorities":"/bank_accounts/a4355e4c-25e4-49e3-88bf-63de71bbbea9/direct_debit_authorities"}}}'
+    http_version:
+  recorded_at: Thu, 19 Jan 2017 04:44:20 GMT
+recorded_with: VCR 3.0.3

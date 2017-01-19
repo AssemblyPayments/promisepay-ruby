@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/bank_accounts/a4355e4c-25e4-49e3-88bf-63de71bbbea9
+    body:
+      encoding: UTF-8
+      string: '{"mobile_pin":null}'
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 19 Jan 2017 04:44:21 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Headers:
+      - Origin, Content-Type, Accept, Authorization, Token
+      Access-Control-Allow-Methods:
+      - POST, GET, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Request-Method:
+      - "*"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"652727d4dd734c741f93f8884be7f597"
+      Server:
+      - nginx/1.8.0 + Phusion Passenger 4.0.59
+      Status:
+      - 200 OK
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Powered-By:
+      - Phusion Passenger 4.0.59
+      X-Request-Id:
+      - 3dc30844-c5f4-4f31-8d70-a84fb3224676
+      X-Runtime:
+      - '0.244601'
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: ASCII-8BIT
+      string: '{"bank_account":"Successfully redacted"}'
+    http_version:
+  recorded_at: Thu, 19 Jan 2017 04:44:22 GMT
+recorded_with: VCR 3.0.3
