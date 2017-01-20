@@ -20,5 +20,5 @@ VCR.configure do |config|
   config.configure_rspec_metadata!
   # Filter out basic auth information in cassettes
   config.filter_sensitive_data('<USERNAME>') { ENV['PROMISEPAY_USERNAME'].gsub('@', '%40') }
-  config.filter_sensitive_data('<TOKEN>') { ENV['PROMISEPAY_TOKEN'] }
+  config.filter_sensitive_data('<TOKEN>') { ENV['PROMISEPAY_TOKEN'].gsub('=','%3D') }
 end

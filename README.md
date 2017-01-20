@@ -569,6 +569,46 @@ dda = client.direct_debit_authorities.find('8f233e04-ffaa-4c9d-adf9-244853848e21
 dda.delete
 ```
 
+##Callbacks
+[Callback API doc](https://reference.prelive.promisepay.com/#callbacks)
+#####Create a callback
+```ruby
+callback = client.callbacks.create(
+  url: 'https://httpbin.org/post',
+  description: 'User Callback',
+  object_type: 'users',
+  enabled: 'true'
+)
+```
+#####Update a callback
+```ruby
+callback = client.callbacks.update(
+  id: '123456',
+  url: 'https://httpbin.org/post',
+  description: 'User Callback',
+  object_type: 'users',
+  enabled: 'true'
+)
+```
+or
+```ruby
+callback = client.callbacks.find('123456')
+callback.update(enabled: false)
+```
+#####Get a callback
+```ruby
+callback = client.callbacks.find('1')
+```
+#####Get a list of callbacks
+```ruby
+callbacks = client.callbacks.find_all
+```
+#####Delete a callback
+```ruby
+callback = client.callbacks.find('1')
+callback.delete
+```
+
 ##Tools
 #####Health check
 ```ruby

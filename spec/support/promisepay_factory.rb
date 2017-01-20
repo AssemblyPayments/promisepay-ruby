@@ -115,6 +115,18 @@ module PromisepayFactory
     client.direct_debit_authorities.create(default_options.merge(options))
   end
 
+  # we don't actually create the resource in Promisepay. we use The one that is already recorded by VCR
+  def self.create_callback(options={})
+    default_options = {
+      id: 'd37282d9-d265-4559-96f2-ca7cfc1cf851',
+      url: 'https://httpbin.org/post',
+      description: 'User Callback',
+      object_type: 'users',
+      enabled: true
+    }
+    Promisepay::Callback.new(client,default_options)
+  end
+
   private
 
   def self.client

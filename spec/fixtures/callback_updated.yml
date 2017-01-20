@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: patch
+    uri: https://<USERNAME>:<TOKEN>@test.api.promisepay.com/callbacks/d37282d9-d265-4559-96f2-ca7cfc1cf851
+    body:
+      encoding: UTF-8
+      string: '{"id":"d37282d9-d265-4559-96f2-ca7cfc1cf851","enabled":"false"}'
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 19 Jan 2017 11:55:11 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Headers:
+      - Origin, Content-Type, Accept, Authorization, Token
+      Access-Control-Allow-Methods:
+      - POST, GET, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '1728000'
+      Access-Control-Request-Method:
+      - "*"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"cb3f099fc59c70580bbfffd8f433de38"
+      Location:
+      - "/callbacks/d37282d9-d265-4559-96f2-ca7cfc1cf851"
+      Server:
+      - nginx/1.8.0 + Phusion Passenger 4.0.59
+      Status:
+      - 200 OK
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Powered-By:
+      - Phusion Passenger 4.0.59
+      X-Request-Id:
+      - 1bb18389-c57d-468c-b506-e18573346db6
+      X-Runtime:
+      - '0.207034'
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: ASCII-8BIT
+      string: '{"callbacks":{"id":"d37282d9-d265-4559-96f2-ca7cfc1cf851","description":"User
+        Callback","url":"https://httpbin.org/post","object_type":"users","enabled":false,"created_at":"2017-01-19T11:34:13.066Z","updated_at":"2017-01-19T11:55:11.210Z","links":{"self":"/callbacks/d37282d9-d265-4559-96f2-ca7cfc1cf851","responses":"/callbacks/d37282d9-d265-4559-96f2-ca7cfc1cf851/responses"}}}'
+    http_version:
+  recorded_at: Thu, 19 Jan 2017 11:55:11 GMT
+recorded_with: VCR 3.0.3

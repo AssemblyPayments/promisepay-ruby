@@ -4,6 +4,7 @@ require_relative 'models/base_model'
 require_relative 'models/account'
 require_relative 'models/bank_account'
 require_relative 'models/batch_transaction'
+require_relative 'models/callback'
 require_relative 'models/card_account'
 require_relative 'models/charge'
 require_relative 'models/company'
@@ -18,6 +19,7 @@ require_relative 'resources/base_resource'
 require_relative 'resources/account_resource'
 require_relative 'resources/bank_account_resource'
 require_relative 'resources/batch_transaction_resource'
+require_relative 'resources/callback_resource'
 require_relative 'resources/card_account_resource'
 require_relative 'resources/charge_resource'
 require_relative 'resources/company_resource'
@@ -131,6 +133,7 @@ module Promisepay
       {
         bank_accounts: BankAccountResource,
         batch_transactions: BatchTransactionResource,
+        callbacks: CallbackResource,
         card_accounts: CardAccountResource,
         charges: ChargeResource,
         companies: CompanyResource,
