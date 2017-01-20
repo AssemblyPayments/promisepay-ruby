@@ -360,6 +360,10 @@ bank_account = client.bank_accounts.find('1')
 ```ruby
 bank_account.deactivate
 ```
+Optionally a *mobile_pin* can be passed as argument.
+```ruby
+bank_account.deactivate('mobile_pin')
+```
 #####Get a bank account's users
 ```ruby
 bank_account.user
