@@ -18,5 +18,3 @@ mkmf.log
 .ruby-version
 .ruby-gemset
 .rspec
-docker-compose.yml
-Dockerfile
