@@ -7,6 +7,7 @@ require_relative 'models/batch_transaction'
 require_relative 'models/card_account'
 require_relative 'models/charge'
 require_relative 'models/company'
+require_relative 'models/configuration'
 require_relative 'models/direct_debit_authority'
 require_relative 'models/fee'
 require_relative 'models/item'
@@ -21,6 +22,7 @@ require_relative 'resources/batch_transaction_resource'
 require_relative 'resources/card_account_resource'
 require_relative 'resources/charge_resource'
 require_relative 'resources/company_resource'
+require_relative 'resources/configuration_resource'
 require_relative 'resources/fee_resource'
 require_relative 'resources/direct_debit_authority_resource'
 require_relative 'resources/item_resource'
@@ -134,6 +136,7 @@ module Promisepay
         card_accounts: CardAccountResource,
         charges: ChargeResource,
         companies: CompanyResource,
+        configurations: ConfigurationResource,
         direct_debit_authorities: DirectDebitAuthorityResource,
         fees: FeeResource,
         items: ItemResource,

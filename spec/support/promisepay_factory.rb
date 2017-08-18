@@ -115,6 +115,14 @@ module PromisepayFactory
     client.direct_debit_authorities.create(default_options.merge(options))
   end
 
+  def self.create_configuration options={}
+    default_options = {
+      name: 'partial_refunds',
+      enabled: false
+    }
+    client.configurations.create(default_options.merge(options))
+  end
+
   private
 
   def self.client
