@@ -501,6 +501,22 @@ transaction.users
 ```ruby
 transaction.fees
 ```
+#####Get a transaction's bank account
+```ruby
+transaction.bank_account
+```
+#####Get a transaction's card account
+```ruby
+transaction.card_account
+```
+#####Get a transaction's Paypal account
+```ruby
+transaction.paypal_account
+```
+#####Get a transaction's wallet account
+```ruby
+transaction.wallet_account
+```
 
 ## Batch Transactions
 ##### Get a list of batch transactions
