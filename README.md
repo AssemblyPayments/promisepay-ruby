@@ -9,7 +9,7 @@
 
 To see a completed integration in a Ruby on Rails app, visit this [repository](https://github.com/dannyshafer/PromisePay_api_integration).
 
-#1. Installation
+# 1. Installation
 
 Add these lines to your application's Gemfile:
 
@@ -25,11 +25,11 @@ Or install it yourself as:
 
     $ gem install promisepay
 
-#2. Configuration
+# 2. Configuration
 
 Before interacting with Promispay API you need to generate an access token.
 
-See [PromisePay documentation](https://promisepay-docs.readme.io/v1.0/docs/fetching-your-api-key) for more information.
+See [PromisePay documentation](https://docs.assemblypayments.com/feature-guides/integration/generating-api-keys/) for more information.
 
 **Create a PromisePay client**
 
@@ -43,9 +43,9 @@ PROMISEPAY_TOKEN ||= y0urt0k3n12345678910123456789101
 
 The following parameters are configurable through the client:
 
-  * `:username` / `ENV['PROMISEPAY_USERNAME']`: username for [basic authentication](http://docs.promisepay.com/v2.2/docs/overview-2)
-  * `:token` / `ENV['PROMISEPAY_TOKEN']`: token for [basic authentication](http://docs.promisepay.com/v2.2/docs/overview-2)
-  * `:environment` / `ENV['PROMISEPAY_ENVIRONMENT']`: API [environment](http://docs.promisepay.com/v2.2/docs/environments) to use (default: 'test')
+  * `:username` / `ENV['PROMISEPAY_USERNAME']`: username for [basic authentication](https://docs.assemblypayments.com/feature-guides/integration/generating-api-keys/)
+  * `:token` / `ENV['PROMISEPAY_TOKEN']`: token for [basic authentication](https://docs.assemblypayments.com/feature-guides/integration/generating-api-keys/)
+  * `:environment` / `ENV['PROMISEPAY_ENVIRONMENT']`: API [environment](http://docs.assemblypayments.com/feature-guides/fundamentals/environments/) to use (default: 'test')
   * `:api_domain` / `ENV['PROMISEPAY_API_DOMAIN']`: API domain name to use (default: 'api.promisepay.com')
 
  Instantiate the PromisePay client.
@@ -54,9 +54,9 @@ The following parameters are configurable through the client:
 client = Promisepay::Client.new(username: ENV['PROMISEPAY_USERNAME'], token: ENV['PROMISEPAY_TOKEN'])
 ```
 
-#3. Examples
+# 3. Examples
 
-##Tokens
+## Tokens
 ##### Example 1 - Request session token
 The below example shows the controller request for a marketplace configured to have the Item and User IDs generated automatically for them. Note: by default, the ability to have PromisePay auto generate IDs is turned off. However, it can easily be requested by contacting PromisePay support.
 
@@ -81,7 +81,7 @@ item_id = token_request['item']
 buyer_id = token_request['buyer']
 seller_id = token_request['seller']
 ```
-#####Example 2 - Request session token
+##### Example 2 - Request session token
 The below example shows the request for a marketplace that passes the Item and User IDs.
 
 ```ruby
@@ -104,9 +104,9 @@ token = client.tokens.create(:session, {
   payment_type_id: 2
 })['token']
 ```
-##Items
+## Items
 
-#####Create an item
+##### Create an item
 ```ruby
 item = client.items.create(
   id: '12345',
@@ -119,58 +119,58 @@ item = client.items.create(
   description: '5AUD transfer'
 )
 ```
-#####Get an item
+##### Get an item
 ```ruby
 item = client.items.find('1')
 ```
-#####Get a list of items
+##### Get a list of items
 ```ruby
 items = client.items.find_all
 ```
-#####Update an item
+##### Update an item
 ```ruby
 item.update(name: 'new name')
 ```
-#####Cancel an item
+##### Cancel an item
 ```ruby
 item.cancel
 ```
-#####Get an item status
+##### Get an item status
 ```ruby
 item.status
 ```
-#####Get an item's buyer
+##### Get an item's buyer
 ```ruby
 item.buyer
 ```
-#####Get an item's seller
+##### Get an item's seller
 ```ruby
 item.seller
 ```
-#####Get an item's fees
+##### Get an item's fees
 ```ruby
 item.fees
 ```
-#####Get an item's transactions
+##### Get an item's transactions
 ```ruby
 item.transactions
 ```
-#####Get an item's batch transactions
+##### Get an item's batch transactions
 ```ruby
 item.batch_transactions
 ```
-#####Get an item's wire details
+##### Get an item's wire details
 ```ruby
 item.wire_details
 ```
-#####Get an item's BPAY details
+##### Get an item's BPAY details
 ```ruby
 item.bpay_details
 ```
 
-##Users
+## Users
 
-#####Create a user
+##### Create a user
 ```ruby
 user = client.users.create(
   id: '123456',
@@ -185,7 +185,7 @@ user = client.users.create(
   dob:'12/06/1980'
 )
 ```
-#####Update a user
+##### Update a user
 ```ruby
 user = client.users.update(
   id: '123456',
@@ -200,121 +200,121 @@ user = client.users.update(
   dob:'12/06/1980'
 )
 ```
-#####Get a user
+##### Get a user
 ```ruby
 user = client.users.find('1')
 ```
-#####Get a list of users
+##### Get a list of users
 ```ruby
 users = client.users.find_all
 ```
-#####Get a user's card account
+##### Get a user's card account
 ```ruby
 user.card_account
 ```
-#####Get a user's PayPal account
+##### Get a user's PayPal account
 ```ruby
 user.paypal_account
 ```
-#####Get a user's bank account
+##### Get a user's bank account
 ```ruby
 user.bank_account
 ```
-#####Get a user's wallet account
+##### Get a user's wallet account
 ```ruby
 user.wallet_account
 ```
-#####Get a user's items
+##### Get a user's items
 ```ruby
 user.items
 ```
-#####Get a user's address
+##### Get a user's address
 ```ruby
 user.address
 ```
-#####Set a user's disbursement account
+##### Set a user's disbursement account
 ```ruby
 user.disbursement_account(bank_account.id)
 ```
-##Item Actions
-#####Make payment
+## Item Actions
+##### Make payment
 ```ruby
 item.make_payment(
   account_id: buyer_card_account.id
 )
 ```
-#####Request payment
+##### Request payment
 ```ruby
 item.request_payment
 ```
-#####Release payment
+##### Release payment
 ```ruby
 item.release_payment
 ```
-#####Request release
+##### Request release
 ```ruby
 item.request_release
 ```
-#####Cancel
+##### Cancel
 ```ruby
 item.cancel
 ```
-#####Acknowledge wire
+##### Acknowledge wire
 ```ruby
 item.acknowledge_wire
 ```
-#####Acknowledge PayPal
+##### Acknowledge PayPal
 ```ruby
 item.acknowledge_paypal
 ```
-#####Revert wire
+##### Revert wire
 ```ruby
 item.revert_wire
 ```
-#####Request refund
+##### Request refund
 ```ruby
 item.request_refund(
   refund_amount: '1000',
   refund_message: 'because'
 )
 ```
-#####Decline refund
+##### Decline refund
 ```ruby
 item.decline_refund
 ```
-#####Refund
+##### Refund
 ```ruby
 item.refund(
   refund_amount: '1000',
   refund_message: 'because'
 )
 ```
-#####Raise dispute
+##### Raise dispute
 ```ruby
 item.raise_dispute(user_id: '5830def0-ffe8-11e5-86aa-5e5517507c66')
 ```
-#####Request resolve dispute
+##### Request resolve dispute
 ```ruby
 item.request_resolve_dispute
 ```
-#####Resolve dispute
+##### Resolve dispute
 ```ruby
 item.resolve_dispute
 ```
-#####Escalate dispute
+##### Escalate dispute
 ```ruby
 item.escalate_dispute
 ```
-#####Send tax invoice
+##### Send tax invoice
 ```ruby
 item.send_tax_invoice
 ```
-#####Request tax invoice
+##### Request tax invoice
 ```ruby
 item.request_tax_invoice
 ```
-##Card Accounts
-#####Create a card account
+## Card Accounts
+##### Create a card account
 ```ruby
 card_account = client.card_accounts.create(
   user_id: buyer.id,
@@ -325,21 +325,21 @@ card_account = client.card_accounts.create(
   cvv: '123'
 )
 ```
-#####Get a card account
+##### Get a card account
 ```ruby
 card_account = client.card_accounts.find('1')
 ```
-#####Deactivate a card account
+##### Deactivate a card account
 ```ruby
 card_account.deactivate
 ```
-#####Get a card account's users
+##### Get a card account's users
 ```ruby
 card_account.user
 ```
 
-##Bank Accounts
-#####Create a bank account
+## Bank Accounts
+##### Create a bank account
 ```ruby
 bank_account = client.bank_accounts.create(
   user_id: seller.id,
@@ -352,71 +352,71 @@ bank_account = client.bank_accounts.create(
   country: 'AUS'
 )
 ```
-#####Get a bank account
+##### Get a bank account
 ```ruby
 bank_account = client.bank_accounts.find('1')
 ```
-#####Deactivate a bank account
+##### Deactivate a bank account
 ```ruby
 bank_account.deactivate
 ```
-#####Get a bank account's users
+##### Get a bank account's users
 ```ruby
 bank_account.user
 ```
-#####Validate Routing Number
+##### Validate Routing Number
 ```ruby
 client.bank_accounts.validate('122235821')
 ```
 
-##PayPal Accounts
-#####Create a PayPal account
+## PayPal Accounts
+##### Create a PayPal account
 ```ruby
 paypal_account = client.paypal_accounts.create(
   user_id: seller.id,
   paypal_email: 'seller@promisepay.com'
 )
 ```
-#####Get a PayPal account
+##### Get a PayPal account
 ```ruby
 paypal_account = client.paypal_accounts.find('1')
 ```
-#####Deactivate a PayPal account
+##### Deactivate a PayPal account
 ```ruby
 paypal_account.deactivate
 ```
-#####Get a PayPal account's users
+##### Get a PayPal account's users
 ```ruby
 paypal_account.user
 ```
 
-##Wallet Accounts
-#####Get a Wallet account
+## Wallet Accounts
+##### Get a Wallet account
 ```ruby
 wallet_account = client.wallet_accounts.find('1')
 ```
-#####Deposit funds
+##### Deposit funds
 ```ruby
 wallet_account.deposit(
   account_id: '123',
   amount: 500
 )
 ```
-#####Withdraw funds
+##### Withdraw funds
 ```ruby
 wallet_account.withdraw(
   account_id: '123',
   amount: 200
 )
 ```
-#####Get a Wallet account's users
+##### Get a Wallet account's users
 ```ruby
 wallet_account.user
 ```
 
-##Companies
+## Companies
 
-#####Create a company
+##### Create a company
 ```ruby
 client.companies.create(
   user_id: "1",
@@ -433,22 +433,22 @@ client.companies.create(
 )
 ```
 
-#####Get a company
+##### Get a company
 ```ruby
 client.companies.find('compamy_id')
 ```
 
-#####Get a list of companies
+##### Get a list of companies
 ```ruby
 client.companies.find_all
 ```
 
-#####Get a company's address
+##### Get a company's address
 ```ruby
 company.address
 ```
 
-#####Update a company
+##### Update a company
 ```ruby
 client.companies.update(
   id: "8d578b9c-5b79-11e5-885d-feff819cdc9f",
@@ -465,16 +465,16 @@ client.companies.update(
 )
 ```
 
-##Fees
-#####Get a list of fees
+## Fees
+##### Get a list of fees
 ```ruby
 fees = client.fees.find_all
 ```
-#####Get a fee
+##### Get a fee
 ```ruby
 fees = client.fees.find('1')
 ```
-#####Create a fee
+##### Create a fee
 ```ruby
 fee = client.fees.create(
   name: 'test fee for 5 AUD',
@@ -484,44 +484,44 @@ fee = client.fees.create(
 )
 ```
 
-##Transactions
-#####Get a list of transactions
+## Transactions
+##### Get a list of transactions
 ```ruby
 transactions = client.transactions.find_all
 ```
-#####Get a transaction
+##### Get a transaction
 ```ruby
 transaction = client.transactions.find('1')
 ```
-#####Get a transaction's users
+##### Get a transaction's users
 ```ruby
 transaction.users
 ```
-#####Get a transaction's fees
+##### Get a transaction's fees
 ```ruby
 transaction.fees
 ```
 
-##Batch Transactions
-#####Get a list of batch transactions
+## Batch Transactions
+##### Get a list of batch transactions
 ```ruby
 batch_transactions = client.batch_transactions.find_all
 ```
-#####Get a transaction
+##### Get a transaction
 ```ruby
 batch_transaction = client.batch_transactions.find('1')
 ```
 
-##Charges
-#####Get a list of charges
+## Charges
+##### Get a list of charges
 ```ruby
 charges = client.charges.find_all
 ```
-#####Get a charge
+##### Get a charge
 ```ruby
 charge = client.charges.find('1')
 ```
-#####Create a charge
+##### Create a charge
 ```ruby
 charge = client.charges.create(
   account_id: '123',
@@ -537,57 +537,57 @@ charge = client.charges.create(
   ip_address: '172.16.81.100'
 )
 ```
-#####Get a charge's buyer
+##### Get a charge's buyer
 ```ruby
 charge.buyer
 ```
-#####Get a charge's status
+##### Get a charge's status
 ```ruby
 charge.status
 ```
 
-##Direct Debit Authority
-#####Get a list of direct debit authorities for a given account
+## Direct Debit Authority
+##### Get a list of direct debit authorities for a given account
 ```ruby
 bank_account = client.bank_accounts.find('9fda18e7-b1d3-4a83-830d-0cef0f62cd25')
 ddas = client.charges.find_all(bank_account.id)
 ```
-#####Get a direct debit authority
+##### Get a direct debit authority
 ```ruby
 dda = client.direct_debit_authorities.find('8f233e04-ffaa-4c9d-adf9-244853848e21')
 ```
-#####Create a direct debit authority
+##### Create a direct debit authority
 ```ruby
 charge = client.direct_debit_authorities.create(
   account_id: '9fda18e7-b1d3-4a83-830d-0cef0f62cd25',
   amount: '10000'
 )
 ```
-#####Delete a direct debit authority
+##### Delete a direct debit authority
 ```ruby
 dda = client.direct_debit_authorities.find('8f233e04-ffaa-4c9d-adf9-244853848e21')
 dda.delete
 ```
 
-##Tools
-#####Health check
+## Tools
+##### Health check
 ```ruby
 client.tools.health_check
 ```
-##Marketplace
+## Marketplace
 ```ruby
 client.marketplace
 ```
 
-##Token
-#####Generate
+## Token
+##### Generate
 ```ruby
 client.generate_token(token_type: 'card', user_id: '5830def0-ffe8-11e5-86aa-5e5517507c66')
 ```
 
 _Check out the [online documentation](http://promisepay.github.io/promisepay-ruby/) to get a full list of available resources and methods._
 
-#4. Contributing
+# 4. Contributing
 
   1. Fork it ( https://github.com/PromisePay/promisepay-ruby/fork )
   2. Create your feature branch (`git checkout -b my-new-feature`)
