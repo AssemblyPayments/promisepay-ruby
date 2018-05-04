@@ -591,7 +591,7 @@ _Check out the [online documentation](http://promisepay.github.io/promisepay-rub
 ## Direct API Calls (that are missing as model methods)
 ##### Example: Search user by email (or any text in user's profile)
 ```ruby
-JSON.parse ASSEMBLY.get("users",{search: "test@test.com"}).body
+JSON.parse client.get("users",{search: "test@test.com"}).body
 ```
 
 
